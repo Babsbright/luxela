@@ -12,7 +12,7 @@ const Input = (props: InputProps) => {
     <div>
       <label
         htmlFor={props.label}
-        className="block text-sm font-medium leading-6 text-black"
+        className="text-sm font-medium leading-6 text-black"
       >
         {props.label}{" "}
       </label>
@@ -24,7 +24,7 @@ const Input = (props: InputProps) => {
           placeholder={props.placeholder}
           onChange={props.onChange}
           required
-          className="block px-2 w-full text-base rounded-lg border-0 py-2 text-black shadow-sm ring-1
+          className="px-2 w-full text-base rounded-lg border-0 py-2 text-black shadow-sm ring-1
              ring-inset ring-gray-300 placeholder:text-grey-300
               focus:outline-luxela_lilac sm:text-sm sm:leading-6 placeholder:text-sm"
         />

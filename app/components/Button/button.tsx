@@ -9,8 +9,7 @@ const Button = (props: ButtonProps) => {
       <button
         onClick={props.onClick}
         className="font-sans w-full h-10 bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple justify-center 
-                   rounded-lg text-base text-white shadow-lg hover:bg-none hover:text-luxela_lilac focus:ring
-                    focus:ring-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
+                   rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
       >
         {props.children}
       </button>

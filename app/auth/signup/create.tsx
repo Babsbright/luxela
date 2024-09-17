@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/app/components/Button/button";
 import Input from "@/app/components/Input/input";
-import Link from "next/link";
+import Header from "./header";
 import { useState } from "react";
 import EmailVerification from "./emailVerfication";
 interface Formprops {
@@ -17,18 +17,9 @@ export default function CreateForm(props: Formprops) {
     <>
       {!props.page ? (
         <div className="font-sans flex min-h-full flex-col justify-center">
-          <div className="text-center">
-            <h2 className="font-semibold capitalize text-sm">
-              personal details
-            </h2>
-            <p className="max-w-md mt-2 mx-auto text-gray-400 text-sm">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
-              ratione consequuntur ut laborum inventore sequi assumenda paria
-            </p>
-          </div>
-
+          <Header heading="personal details"/>
           <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
-            <form className="space-y-4" action="#" method="POST">
+            <form className="space-y-4">
               <Input
                 label="First Name"
                 name="firstName"
@@ -62,7 +53,7 @@ export default function CreateForm(props: Formprops) {
         <EmailVerification />
       )}
       {!props.page && (
-        <Button onClick={() => props.setPage(!props.page)}>Proceed</Button>
+        <Button onClick={() => props.setPage(true)}>Proceed</Button>
       )}
     </>
   );
