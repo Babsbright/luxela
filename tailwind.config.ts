@@ -9,8 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        luxela_purple:"#5c2eaf",
+        luxela_purple2:"#8351e1",
+        luxela_lilac:"#9872dd",
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      fontFamily:{
+        mono:['var(--font-geist-mono)'],
+        sans:['var(--font-geist-sans)'],
       },
     },
   },
