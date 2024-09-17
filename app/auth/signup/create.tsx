@@ -9,10 +9,23 @@ interface Formprops {
   setPage: any;
 }
 export default function CreateForm(props: Formprops) {
-  const [value, setValue] = useState("");
-  const handleChange = (e: any) => {
-    setValue(e.target.value);
+  
+  const [data, setData] = useState({
+    firstName: "",
+    emailAddress: "",
+    lastName: "",
+  });
+
+
+  const handleChange = (e: { target: { value: string; name: string; }; }) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value
+    });
   };
+  
+   
   return (
     <>
       {!props.page ? (
@@ -23,7 +36,7 @@ export default function CreateForm(props: Formprops) {
               <Input
                 label="First Name"
                 name="firstName"
-                value={value}
+                value={data.firstName}
                 type="text"
                 placeholder="Enter your first name"
                 onChange={handleChange}
@@ -33,7 +46,7 @@ export default function CreateForm(props: Formprops) {
                 label="Last Name"
                 name="lastName"
                 type="text"
-                value={value}
+                value={data.lastName}
                 onChange={handleChange}
                 placeholder="Enter your last name"
               />
@@ -42,7 +55,7 @@ export default function CreateForm(props: Formprops) {
                 label="Email Address"
                 name="emailAddress"
                 type="email"
-                value={value}
+                value={data.emailAddress}
                 onChange={handleChange}
                 placeholder="Enter your email address"
               />

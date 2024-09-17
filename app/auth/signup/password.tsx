@@ -10,9 +10,18 @@ interface Formprops {
   setFinish: any;
 }
 export default function Password(props: Formprops) {
-  const [value, setValue] = useState("");
-  const handleChange = (e: any) => {
-    setValue(e.target.value);
+  const [data, setData] = useState({
+    password: "",
+    confirmPassword: "",
+  });
+
+
+  const handleChange = (e: { target: { value: string; name: string; }; }) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value
+    });
   };
 
   useEffect(() => {
@@ -28,7 +37,7 @@ export default function Password(props: Formprops) {
             <Input
               label="Password"
               name="password"
-              value={value}
+              value={data.password}
               type="password"
               placeholder="Enter your password"
               onChange={handleChange}
@@ -37,7 +46,7 @@ export default function Password(props: Formprops) {
             <Input
               label="Confirm Password"
               name="password"
-              value={value}
+              value={data.confirmPassword}
               type="password"
               placeholder="Enter your password"
               onChange={handleChange}
