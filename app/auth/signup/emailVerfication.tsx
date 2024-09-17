@@ -16,11 +16,11 @@ export default function EmailVerification() {
         <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
           <form className="space-y-4">
             <Input
-              label="First Name"
-              name="firstName"
+              label="Email Verification"
+              name="emailVerification"
               value={value}
               type="text"
-              placeholder="Enter your first name"
+              placeholder=""
               onChange={handleChange}
             />
           </form>

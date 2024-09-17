@@ -18,12 +18,12 @@ const Input = (props: InputProps) => {
       </label>
       <div className="mt-2">
         <input
+          required
           name={props.name}
           type={props.type}
           value={props.value}
           placeholder={props.placeholder}
           onChange={props.onChange}
-          required
           className="px-2 w-full text-base rounded-lg border-0 py-2 text-black shadow-sm ring-1
              ring-inset ring-gray-300 placeholder:text-grey-300
               focus:outline-luxela_lilac sm:text-sm sm:leading-6 placeholder:text-sm"

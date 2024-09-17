@@ -4,75 +4,85 @@ import { useState } from "react";
 import Header from "./header";
 
 export default function DetailsForm() {
-  const [value, setValue] = useState("");
-  const handleChange = (e: any) => {
-    setValue(e.target.value);
+  const [data, setData] = useState({
+    dateOfBirth: "",
+    gender: "",
+    country: "",
+    shippingaddress: "",
+    stylePreference: "",
+    sizePreference: "",
+  });
+
+  const handleChange = (e: { target: { value: string; name: string } }) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value,
+    });
   };
   return (
     <>
       <div className="font-sans flex min-h-full flex-col justify-center mb-10">
-      <Header heading="additional details"/>
+        <Header heading="additional details" />
         <div className="mt-5 sm:mx-auto sm:w-full md:max-w-screen-lg">
           <form className="md:flex md:flex-row md:justify-between items-center md:space-x-8 lg:space-x-32">
-           <div className="space-y-4 md:w-1/2">
-           <Input
-              label="First Name"
-              name="firstName"
-              value={value}
-              type="text"
-              placeholder="Enter your first name"
-              onChange={handleChange}
-            />
+            <div className="space-y-4 md:w-1/2">
+              <Input
+                label="Date of Birth(Optional)"
+                name="dateOfBirth"
+                value={data.dateOfBirth}
+                type="text"
+                placeholder="Enter your date of birth"
+                onChange={handleChange}
+              />
 
-            <Input
-              label="First Name"
-              name="firstName"
-              value={value}
-              type="text"
-              placeholder="Enter your first name"
-              onChange={handleChange}
-            />
+              <Input
+                label="Gender"
+                name="gender"
+                value={data.gender}
+                type="text"
+                placeholder="Enter your gender"
+                onChange={handleChange}
+              />
 
-            <Input
-              label="First Name"
-              name="firstName"
-              value={value}
-              type="text"
-              placeholder="Enter your first name"
-              onChange={handleChange}
-            />
-           </div>
+              <Input
+                label="Country"
+                name="country"
+                value={data.country}
+                type="text"
+                placeholder="Enter your country"
+                onChange={handleChange}
+              />
+            </div>
 
+            <div className="space-y-4 md:w-1/2 mt-4 md:mt-0">
+              <Input
+                label="Shipping Address"
+                name="shippingaddress"
+                value={data.shippingaddress}
+                type="text"
+                placeholder="Enter your shipping address"
+                onChange={handleChange}
+              />
 
+              <Input
+                label="Style Preference"
+                name="stylePreference"
+                value={data.stylePreference}
+                type="text"
+                placeholder="Enter your style preference"
+                onChange={handleChange}
+              />
 
-           <div className="space-y-4 md:w-1/2 mt-4 md:mt-0">
-           <Input
-              label="First Name"
-              name="firstName"
-              value={value}
-              type="text"
-              placeholder="Enter your first name"
-              onChange={handleChange}
-            />
-
-            <Input
-              label="First Name"
-              name="firstName"
-              value={value}
-              type="text"
-              placeholder="Enter your first name"
-              onChange={handleChange}
-            />
-
-            <Input
-              label="First Name"
-              name="firstName"
-              value={value}
-              type="text"
-              placeholder="Enter your first name"
-              onChange={handleChange}
-            />
-           </div>
+              <Input
+                label="Size Preference"
+                name="sizePreference"
+                value={data.sizePreference}
+                type="text"
+                placeholder="Enter your size preference"
+                onChange={handleChange}
+              />
+            </div>
           </form>
         </div>
       </div>
