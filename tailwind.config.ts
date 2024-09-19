@@ -12,13 +12,15 @@ const config: Config = {
         luxela_purple:"#5c2eaf",
         luxela_purple2:"#8351e1",
         luxela_lilac:"#9872dd",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
       },
       fontFamily:{
-        mono:['var(--font-geist-mono)'],
-        sans:['var(--font-geist-sans)'],
+        aeonik:['var(--font-aeonik-mono)'],
+        helvtica:['var(--font-helva-sans)'],
+        spaceGrotesk:['var(--font-space-grotesk)']
       },
+      backgroundImage: {
+        'hero-pattern': "url('/assests/Hero Section.png')",
+      }
     },
   },
   plugins: [],
