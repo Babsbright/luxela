@@ -1,5 +1,6 @@
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Terms() {
   return (
@@ -64,20 +65,24 @@ export default function Terms() {
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-x-4">
             <div className="lg:w-2/3">
-              <button
-                className="font-spaceGrotesk font-medium w-full h-10 2xl:h-20 bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple
+              <Link href={"/auth/signin"}>
+                <button
+                  className="font-spaceGrotesk font-medium w-full h-10 2xl:h-20 bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple
                    rounded-lg text-[2.5vh] text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
-              >
-                Proceed
-              </button>
+                >
+                  Proceed
+                </button>
+              </Link>
             </div>
             <div className="lg:w-1/3">
-              <button
-                className="font-spaceGrotesk font-medium w-full h-10 2xl:h-20 bg-zinc-700
+              <Link href={"/auth/signup/create"}>
+                <button
+                  className="font-spaceGrotesk font-medium w-full h-10 2xl:h-20 bg-zinc-700
                    rounded-lg text-[2.5vh] text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
-              >
-                Decline
-              </button>
+                >
+                  Decline
+                </button>
+              </Link>
             </div>
           </div>
         </div>
