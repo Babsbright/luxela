@@ -21,8 +21,8 @@ export default function EmailVerification(props: Formprops) {
   return (
     <>
       <div className="font-spaceGrotesk">
-        <div className="mt-5 sm:mx-auto sm:w-full max-w-md 2xl:max-w-7xl">
-          <form className="space-y-4 2xl:mb-14">
+        <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
+          <form className="space-y-4">
             <Input
               label="Email Verification"
               name="emailVerification"

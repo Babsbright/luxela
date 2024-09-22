@@ -20,7 +20,7 @@ export default function CreateForm() {
 
   return (
     <>
-      <section className="2xl:mb-14">
+      <section className="">
         <div className="flex justify-center cursor-pointer my-4">
           <Image
             className="w-20 lg:w-28 hover:bg-luxela_lilac"
@@ -30,8 +30,8 @@ export default function CreateForm() {
         </div>
 
         <div className="font-spaceGrotesk">
-          <div className="mt-5 sm:mx-auto sm:w-full max-w-md 2xl:max-w-7xl">
-            <form className="space-y-4 2xl:space-y-14">
+          <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
+            <form className="space-y-4">
               <Input
                 label="Username"
                 name="userName"
