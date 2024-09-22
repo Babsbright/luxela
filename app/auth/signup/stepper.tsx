@@ -1,13 +1,13 @@
 import React from "react";
 
 interface Step {
-  currentStep: any;
-  numberOfSteps: any;
+  currentStep: number;
+  numberOfSteps: number;
 }
 export default function Stepper(props: Step) {
-  const activeColor = (index: any) =>
+  const activeColor = (index: number) =>
     props.currentStep >= index ? "bg-luxela_purple2" : "bg-gray-300";
-  const isFinalStep = (index: any) => index === props.currentStep - 1;
+  // const isFinalStep = (index: any) => index === props.currentStep - 1;
 
   return (
     <div className="flex justify-center items-center gap-x-3">
