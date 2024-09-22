@@ -3,6 +3,7 @@ import Image from "next/image";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 import Button from "../components/Button/button";
+import Link from "next/link";
 
 const datas = [
   {
@@ -157,7 +158,9 @@ export default function Cart() {
                 </div>
               </div>
               <hr className="mt-3 w-full h-[0.2px] border border-gray-700/50" />
-              <Button>Proceed to checkout</Button>
+              <Link href={"/cart/checkout"}>
+                <Button>Proceed to checkout</Button>
+              </Link>
             </section>
           </section>
         </section>
