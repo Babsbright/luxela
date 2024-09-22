@@ -12,7 +12,7 @@ const Input = (props: InputProps) => {
     <div>
       <label
         htmlFor={props.label}
-        className="text-sm font-medium leading-6 text-black"
+        className="text-[2.5vh] font-medium leading-6 text-white/80"
       >
         {props.label}{" "}
       </label>
@@ -24,9 +24,11 @@ const Input = (props: InputProps) => {
           value={props.value}
           placeholder={props.placeholder}
           onChange={props.onChange}
-          className="px-2 w-full text-base rounded-lg border-0 py-2 text-black shadow-sm ring-1
-             ring-inset ring-gray-300 placeholder:text-grey-300
-              focus:outline-luxela_lilac sm:text-sm sm:leading-6 placeholder:text-sm"
+          className="px-2 w-full bg-zinc-900 text-[2.5vh] 2xl:text-[3vh]
+          rounded-lg border-none py-2 2xl:py-5 text-white shadow-sm
+          focus:outline-none focus:shadow-outline
+           placeholder:text-white/70 focus:outline-luxela_lilac
+            sm:text-sm sm:leading-6 placeholder:text-[2vh]"
         />
       </div>
     </div>
