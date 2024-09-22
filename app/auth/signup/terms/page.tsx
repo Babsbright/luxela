@@ -58,7 +58,7 @@ export default function Terms() {
               id=""
             />
             <p className="text-[2vh] font-spaceGrotesk">
-              By clicking "Accept", you agree to our Terms of Agreement and
+              By clicking &quot;Accept&quot;, you agree to our Terms of Agreement and
               Privacy Policies
             </p>
           </div>
