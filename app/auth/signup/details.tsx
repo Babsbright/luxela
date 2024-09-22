@@ -22,8 +22,8 @@ export default function DetailsForm() {
   };
   return (
     <>
-      <div className="font-sans flex min-h-full flex-col justify-center mb-10">
-        <Header heading="additional details" />
+      <div className="font-spaceGrotesk">
+        <Header heading="Additional details" />
         <div className="mt-5 sm:mx-auto sm:w-full md:max-w-screen-lg">
           <form className="md:flex md:flex-row md:justify-between items-center md:space-x-8 lg:space-x-32">
             <div className="space-y-4 md:w-1/2">

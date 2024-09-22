@@ -2,6 +2,7 @@
 import Input from "@/app/components/Input/input";
 import { useState } from "react";
 import Button from "@/app/components/Button/button";
+import AuthNavbar from "../AuthNavbar";
 
 export default function Login() {
   const [data, setData] = useState({
@@ -18,17 +19,19 @@ export default function Login() {
   };
   return (
     <>
-      <div className="font-sans w-full py-4 px-4 md:px-8 flex min-h-full flex-col justify-center">
+      <AuthNavbar />
+
+      <div className="w-full px-4 md:px-8 mt-4 mb-12 flex min-h-full flex-col justify-center max-w-[1440px] mx-auto">
         <div className="text-center my-4">
-          <h2 className="font-semibold capitalize text-base">
-            sign into your account
+          <h2 className="font-medium text-lg font-aeonik">
+            Sign into your account
           </h2>
-          <p className="max-w-md mt-2 mx-auto text-gray-400 text-sm">
+          <p className="font-spaceGrotesk max-w-lg mt-2 mx-auto text-gray-500 text-sm">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
             ratione consequuntur ut laborum inventore sequi assumenda paria
           </p>
         </div>
-        <div className="mt-5 mx-auto w-full max-w-md">
+        <div className="font-spaceGrotesk mt-5 mx-auto w-full max-w-md">
           <form className="space-y-4">
             <Input
               label="Email Address"

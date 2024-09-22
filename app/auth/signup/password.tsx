@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import Header from "./header";
 import Button from "@/app/components/Button/button";
 import Link from "next/link";
+import { Dispatch, SetStateAction } from "react";
 
 interface Formprops {
   finish: boolean;
-  setFinish: any;
+  setFinish: Dispatch<SetStateAction<boolean>>;
 }
 export default function Password(props: Formprops) {
   const [data, setData] = useState({
@@ -15,23 +16,21 @@ export default function Password(props: Formprops) {
     confirmPassword: "",
   });
 
-
-  const handleChange = (e: { target: { value: string; name: string; }; }) => {
+  const handleChange = (e: { target: { value: string; name: string } }) => {
     const value = e.target.value;
     setData({
       ...data,
-      [e.target.name]: value
+      [e.target.name]: value,
     });
   };
 
   useEffect(() => {
     props.setFinish(true);
-    console.log("jjjjjjjjjj");
   }, []);
   return (
     <>
-      <div className="font-sans flex min-h-full flex-col justify-center">
-        <Header heading="set your password" />
+      <div className="font-spaceGrotesk">
+        <Header heading="Set your password" />
         <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
           <form className="space-y-4">
             <Input

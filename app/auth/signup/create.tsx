@@ -4,10 +4,13 @@ import Input from "@/app/components/Input/input";
 import Header from "./header";
 import { useState } from "react";
 import EmailVerification from "./emailVerfication";
+import { Dispatch, SetStateAction } from "react";
+
 interface Formprops {
   page: boolean;
-  setPage: any;
+  setPage: Dispatch<SetStateAction<boolean>>;
 }
+
 export default function CreateForm(props: Formprops) {
   
   const [data, setData] = useState({
@@ -29,8 +32,8 @@ export default function CreateForm(props: Formprops) {
   return (
     <>
       {!props.page ? (
-        <div className="font-sans flex min-h-full flex-col justify-center">
-          <Header heading="personal details"/>
+        <div className="font-spaceGrotesk">
+          <Header heading="Personal details"/>
           <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
             <form className="space-y-4">
               <Input
