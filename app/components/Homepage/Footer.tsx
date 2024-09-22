@@ -1,11 +1,17 @@
+"use client"
 import React from "react";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import BigLogo from "/public/assests/LUXELA.svg";
 import Image from "next/image";
 import { ArrowRightIcon } from "../icons";
+import { usePathname } from "next/navigation"
+import { disableFooter } from "../../utils/disableFooter"
 
 const Footer = () => {
+  const path = usePathname()
   return (
+    <>
+    {!disableFooter.includes(path) && (
     <div className="p-[60px] bg-[#1A1A1A]">
       <div className="flex justify-between">
         <div className="w-[330px]">
@@ -70,7 +76,10 @@ const Footer = () => {
         <Image src={BigLogo} alt="big logo" />
       </div>
     </div>
+  )}
+</>
   );
+  
 };
 
 export default Footer;
