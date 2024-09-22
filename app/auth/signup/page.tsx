@@ -21,16 +21,18 @@ export default function SignUp() {
 
           <div className="text-white mt-5 lg:mt-20 xl:mt-28 lg:max-w-md">
             <div className="flex justify-between items-center font-aeonik lg:mb-16">
-              <Image className="max-sm:w-32" src={Logo} alt="logo" />
-              <button
-                className="flex items-center gap-x-2 py-1.5 px-3 sm:px-4 hover:bg-luxela_purple hover:text-white
+              <Image className="max-sm:w-32" src={Logo} alt="logo" priority />
+              <Link href={"/auth/signup"}>
+                <button
+                  className="flex items-center gap-x-2 py-1.5 px-3 sm:px-4 hover:bg-luxela_purple hover:text-white
              text-luxela_lilac rounded-sm bg-luxela_lilac/30 text-[2vh]"
-              >
-                Sign in{" "}
-                <span>
-                  <Image className="max-sm:w-4" src={arrow} alt="arrow" />
-                </span>
-              </button>
+                >
+                  Sign in{" "}
+                  <span>
+                    <Image className="max-sm:w-4" src={arrow} alt="arrow" />
+                  </span>
+                </button>
+              </Link>
             </div>
             <div className="my-8 lg:my-4">
               <h2 className="font-medium text-[2.5vh] font-aeonik">
@@ -98,9 +100,8 @@ export default function SignUp() {
                hover:border hover:border-luxela_lilac hover:py-1.5 lg:py-2"
                 >
                   {" "}
-                    <Image src={help} alt="help-circle" />
-                    <Link href={"/auth/signup/create"}>
-
+                  <Image src={help} alt="help-circle" />
+                  <Link href={"/auth/signup/create"}>
                     <p>I don&apos;t have a wallet</p>
                   </Link>
                 </div>
