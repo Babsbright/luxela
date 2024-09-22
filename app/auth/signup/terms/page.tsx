@@ -1,21 +1,24 @@
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Image from "next/image";
 import Link from "next/link";
+import AuthNavbar from "../../AuthNavbar";
 
 export default function Terms() {
   return (
     <section className="bg-black w-full min-h-[100vh] pb-20 ">
+        <div className="hidden lg:block">
+            <AuthNavbar />
+          </div>
       <div className="max-w[1440px] px-4 md:px-8 flex flex-col mx-auto justify-center items-center">
-        <div className="flex justify-center cursor-pointer my-4">
+        <div className="lg:hidden flex justify-center cursor-pointer my-4">
           <Image
             className="w-20 lg:w-28 hover:bg-luxela_lilac"
             src={Logo}
             alt="profile"
           />
         </div>
-        <hr className="w-full h-[0.2px] border border-gray-700/50" />
 
-        <div className="text-white mt-5 max-w-2xl bg-zinc-900 rounded-md p-6 ">
+        <div className="text-white mt-16 max-w-2xl bg-zinc-900 rounded-md p-6">
           <h1 className="text-lg font-aeonik mb-4">Terms of agreement</h1>
           <p className="text-sm font-spaceGrotesk">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do

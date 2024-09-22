@@ -1,16 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "/public/assests/Luxela black logo 2.svg";
+import Logo from "/public/assests/Luxela white logo 1.svg";
 // import { ShopCartIcon } from "../components/icons";
 
 const AuthNavbar = () => {
   return (
     <div className="w-full bg-transparent">
-      <div className="flex items-center flex-row-reverse lg:flex-row justify-between max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[40px] py-[18px] text-black">
+      <div className="flex items-center flex-row-reverse lg:flex-row justify-between max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[40px] py-[18px] text-white">
           <ul className="lg:w-1/3 flex font-spaceGrotesk gap-4 lg:gap-[36px] text-[14px]">
-            <li>Marketplace</li>
+            <li>Explore</li>
             <li>Brands</li>
-            <li>Sales</li>
+            <li>Limited offers</li>
           </ul>
 
           <div className="lg:w-1/3 flex items-center justify-center">
@@ -25,7 +25,9 @@ const AuthNavbar = () => {
           </button>
           <ShopCartIcon />
         </div> */}
+        
       </div>
+      <hr className="w-full h-[0.2px] border border-gray-700/50" />
     </div>
   );
 };

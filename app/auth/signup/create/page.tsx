@@ -7,6 +7,7 @@ import Header from "../header";
 import Stepper from "../stepper";
 import { useState } from "react";
 import CreateForm from "./createForm";
+import AuthNavbar from "../../AuthNavbar";
 
 export default function Create() {
   const [lastPage, setLastPage] = useState(false);
@@ -22,12 +23,14 @@ export default function Create() {
   //   setCurrentStep((prev) => (prev <= 0 ? prev : prev - 1));
   return (
     <section className="bg-black w-full min-h-[100vh] pb-20">
+        <div className="hidden lg:block">
+            <AuthNavbar />
+          </div>
       <div className="max-w[1440px] px-4 md:px-8 flex flex-col mx-auto justify-center items-center">
         <div className="text-white mt-5 max-w-md">
-          <div className="flex justify-center items-center">
+          <div className="lg:hidden flex justify-center items-center">
             <Image className="max-sm:w-32" src={Logo} alt="logo" />
           </div>
-
           <Header />
 
           <Stepper currentStep={currentStep} numberOfSteps={NUMBER_OF_STEPS} />
@@ -36,7 +39,10 @@ export default function Create() {
             {currentStep === 0 ? (
               <CreateForm />
             ) : (
-              <EmailVerification lastPage={lastPage} setLastPage={setLastPage} />
+              <EmailVerification
+                lastPage={lastPage}
+                setLastPage={setLastPage}
+              />
             )}
           </div>
 
