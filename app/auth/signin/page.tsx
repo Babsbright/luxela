@@ -26,7 +26,7 @@ export default function SignUp() {
               </Link>
               <Link href={"/auth/signup"}>
                 <button
-                  className="flex items-center gap-x-2 py-1.5 px-2 sm:px-4 hover:bg-luxela_purple hover:text-white
+                  className="font-spaceGrotesk flex items-center gap-x-2 py-1.5 px-2 sm:px-4 hover:bg-luxela_purple hover:text-white
              text-luxela_lilac rounded-sm bg-luxela_lilac/30 text-sm"
                 >
                   Create account{" "}
@@ -37,9 +37,7 @@ export default function SignUp() {
               </Link>
             </div>
             <div className="max-lg:mt-10 my-8 lg:my-4">
-              <h2 className="font-medium text-lg font-aeonik">
-                Welcome back
-              </h2>
+              <h2 className="font-medium text-lg font-aeonik">Welcome back</h2>
               <p className="font-spaceGrotesk max-w-md lg:max-w-lg mt-2 mx-auto text-white/80 text-sm">
                 Connect your solana wallet to create your own LUXELA account for
                 free. Your wallet would be used as a security measure.{" "}
@@ -47,7 +45,7 @@ export default function SignUp() {
             </div>
             <div className="font-spaceGrotesk mt-6 mx-auto w-full max-w-md">
               <section className="space-y-6">
-                <h1 className="text-sm">Connect your wallet</h1>
+                <p className="text-sm">Connect your wallet</p>
                 <div
                   className="flex items-center justify-center 
               gap-x-2 py-2.5 w-full text-center rounded-sm cursor-pointer
