@@ -50,7 +50,7 @@ export default function Terms() {
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur.
           </p>
-          <div className="flex items-center my-2 gap-x-2">
+          <div className="flex items-center my-4 gap-x-2">
             <input
               className="bg-transparent"
               type="checkbox"
@@ -63,8 +63,8 @@ export default function Terms() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-x-4">
-            <div className="lg:w-2/3">
+          <div className="flex flex-col md:flex-row items-center justify-center max-md:space-y-4 md:gap-x-4">
+            <div className="w-full md:w-2/3">
               <Link href={"/auth/signin"}>
                 <button
                   className="font-spaceGrotesk font-medium w-full h-10 2xl:h-20 bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple
@@ -74,7 +74,7 @@ export default function Terms() {
                 </button>
               </Link>
             </div>
-            <div className="lg:w-1/3">
+            <div className="w-full md:w-1/3">
               <Link href={"/auth/signup/create"}>
                 <button
                   className="font-spaceGrotesk font-medium w-full h-10 2xl:h-20 bg-zinc-700
