@@ -56,7 +56,7 @@ export default function Checkout() {
 
         <section className="my-10">
           <div>
-            <p className=" font-spaceGrotesk text-xs flex gap-x-6 my-3 text-white/60">
+            <p className=" font-spaceGrotesk text-xs flex gap-x-3 mb-5 text-white/60">
               Cart <span>&gt;</span>{" "}
               <span className="text-white">Checkout</span>
             </p>
@@ -64,9 +64,9 @@ export default function Checkout() {
 
           <section className=" font-spaceGrotesk flex flex-col lg:flex-row max-lg:space-y-16 justify-between items-start gap-x-8">
             <section className="bg-zinc-900 w-full lg:w-1/2 p-6 rounded-md">
-              <div className="flex justify-between mb-2">
+              <div className="flex justify-between items-center mb-2">
                 <h2 className="text-sm mb-4">Order Summary</h2>
-                <button className="px-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
+                <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
                   Edit details
                 </button>
               </div>
@@ -149,7 +149,7 @@ export default function Checkout() {
                 </div>
               </div>
               <hr className="mt-3 w-full h-[0.2px] border border-gray-700/50" />
-              <Link href={"/cart/checkout"}>
+              <Link href={"/cart/checkout/payment"}>
                 <Button>Proceed to checkout</Button>
               </Link>
             </section>

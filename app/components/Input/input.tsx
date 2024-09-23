@@ -4,6 +4,7 @@ interface InputProps {
   value: string;
   name: string;
   type: string;
+  disabled?:boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -51,6 +52,7 @@ const CheckoutInput = (props: InputProps) => {
           name={props.name}
           type={props.type}
           value={props.value}
+          disabled ={props.disabled}
           placeholder={props.placeholder}
           onChange={props.onChange}
           className="px-2 w-full bg-zinc-800 text-sm

@@ -45,7 +45,7 @@ export default function Cart() {
 
         <section className="my-10">
           <div>
-            <p className=" font-spaceGrotesk text-xs flex gap-x-6 my-3 text-white/60">
+            <p className=" font-spaceGrotesk text-xs flex gap-x-3 mb-5 text-white/60">
               Home <span>&gt;</span> <span className="text-white">My cart</span>
             </p>
           </div>
@@ -95,8 +95,8 @@ export default function Cart() {
                           </button>
                         </div>
                         <div className="flex flex-col items-end">
-                        <button className="font-spaceGrotesk text-[10px] px-2 mt-2 py-1 rounded-md bg-red-500/10 text-red-600 hover:bg-red-500 hover:text-white/70">
-                        Remove item
+                          <button className="font-spaceGrotesk text-[10px] px-2 mt-2 py-1 rounded-md bg-red-500/10 text-red-600 hover:bg-red-500 hover:text-white/70">
+                            Remove item
                           </button>
                         </div>
                       </div>
