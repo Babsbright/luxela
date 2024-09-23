@@ -1,5 +1,5 @@
 "use client";
-import Input from "@/app/components/Input/input";
+import {Input} from "@/app/components/Input/input";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "@/app/components/Button/button";

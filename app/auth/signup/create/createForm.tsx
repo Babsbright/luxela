@@ -1,5 +1,5 @@
 "use client";
-import Input from "@/app/components/Input/input";
+import {Input} from "@/app/components/Input/input";
 import { useState } from "react";
 import Image from "next/image";
 import profile from "/public/assests/profilepic.svg";
