@@ -8,7 +8,7 @@ import Link from "next/link";
 import { CheckoutInput } from "@/app/components/Input/input";
 import { useState } from "react";
 
-const datas = [
+const items = [
   {
     name: "Mamba uniform",
     price: "0.064",
@@ -71,7 +71,7 @@ export default function Checkout() {
                 </button>
               </div>
               <div className="flex flex-col gap-y-8 gap-x-8">
-                {datas.map((data, index) => {
+                {items.map((item, index) => {
                   return (
                     <div key={index} className="flex justify-between gap-y-8">
                       <div className="flex justify-between gap-x-4 items-center">
@@ -79,21 +79,21 @@ export default function Checkout() {
                           <Image
                             width={45}
                             height={45}
-                            src={data.image}
+                            src={item.image}
                             alt="product"
                           />
                         </div>
 
                         <div className="text-xs">
-                          <p className="text-white/70">{data.name}</p>
+                          <p className="text-white/70">{item.name}</p>
                           <p className="flex items-center">
-                            {data.price}{" "}
+                            {item.price}{" "}
                             <span className="">
                               <Image className="w-5 h-5" src={sol} alt="sol" />
                             </span>
                           </p>
                           <p className="text-[10px] text-white/70">
-                            {data.size}
+                            {item.size}
                           </p>
                         </div>
                       </div>
@@ -138,7 +138,7 @@ export default function Checkout() {
               <hr className="w-full h-[0.2px] mt-4 border border-gray-700/50" />
 
               <div className="text-xs mt-4 flex justify-between items-center">
-                <p className="text-white/70">Total amount(SOL)</p>
+                <p className="text-white/70">Total amount (SOL)</p>
                 <div className="flex gap-x-1">
                   <span className="text-[10px] text-white/70">$37.34</span>
                   <span>0.254</span>

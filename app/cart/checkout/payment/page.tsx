@@ -7,7 +7,7 @@ import qrcode from "/public/assests/qrcode.svg";
 import { useState } from "react";
 import lock from "/public/assests/lock.svg";
 
-const datas = [
+const items = [
   {
     name: "Mamba uniform",
     price: "0.064",
@@ -28,6 +28,7 @@ const datas = [
     image: "/assests/product2.svg",
   },
 ];
+
 export default function Payment() {
   const [data, setData] = useState({
     emailAddress: "",
@@ -35,13 +36,13 @@ export default function Payment() {
     shippingAddress: "",
   });
 
-  const handleChange = (e: { target: { value: string; name: string } }) => {
-    const value = e.target.value;
-    setData({
-      ...data,
-      [e.target.name]: value,
-    });
-  };
+  // const handleChange = (e: { target: { value: string; name: string } }) => {
+  //   const value = e.target.value;
+  //   setData({
+  //     ...data,
+  //     [e.target.name]: value,
+  //   });
+  // };
 
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
@@ -73,7 +74,7 @@ export default function Payment() {
                   </button>
                 </div>
                 <div className="flex flex-col gap-y-8 gap-x-8">
-                  {datas.map((data, index) => {
+                  {items.map((item, index) => {
                     return (
                       <div key={index} className="flex justify-between gap-y-8">
                         <div className="flex justify-between gap-x-4 items-center">
@@ -81,15 +82,15 @@ export default function Payment() {
                             <Image
                               width={45}
                               height={45}
-                              src={data.image}
+                              src={item.image}
                               alt="product"
                             />
                           </div>
 
                           <div className="text-xs">
-                            <p className="text-white/70">{data.name}</p>
+                            <p className="text-white/70">{item.name}</p>
                             <p className="flex items-center">
-                              {data.price}{" "}
+                              {item.price}{" "}
                               <span className="">
                                 <Image
                                   className="w-5 h-5"
@@ -99,7 +100,7 @@ export default function Payment() {
                               </span>
                             </p>
                             <p className="text-[10px] text-white/70">
-                              {data.size}
+                              {item.size}
                             </p>
                           </div>
                         </div>
@@ -136,7 +137,7 @@ export default function Payment() {
                 <hr className="w-full h-[0.2px] mt-4 border border-gray-700/50" />
 
                 <div className="text-xs mt-4 flex justify-between items-center">
-                  <p className="text-white/70">Total amount(SOL)</p>
+                  <p className="text-white/70">Total amount (SOL)</p>
                   <div className="flex gap-x-1">
                     <span className="text-[10px] text-white/70">$37.34</span>
                     <span>0.254</span>
