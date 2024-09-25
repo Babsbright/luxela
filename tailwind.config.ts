@@ -7,6 +7,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+			sm: "480px",
+			md: "800px",
+			lg: "1000px",
+			xl: "1280px",
+		},
     extend: {
       colors: {
         luxela_purple:"#5c2eaf",
