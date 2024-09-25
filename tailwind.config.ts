@@ -20,6 +20,7 @@ const config: Config = {
       },
       backgroundImage: {
         'hero-pattern': "url('/assests/Hero Section.png')",
+        'mobile-background': "url('/assests/iPhone 14 & 15 Pro - 5.svg')"
       }
     },
   },

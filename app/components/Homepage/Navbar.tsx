@@ -6,7 +6,7 @@ import { ShopCartIcon } from "../icons";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-transparent">
+    <div className="w-full hidden lg:block bg-transparent">
       <div className="flex items-center justify-between max-w-[1440px] mx-auto px-[40px] py-[18px] text-white">
         <div className="flex items-center gap-[162px]">
           <ul className="flex font-spaceGrotesk gap-[36px] text-[14px] font-light">
