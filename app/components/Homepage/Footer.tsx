@@ -37,7 +37,7 @@ const Footer = () => {
             <button type="submit" className="absolute right-2 bottom-2.5 font-spaceGrotesk font-medium w-[106px] h-[36px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">Subscribe</button>
           </form>
 
-          <div className="flex gap-[80px] mt-[60px]">
+          <div className="flex lg:gap-[80px] mt-[60px]">
             <div>
               <h2 className="font-aeonik text-[18px] text-white">LUXELA</h2>
               <div className="text-[#BFBFBF] mt-[24px] space-y-[16px] font-spaceGrotesk">

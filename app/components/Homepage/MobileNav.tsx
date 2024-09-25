@@ -40,7 +40,7 @@ const MobileNav = () => {
       </div>
 
       {isOpen && (
-        <div className="fixed top-[80px] inset-0  bg-opacity-90 z-50 px-[20px]">
+        <div className="fixed top-[80px] inset-0  bg-[#0E0E0E] border-none z-50 px-[20px]">
           <nav className="mt-[40px] px-[20px]">
             <ul className="space-y-[33px] font-spaceGrotesk text-white text-[18px]">
               <li className="flex justify-between items-center">
