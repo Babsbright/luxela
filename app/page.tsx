@@ -29,7 +29,7 @@ const featureData = [
     image: Screenshot2,
   },
   {
-    title: "Security and Transparency",
+    title: "Be Closer to Your Favorite Designer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: Screenshot3,
@@ -167,8 +167,7 @@ const FAQCard = ({
   description: string;
   index: number;
 }) => {
-  const [isOpen, setIsOpen] = useState(index === 0); 
-  
+  const [isOpen, setIsOpen] = useState(index === 0);
 
   const toggleFAQ = () => {
     setIsOpen(!isOpen);
@@ -177,10 +176,10 @@ const FAQCard = ({
   return (
     <div className="lg:max-w-[432px] rounded-[12px] flex flex-col justify-between bg-[#1A1A1A] p-[20px]">
       <div
-        className="flex justify-between items-center cursor-pointer"
+        className="flex justify-between lg:hidden items-center cursor-pointer"
         onClick={toggleFAQ}
       >
-        <h2 className="font-spaceGrotesk text-[17px] text-white">{title}</h2>
+        <h2 className="font-spaceGrotesk text-[16px] text-white">{title}</h2>
         <QuestionIcon className="hidden lg:flex" />
         <DropdownIcon
           className={`transform lg:hidden flex transition-transform duration-300 ${
@@ -188,8 +187,15 @@ const FAQCard = ({
           }`}
         />
       </div>
+      <div className="lg:flex justify-between hidden items-center cursor-pointer">
+        <h2 className="font-spaceGrotesk text-[17px] text-white">{title}</h2>
+        <QuestionIcon />
+      </div>
+      <p className="font-spaceGrotesk  text-[#BFBFBF] mt-[92px] hidden lg:block transition-opacity duration-300 ease-in-out">
+        {description}
+      </p>
       {isOpen && (
-        <p className="font-spaceGrotesk text-[#BFBFBF] mt-2 transition-opacity duration-300 ease-in-out">
+        <p className="font-spaceGrotesk lg:hidden block text-[#BFBFBF] mt-[32px] transition-opacity duration-300 ease-in-out">
           {description}
         </p>
       )}
@@ -274,17 +280,17 @@ export default function Home() {
       </div>
 
       <div className="mt-[99px] lg:py-[100px]  lg:max-w-[1440px] mx-auto">
-        <div className="text-center">
-          <h2 className="font-aeonik lg:text-[32px] text-white">
+        <div className="lg:text-center">
+          <h2 className="font-aeonik px-[20px] lg:px-0 lg:text-[32px] text-white">
             Frequently Asked Questions
           </h2>
-          <p className="font-spaceGrotesk text-[18px] lg:pl-[200.5px] lg:pr-[199.5px] mt-[20px] text-[#BFBFBF]">
+          <p className="font-spaceGrotesk text-[16px] lg:text-[18px] pl-[20px] pr-[20px] lg:pl-[200.5px] lg:pr-[199.5px] mt-[20px] text-[#BFBFBF]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam.
           </p>
         </div>
-        <div className="mt-[72px] grid grid-cols-1 lg:grid-cols-3 gap-[12px] lg:px-[60px]">
+        <div className="mt-[72px] grid grid-cols-1 px-[20px] lg:grid-cols-3 gap-[12px] lg:px-[60px]">
           {faqData.map((faq, index) => (
             <FAQCard
               key={index}
@@ -296,18 +302,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-[99px] px-[60px] hidden py-[100px]">
-        <div className="bg-[#1A1A1A] py-[95px] text-center ">
-          <h2 className="font-aeonik text-white text-[32px]">
+      <div className="lg:mt-[99px] mt-[50px] bg-[#1A1A1A] lg:bg-[#0E0E0E] px-[20.5px] lg:px-[60px] py-[100px]">
+        <div className="lg:bg-[#1A1A1A] lg:py-[95px] text-center ">
+          <h2 className="font-aeonik text-white text-[24px] lg:text-[32px]">
             Frequently Asked Questions
           </h2>
-          <p className="px-[240px] mt-[16px] text-[#BFBFBF]">
+          <p className="lg:px-[240px] mt-[20px] lg:mt-[16px] text-[#BFBFBF]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut{" "}
           </p>
           <div className="mt-[40px]">
-            <button className="font-spaceGrotesk font-medium w-[230px] h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
+            <button className="font-spaceGrotesk font-medium w-full lg:w-[230px] h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
               Shop Luxela Now
             </button>
           </div>
