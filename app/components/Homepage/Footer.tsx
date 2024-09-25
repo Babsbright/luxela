@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "../icons";
 
 const Footer = () => {
   return (
-    <div className="lg:p-[60px]  bg-[#1A1A1A]">
+    <div className="lg:p-[60px] py-[80px] px-[20px]  bg-[#1A1A1A]">
       <div className="flex lg:flex-row flex-col justify-between">
         <div className="lg:w-[330px]">
           <Image src={Logo} alt="logo" />
@@ -25,25 +25,46 @@ const Footer = () => {
         </div>
 
         <div>
-          <h2 className="text-[14px] font-spaceGrotesk text-white">Subscribe to our newsletter</h2>
+          <h2 className="text-[14px] mt-[80px] lg:mt-0 font-spaceGrotesk text-white">
+            Subscribe to our newsletter
+          </h2>
           <form className="relative bg-[#2B2B2B] rounded-[8px] lg:w-[580px] py-[17px] mt-[10px] ">
-            <input type="text" placeholder="Your email address" className="focus:outline-none bg-[#2B2B2B] placeholder:text-[#ACACAC] px-[16px] " />
-            <button type="submit" className="absolute right-2 bottom-2.5 font-spaceGrotesk font-medium w-[106px] h-[36px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">Subscribe</button>
+            <input
+              type="text"
+              placeholder="Your email address"
+              className="focus:outline-none bg-[#2B2B2B] text-white placeholder:font-spaceGrotesk placeholder:text-[#ACACAC] px-[16px] "
+            />
+            <button
+              type="submit"
+              className="absolute right-2 bottom-2.5 font-spaceGrotesk font-medium w-[106px] h-[36px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
+            >
+              Subscribe
+            </button>
           </form>
 
-          <div className="flex lg:gap-[80px] mt-[60px]">
-            <div>
-              <h2 className="font-aeonik text-[18px] text-white">LUXELA</h2>
-              <div className="text-[#BFBFBF] mt-[24px] space-y-[16px] font-spaceGrotesk">
-                <p>About Us</p>
-                <p>Features</p>
-                <p>Special Brands</p>
-                <p>How to Luxela</p>
-                <p>FAQs</p>
+          <div className="flex gap-[80px] mt-[80px] lg:mt-[60px]">
+            <div className="lg:flex lg:gap-[80px]">
+              <div>
+                <h2 className="font-aeonik text-[18px] text-white">LUXELA</h2>
+                <div className="text-[#BFBFBF] mt-[24px] space-y-[16px] font-spaceGrotesk">
+                  <p>About Us</p>
+                  <p>Features</p>
+                  <p>Special Brands</p>
+                  <p>How to Luxela</p>
+                  <p>FAQs</p>
+                </div>
+              </div>
+              <div className="mt-[80px] lg:mt-0">
+                <h2 className="font-aeonik text-[18px] text-white">LEGAL</h2>
+                <div className="text-[#BFBFBF] mt-[24px] space-y-[16px] font-spaceGrotesk">
+                  <p>Privacy Policy</p>
+                  <p>Terms of Agreement</p>
+                  <p>Refunds</p>
+                </div>
               </div>
             </div>
 
-            <div>
+            <div >
               <h2 className="font-aeonik text-[18px] text-white">CONTACT US</h2>
               <div className="text-[#BFBFBF] mt-[24px] space-y-[16px] font-spaceGrotesk">
                 <p>Twitter/X</p>
@@ -53,20 +74,10 @@ const Footer = () => {
                 <p>I have a Brand</p>
               </div>
             </div>
-
-            <div>
-              <h2 className="font-aeonik text-[18px] text-white">LEGAL</h2>
-              <div className="text-[#BFBFBF] mt-[24px] space-y-[16px] font-spaceGrotesk">
-                <p>Privacy Policy</p>
-                <p>Terms of Agreement</p>
-                <p>Refunds</p>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
-      <div className="mx-auto text-center flex justify-center mt-[125px]">
+      <div className="mx-auto text-center flex justify-center mt-[80px] lg:mt-[125px]">
         <Image src={BigLogo} alt="big logo" />
       </div>
     </div>
