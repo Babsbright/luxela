@@ -6,9 +6,9 @@ import { ArrowRightIcon } from "../icons";
 
 const Footer = () => {
   return (
-    <div className="p-[60px] bg-[#1A1A1A]">
-      <div className="flex justify-between">
-        <div className="w-[330px]">
+    <div className="lg:p-[60px] hidden bg-[#1A1A1A]">
+      <div className="flex lg:flex-row flex-col justify-between">
+        <div className="lg:w-[330px]">
           <Image src={Logo} alt="logo" />
           <p className="mt-[60.36px] font-spaceGrotesk text-[#BFBFBF]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -26,7 +26,7 @@ const Footer = () => {
 
         <div>
           <h2 className="text-[14px] font-spaceGrotesk text-white">Subscribe to our newsletter</h2>
-          <form className="relative bg-[#2B2B2B] rounded-[8px] w-[580px] py-[17px] mt-[10px] ">
+          <form className="relative bg-[#2B2B2B] rounded-[8px] lg:w-[580px] py-[17px] mt-[10px] ">
             <input type="text" placeholder="Your email address" className="focus:outline-none bg-[#2B2B2B] placeholder:text-[#ACACAC] px-[16px] " />
             <button type="submit" className="absolute right-2 bottom-2.5 font-spaceGrotesk font-medium w-[106px] h-[36px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">Subscribe</button>
           </form>

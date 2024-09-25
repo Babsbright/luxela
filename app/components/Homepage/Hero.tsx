@@ -4,6 +4,7 @@ import Button from "../Button/button";
 import Image from "next/image";
 import Product from "/public/assests/image 1 (1).svg";
 import SolanaImage from "/public/assests/SOL 1.svg";
+import MobileNav from "./MobileNav";
 
 const products = [
   {
@@ -51,12 +52,13 @@ const products = [
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen bg-hero-pattern bg-cover overflow-hidden ">
-      <div className="max-w-[1440px] mx-auto w-full">
+    <div className="relative min-h-screen bg-mobile-background lg:bg-hero-pattern bg-cover overflow-hidden ">
+      <div className="lg:max-w-[1440px] lg:mx-auto w-full">
         <Navbar />
+        <MobileNav/>
       </div>
 
-      <div className="mt-[72px] flex flex-col justify-center">
+      <div className="mt-[72px] hidden lg:flex flex-col justify-center">
         <div className="border border-solid mx-auto border-[#B8A3E1] text-[#FEC5F3] rounded-[34px] w-auto bg-[#1C1111] py-[8px] px-[20px]">
           <p className="font-spaceGrotesk text-[14px] whitespace-nowrap">
             Pay With Crypto
@@ -82,7 +84,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-[56px] flex gap-[36px]">
+      <div className="mt-[56px] hidden max-w-[1440px] mx-auto lg:flex gap-[36px]">
         {products.map((product, index) => (
           <div
             key={index}

@@ -115,7 +115,7 @@ const FAQCard = ({
 
 export default function Home() {
   return (
-    <div className="bg-[#0E0E0E]">
+    <div className="bg-[#0E0E0E] w-full">
       <Hero />
       <div className="py-[100px]">
         <h2 className="text-white text-center font-aeonik text-[32px]">
@@ -129,7 +129,7 @@ export default function Home() {
         </Marquee>
       </div>
 
-      <div className="p-[100px] text-center">
+      <div className="p-[100px] text-center hidden max-w-[1440px] mx-auto">
         <h2 className="font-aeonik text-[32px] text-white">
           What Exactly is Luxela?
         </h2>
@@ -139,7 +139,7 @@ export default function Home() {
         <div className="mt-[68px] rounded-[20px] h-[538px] bg-gray-50"></div>
       </div>
 
-      <div className="mt-[99px] p-[100px]">
+      <div className="mt-[99px] p-[100px] hidden max-w-[1440px] mx-auto">
         {featureData.map((feature, index) => (
           <FeatureCard
             key={index}
@@ -149,7 +149,7 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="mt-[99px] py-[100px]">
+      <div className="mt-[99px] py-[100px] hidden max-w-[1440px] mx-auto">
         <h2 className="text-white font-aeonik text-[32px] text-center">
           Featured Brands on Luxela
         </h2>
@@ -164,7 +164,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-[99px] py-[100px]">
+      <div className="mt-[99px] py-[100px] hidden max-w-[1440px] mx-auto">
         <div className="text-center">
           <h2 className="font-aeonik text-[32px] text-white">
             Frequently Asked Questions
@@ -186,7 +186,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-[99px] px-[60px] py-[100px]">
+      <div className="mt-[99px] px-[60px] hidden py-[100px]">
         <div className="bg-[#1A1A1A] py-[95px] text-center ">
           <h2 className="font-aeonik text-white text-[32px]">
             Frequently Asked Questions
