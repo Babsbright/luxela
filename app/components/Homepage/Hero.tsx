@@ -126,7 +126,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="lg:hidden flex max-w-[393px] mx-auto gap-[10px] mt-[56px]">
+      <div className="lg:hidden flex max-w-[393px] mx-auto gap-[10px] mt-[62px]">
         {products.slice(0, 3).map((product, index) => (
           <div key={index}     className={`w-[200px] h-[250.63px] ${
             product.marginTop
