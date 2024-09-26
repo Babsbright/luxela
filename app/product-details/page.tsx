@@ -1,3 +1,4 @@
+"use client";
 import AuthNavbar from "../auth/AuthNavbar";
 import Image from "next/image";
 import Logo from "@/public/assests/Luxela white logo 1.svg";
@@ -5,8 +6,36 @@ import productBaz from "@/public/assests/product_baz.svg";
 import sol from "/public/assests/sol.svg";
 import arrow from "/public/assests/autharrow.svg";
 import cart from "/public/assests/shopping-cart-01.svg";
+import { useState } from "react";
+import DetailModal from "./detailModal";
+
+const items = [
+  {
+    name: "Bat Tee Yellow Print",
+    price: "0.041",
+    image: "/assests/product1.svg",
+  },
+
+  {
+    name: "Track Pants",
+    price: "0.06",
+    image: "/assests/product 2.svg",
+  },
+  {
+    name: "Cargo Pants",
+    price: "0.06",
+    image: "/assests/product3.svg",
+  },
+  {
+    name: "Mamba Uniform",
+    price: "0.064",
+    image: "/assests/product4.svg",
+  },
+];
 
 export default function ProductDetails() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
       <div className="hidden lg:block">
@@ -72,7 +101,12 @@ export default function ProductDetails() {
             <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
             <div className="flex justify-between items-center">
               <p className="text-sm text-white/70">Item description</p>
-              <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
+              <button
+                className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs"
+                onClick={() => {
+                  setOpen(!open);
+                }}
+              >
                 Read more <span className="ml-2 font-bold">&gt;</span>
               </button>
             </div>{" "}
@@ -153,7 +187,45 @@ export default function ProductDetails() {
             </div>
           </section>
         </section>
+
+        {/* SIMILAR ITEMS */}
+
+        <section className="font-spaceGrotesk my-20">
+          <p className="text-sm mb-4">Similar items in this collection</p>
+          <div className="flex flex-col lg:flex-row max-lg:justify-center justify-between items-center max-lg:gap-y-10 gap-x-6">
+            {items.map((item, index) => {
+              return (
+                <div key={index} className="bg-zinc-900 rounded-md p-6">
+                  <div>
+                    <div className="rounded-sm p-2">
+                      <Image
+                        width={300}
+                        height={0}
+                        src={item.image}
+                        alt="product"
+                      />
+                    </div>
+
+                    <div className="flex justify-between items-center text-sm">
+                      <p>{item.name}</p>
+                      <p className="flex items-center text-xs gap-x-2">
+                        {item.price}{" "}
+                        <span>
+                          <Image className="w-5 h-5" src={sol} alt="sol" />
+                        </span>
+                      </p>
+                    </div>
+                    <p className="text-xs mt-2">Baz Fashion</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </div>
+
+      {/* DETAIL MODAL */}
+      {open && <DetailModal open={open} setOpen={setOpen} />}
     </section>
   );
 }
