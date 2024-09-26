@@ -6,7 +6,7 @@ import Logo from "/public/assests/Luxela white logo 1.svg";
 const AuthNavbar = () => {
   return (
     <div className="w-full bg-transparent">
-      <div className="flex items-center flex-row-reverse lg:flex-row justify-between max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[40px] py-[18px] text-white">
+      <div className="flex items-center flex-row-reverse lg:flex-row justify-between max-w-[1440px] mx-auto px-4 md:px-8 py-[18px] text-white">
           <ul className="lg:w-1/3 flex font-spaceGrotesk gap-4 lg:gap-[36px] text-[14px]">
             <li>Explore</li>
             <li>Brands</li>
