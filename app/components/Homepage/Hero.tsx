@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "./Navbar";
 import Button from "../Button/button";
 import Image from "next/image";
-import TrackPants from "/public/assests/Twitter header - 13.png"
-import Dress2 from "/public/assests/Twitter header - 12.png"
-import Dress3 from "/public/assests/image 7.png"
+import TrackPants from "/public/assests/Frame 2087327429-1.svg"
+import Dress2 from "/public/assests/Frame 2087327428.svg"
+import Dress3 from "/public/assests/Frame 2087327427.svg"
 // import SolanaImage from "/public/assests/SOL 1.svg";
 import MobileNav from "./MobileNav";
 
@@ -126,9 +126,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="lg:hidden flex  gap-[10px] mt-[56px]">
+      <div className="lg:hidden flex max-w-[393px] mx-auto gap-[10px] mt-[56px]">
         {products.slice(0, 3).map((product, index) => (
-          <div key={index}     className={`max-w-[297px] h-[316px] bg-[#16131D] rounded-[16px] ${
+          <div key={index}     className={`w-[200px] h-[250.63px] ${
             product.marginTop
           } ${product.marginLeft || ""} ${product.marginRight || ""}`}
           style={{
@@ -150,7 +150,7 @@ const Hero = () => {
         {Desktopproducts.map((product, index) => (
           <div
             key={index}
-            className={`max-w-[297px] h-[316px] bg-[#16131D] rounded-[16px] ${
+            className={`w-[300px] h-[375.94px] ${
               product.marginTop
             } ${product.marginLeft || ""} ${product.marginRight || ""}`}
             style={{
