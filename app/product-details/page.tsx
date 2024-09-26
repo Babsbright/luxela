@@ -1,3 +1,4 @@
+"use client";
 import AuthNavbar from "../auth/AuthNavbar";
 import Image from "next/image";
 import Logo from "@/public/assests/Luxela white logo 1.svg";
@@ -5,6 +6,8 @@ import productBaz from "@/public/assests/product_baz.svg";
 import sol from "/public/assests/sol.svg";
 import arrow from "/public/assests/autharrow.svg";
 import cart from "/public/assests/shopping-cart-01.svg";
+import { useState } from "react";
+import DetailModal from "./detailModal";
 
 const items = [
   {
@@ -31,6 +34,8 @@ const items = [
 ];
 
 export default function ProductDetails() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
       <div className="hidden lg:block">
@@ -96,7 +101,12 @@ export default function ProductDetails() {
             <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
             <div className="flex justify-between items-center">
               <p className="text-sm text-white/70">Item description</p>
-              <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
+              <button
+                className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs"
+                onClick={() => {
+                  setOpen(!open);
+                }}
+              >
                 Read more <span className="ml-2 font-bold">&gt;</span>
               </button>
             </div>{" "}
@@ -199,7 +209,7 @@ export default function ProductDetails() {
                     <div className="flex justify-between items-center text-sm">
                       <p>{item.name}</p>
                       <p className="flex items-center text-xs gap-x-2">
-                      {item.price}{" "}
+                        {item.price}{" "}
                         <span>
                           <Image className="w-5 h-5" src={sol} alt="sol" />
                         </span>
@@ -213,6 +223,9 @@ export default function ProductDetails() {
           </div>
         </section>
       </div>
+
+      {/* DETAIL MODAL */}
+      {open && <DetailModal open={open} setOpen={setOpen} />}
     </section>
   );
 }
