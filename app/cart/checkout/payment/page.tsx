@@ -30,20 +30,6 @@ const items = [
 ];
 
 export default function Payment() {
-  const [data, setData] = useState({
-    emailAddress: "",
-    postalCode: "",
-    shippingAddress: "",
-  });
-
-  // const handleChange = (e: { target: { value: string; name: string } }) => {
-  //   const value = e.target.value;
-  //   setData({
-  //     ...data,
-  //     [e.target.name]: value,
-  //   });
-  // };
-
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
       <div className="hidden lg:block">

@@ -6,6 +6,30 @@ import sol from "/public/assests/sol.svg";
 import arrow from "/public/assests/autharrow.svg";
 import cart from "/public/assests/shopping-cart-01.svg";
 
+const items = [
+  {
+    name: "Bat Tee Yellow Print",
+    price: "0.041",
+    image: "/assests/product1.svg",
+  },
+
+  {
+    name: "Track Pants",
+    price: "0.06",
+    image: "/assests/product 2.svg",
+  },
+  {
+    name: "Cargo Pants",
+    price: "0.06",
+    image: "/assests/product3.svg",
+  },
+  {
+    name: "Mamba Uniform",
+    price: "0.064",
+    image: "/assests/product4.svg",
+  },
+];
+
 export default function ProductDetails() {
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
@@ -152,6 +176,41 @@ export default function ProductDetails() {
               </button>
             </div>
           </section>
+        </section>
+
+        {/* SIMILAR ITEMS */}
+
+        <section className="font-spaceGrotesk my-20">
+          <p className="text-sm mb-4">Similar items in this collection</p>
+          <div className="flex flex-col lg:flex-row max-lg:justify-center justify-between items-center max-lg:gap-y-10 gap-x-6">
+            {items.map((item, index) => {
+              return (
+                <div key={index} className="bg-zinc-900 rounded-md p-6">
+                  <div>
+                    <div className="rounded-sm p-2">
+                      <Image
+                        width={300}
+                        height={0}
+                        src={item.image}
+                        alt="product"
+                      />
+                    </div>
+
+                    <div className="flex justify-between items-center text-sm">
+                      <p>{item.name}</p>
+                      <p className="flex items-center text-xs gap-x-2">
+                      {item.price}{" "}
+                        <span>
+                          <Image className="w-5 h-5" src={sol} alt="sol" />
+                        </span>
+                      </p>
+                    </div>
+                    <p className="text-xs mt-2">Baz Fashion</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </section>
       </div>
     </section>
