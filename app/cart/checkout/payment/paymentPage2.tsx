@@ -5,7 +5,6 @@ import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 // import qrcode from "/public/assests/qrcode.svg";
 import check from "/public/assests/checkmark.svg";
-import { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 
 const items = [
