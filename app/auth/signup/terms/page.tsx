@@ -6,16 +6,12 @@ import AuthNavbar from "../../AuthNavbar";
 export default function Terms() {
   return (
     <section className="bg-black w-full min-h-[100vh] pb-20 ">
-        <div className="hidden lg:block">
-            <AuthNavbar />
-          </div>
+      <div className="hidden lg:block">
+        <AuthNavbar />
+      </div>
       <div className="max-w[1440px] px-4 md:px-8 flex flex-col mx-auto justify-center items-center">
         <div className="lg:hidden flex justify-center cursor-pointer my-4">
-          <Image
-            className="w-20 lg:w-28 hover:bg-luxela_lilac"
-            src={Logo}
-            alt="profile"
-          />
+          <Image className="max-sm:w-32" src={Logo} alt="logo" />
         </div>
 
         <div className="text-white mt-16 max-w-2xl bg-zinc-900 rounded-md p-6">
