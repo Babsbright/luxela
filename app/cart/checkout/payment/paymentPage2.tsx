@@ -30,11 +30,8 @@ const items = [
   },
 ];
 
-interface PaymentProps {
-  page: boolean;
-  setPage: Dispatch<SetStateAction<boolean>>;
-}
-export default function PaymentPage2(props: PaymentProps) {
+
+export default function PaymentPage2() {
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
       <div className="hidden lg:block">
