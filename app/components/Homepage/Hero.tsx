@@ -80,14 +80,17 @@ const Desktopproducts = [
     marginTop: "72px",
     name: "Layla Dress",
     price: "0.25",
-    image: TrackPants,  },
+    usdPrice: "$40.50",
+  },
   {
     marginLeft: "0",
     marginTop: "0",
     marginRight: "-5.5rem",
+    brand: "GUCCI",
     name: "Layla Dress",
     price: "0.25",
-    image: TrackPants,  },
+    usdPrice: "$40.50",
+  },
 ];
 
 const Hero = () => {
@@ -121,9 +124,9 @@ const Hero = () => {
           <div className="text-[15px] leading-[150%]  px-[20px] lg:hidden block font-spaceGrotesk mt-[12px]">
             <p>Connecting independent fashion brands to a global audience with transparency, sustainability, and a commitment to ethical practices</p>
           </div>
-          <Link href="/Home" className="lg:max-w-[230px]  px-[20px] w-full mt-[32px] lg:mt-[20px] mx-auto">
+          <div className="lg:max-w-[230px]  px-[20px] w-full mt-[32px] lg:mt-[20px] mx-auto">
             <Button>Shop Now</Button>
-          </Link>
+          </div>
         </div>
       </div>
 

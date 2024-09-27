@@ -12,9 +12,9 @@ const Footer = () => {
   return (
     <>
     {!disableFooter.includes(path) && (
-    <div className="p-[60px] bg-[#1A1A1A]">
-      <div className="flex justify-between">
-        <div className="w-[330px]">
+    <div className="lg:p-[60px] py-[80px] px-[20px]  bg-[#1A1A1A]">
+      <div className="flex lg:flex-row flex-col justify-between">
+        <div className="lg:w-[330px]">
           <Image src={Logo} alt="logo" />
           <p className="mt-[60.36px] font-spaceGrotesk text-[#BFBFBF]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
