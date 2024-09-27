@@ -1,0 +1,17 @@
+.check {
+    background-color: #27272a;
+  }
+  #checkboxes input[type="checkbox"] {
+    display: none;
+  }
+  #radios input[type="radio"] {
+    display: none;
+  }
+
+  #checkboxes input[type="checkbox"]:checked + .check {
+    border: 1px solid #5c2eaf;
+  }
+
+  #radios input[type="radio"]:checked + .check {
+    border: 1px solid #5c2eaf;
+  }

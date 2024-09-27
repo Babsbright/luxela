@@ -1,5 +1,6 @@
 "use client";
 import { Input } from "@/app/components/Input/input";
+import { CustomSelect } from "@/app/components/Input/input";
 import { useState } from "react";
 import Image from "next/image";
 import camera from "/public/assests/camera.svg";
@@ -7,6 +8,19 @@ import cameraCircle from "/public/assests/camera-circle.svg";
 import Button from "@/app/components/Button/button";
 import AuthNavbar from "../AuthNavbar";
 import Logo from "/public/assests/Luxela white logo 1.svg";
+import {
+  target,
+  brands,
+  countries,
+  currencies,
+  refundPeriods,
+  productType,
+  productType2,
+  paymentMethod,
+  refundPolicy,
+  shipping
+} from "./data";
+import "./styles.css";
 
 export default function BusinessSignup() {
   const [data, setData] = useState({
@@ -23,6 +37,18 @@ export default function BusinessSignup() {
       [e.target.name]: value,
     });
   };
+
+  const [brand, setBrand] = useState<(typeof brands)[number]>(
+    "Select a category that best fits this product"
+  );
+
+  const [country, setCountry] =
+    useState<(typeof countries)[number]>("Select country");
+
+  const [refund, setRefunds] = useState<(typeof countries)[number]>("3 Days");
+
+  const [currency, setCurrency] =
+    useState<(typeof currencies)[number]>("Select currency");
 
   return (
     <>
@@ -67,13 +93,11 @@ export default function BusinessSignup() {
               <div className="w-full lg:w-1/2">
                 <p className="mb-4 text-[15px]">General Information</p>
                 <form className="space-y-5">
-                  <Input
+                  <CustomSelect
+                    value={brand}
+                    onChange={setBrand}
+                    options={brands}
                     label="Brand name"
-                    name="userName"
-                    value={data.brandName}
-                    type="text"
-                    placeholder="Select a category that best fits this product"
-                    onChange={handleChange}
                   />
 
                   <Input
@@ -85,13 +109,11 @@ export default function BusinessSignup() {
                     placeholder="Enter your email address"
                   />
 
-                  <Input
+                  <CustomSelect
+                    value={country}
+                    onChange={setCountry}
+                    options={countries}
                     label="Country of residence"
-                    name="userName"
-                    value={data.country}
-                    type="text"
-                    placeholder="Select country"
-                    onChange={handleChange}
                   />
 
                   <Input
@@ -109,34 +131,64 @@ export default function BusinessSignup() {
                     Logistics and Shipping
                   </p>
                   <p className="text-sm mt-5">Types of shipping</p>
-                  <div className="flex gap-x-4 text-sm text-white/70 my-3">
-                    <div className="text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                      <p>Domestic shipping only</p>
-                    </div>
-                    <div className="text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                      <p>Domestic and international shipping</p>
-                    </div>
+                  <div
+                    className="flex gap-x-4 text-sm text-white/70 my-3"
+                    id="radios"
+                  >
+                    {shipping.map((item) => {
+                      return (
+                        <>
+                          <input
+                            key={item.name}
+                            type="radio"
+                            name="sGroup"
+                            value={item.value}
+                            id={item.id}
+                          />
+                          <label
+                            className="check text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
+                            htmlFor={item.id}
+                          >
+                            {item.name}
+                          </label>
+                        </>
+                      );
+                    })}
                   </div>
+                  
 
                   <p className="text-sm mt-5">Refund Policy</p>
-                  <div className="flex gap-x-4 text-sm text-white/70 my-3">
-                    <div className="text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                      <p>No refund policy</p>
-                    </div>
-                    <div className="text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                      <p>We accept refunds</p>
-                    </div>
+                  <div
+                    className="flex gap-x-4 text-sm text-white/70 my-3"
+                    id="radios"
+                  >
+                    {refundPolicy.map((item) => {
+                      return (
+                        <>
+                          <input
+                            key={item.name}
+                            type="radio"
+                            name="rGroup"
+                            value={item.value}
+                            id={item.id}
+                          />
+                          <label
+                            className="check text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
+                            htmlFor={item.id}
+                          >
+                            {item.name}
+                          </label>
+                        </>
+                      );
+                    })}
                   </div>
 
-                  <p className="text-sm mt-5">Period until refund is null</p>
-                  <select
-                    className="w-full text-sm my-3 p-3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
-                    name="product"
-                    id=""
-                    aria-placeholder="Select a value that best suits your product"
-                  >
-                    <option value="1">value 1</option>
-                  </select>
+                  <CustomSelect
+                    value={refund}
+                    onChange={setRefunds}
+                    options={refundPeriods}
+                    label="Period until refund is null"
+                  />
 
                   <p className="text-sm mt-5">Estimated shipping time</p>
                   <div className="flex gap-x-4 text-sm text-white/70 my-3">
@@ -154,60 +206,114 @@ export default function BusinessSignup() {
                 <p className="mb-4 text-[15px]">Additional Information</p>
 
                 <p className="text-sm">Type of fashion products sold</p>
-                <div className="flex gap-x-4 text-sm text-white/70 my-3">
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Clothing</p>
-                  </div>
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Shoes</p>
-                  </div>
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Cosmectic products</p>
-                  </div>
+
+                <div
+                  className="flex gap-x-4 text-sm text-white/70 my-3"
+                  id="checkboxes"
+                >
+                  {productType.map((item) => {
+                    return (
+                      <>
+                        <input
+                          key={item.name}
+                          type="checkbox"
+                          name="rGroup"
+                          value={item.value}
+                          id={item.id}
+                        />
+                        <label
+                          className="check text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
+                          htmlFor={item.id}
+                        >
+                          {item.name}
+                        </label>
+                      </>
+                    );
+                  })}
                 </div>
-                <div className="flex gap-x-4 text-sm text-white/70 my-3">
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Accessories</p>
-                  </div>
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Merch</p>
-                  </div>
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Others</p>
-                  </div>
+
+                <div
+                  className="flex gap-x-4 text-sm text-white/70 my-3"
+                  id="checkboxes"
+                >
+                  {productType2.map((item) => {
+                    return (
+                      <>
+                        <input
+                          key={item.name}
+                          type="checkbox"
+                          name="rGroup"
+                          value={item.value}
+                          id={item.id}
+                        />
+                        <label
+                          className="check text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
+                          htmlFor={item.id}
+                        >
+                          {item.name}
+                        </label>
+                      </>
+                    );
+                  })}
                 </div>
 
                 <p className="text-sm mt-5">Target audience</p>
-                <div className="flex gap-x-4 text-sm text-white/70 my-3">
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Male</p>
-                  </div>
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Female</p>
-                  </div>
-                  <div className="text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Unisex</p>
-                  </div>
+                <div
+                  className="flex gap-x-4 text-sm text-white/70 my-3"
+                  id="checkboxes"
+                >
+                  {target.map((item) => {
+                    return (
+                      <>
+                        <input
+                          key={item.name}
+                          type="checkbox"
+                          name="rGroup"
+                          value={item.value}
+                          id={item.id}
+                        />
+                        <label
+                          className="check text-center p-3 w-1/3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
+                          htmlFor={item.id}
+                        >
+                          {item.name}
+                        </label>
+                      </>
+                    );
+                  })}
                 </div>
 
-                <p className="text-sm mt-5">Local pricing or currency</p>
-                <select
-                  className="w-full text-sm my-3 p-3 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
-                  name="product"
-                  id=""
-                  aria-placeholder="Select your local pricing or currency"
-                >
-                  <option value="1">Naira</option>
-                </select>
+                <CustomSelect
+                  value={currency}
+                  onChange={setCurrency}
+                  options={currencies}
+                  label="Local pricing or currency"
+                />
 
                 <p className="text-sm mt-5">Preferred payment method</p>
-                <div className="flex gap-x-4 text-sm text-white/70 my-3">
-                  <div className="text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Fiat (Local currency)</p>
-                  </div>
-                  <div className="text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac">
-                    <p>Cryptocurrency</p>
-                  </div>
+                <div
+                  className="flex gap-x-4 text-sm text-white/70 my-3"
+                  id="checkboxes"
+                >
+                  {paymentMethod.map((item) => {
+                    return (
+                      <>
+                        <input
+                          key={item.name}
+                          type="checkbox"
+                          name="rGroup"
+                          value={item.value}
+                          id={item.id}
+                        />
+                        <label
+                          className="check text-center p-3 w-1/2 bg-zinc-800 rounded-md hover:border hover:border-luxela_lilac"
+                          htmlFor={item.id}
+                        >
+                          {item.name}
+                        </label>
+                      </>
+                    );
+                  })}
                 </div>
               </div>
             </section>

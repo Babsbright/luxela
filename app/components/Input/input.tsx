@@ -8,15 +8,14 @@ interface InputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-interface SelectProps {
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  label: string;
-  value: string;
-  name: string;
-  options: {
-    [key: string]: string;
-  };
-}
+type OptionValue = string;
+
+type Props<Value extends OptionValue> = {
+  value: Value;
+  onChange: (newValue: Value) => void;
+  options: readonly Value[];
+  label:string;
+};
 
 const Input = (props: InputProps) => {
   return (
@@ -35,11 +34,11 @@ const Input = (props: InputProps) => {
           value={props.value}
           placeholder={props.placeholder}
           onChange={props.onChange}
-          className="px-2 w-full bg-zinc-900 text-sm
+          className="px-2 w-full bg-zinc-800 text-sm
           rounded-lg border-none py-2 text-white shadow-sm
           focus:outline-none focus:shadow-outline
            placeholder:text-white/70 focus:outline-luxela_lilac
-            sm:text-sm sm:leading-6 placeholder:text-xs"
+            sm:text-sm sm:leading-6 placeholder:text-sm"
         />
       </div>
     </div>
@@ -69,44 +68,53 @@ const CheckoutInput = (props: InputProps) => {
           rounded-lg border-none py-2 text-white shadow-sm
           focus:outline-none focus:shadow-outline
            placeholder:text-white/70 focus:outline-luxela_lilac
-            sm:text-sm sm:leading-6 placeholder:text-xs"
+            sm:text-sm sm:leading-6 placeholder:text-sm"
         />
       </div>
-      ((
     </div>
   );
 };
 CheckoutInput.displayName = "CheckoutInput";
 
-const Select = (props: SelectProps) => {
+
+
+
+
+function CustomSelect<Value extends OptionValue>({
+  value,
+  onChange,
+  options,
+  label
+}: Props<Value>) {
   return (
     <div>
       <label
-        htmlFor={props.label}
+        htmlFor={label}
         className="text-sm font-medium leading-6 text-white/80"
       >
-        {props.label}{" "}
+        {label}{" "}
       </label>
-      <div className="mt-2">
-        <select
-          required
-          name={props.name}
-          value={props.value}
-          onChange={props.onChange}
-          className="px-2 w-full bg-zinc-800 text-sm
-          rounded-lg border-none py-2 text-white shadow-sm
-          focus:outline-none focus:shadow-outline
-           placeholder:text-white/70 focus:outline-luxela_lilac
-            sm:text-sm sm:leading-6"
-        >
-          {/* {props.options.map((opt) =>{
-          <option key={opt.value} value={opt.value}>{opt.label}</option>
-
-          })} */}
-        </select>
-      </div>
+    <select
+    className="mt-2 px-2 w-full bg-zinc-800 text-sm
+    rounded-lg border-none py-2 text-white/70 shadow-sm
+    focus:outline-none focus:shadow-outline
+     placeholder:text-white/70 focus:outline-luxela_lilac
+      sm:text-sm sm:leading-6"
+            value={value}
+      onChange={(event: React.FormEvent<HTMLSelectElement>) => {
+        const selectedOption = options[event.currentTarget.selectedIndex];
+        onChange(selectedOption);
+      }}
+    >
+      {options.map((value) => (
+        <option value={value} key={value}>
+          {value}
+        </option>
+      ))}
+    </select>
     </div>
   );
-};
-Select.displayName = "Select";
-export { Input, CheckoutInput, Select };
+}
+CustomSelect.displayName = "CustomSelect";
+
+export { Input, CheckoutInput, CustomSelect };
