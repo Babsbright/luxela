@@ -7,6 +7,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+			sm: "480px",
+			md: "800px",
+			lg: "1000px",
+			xl: "1280px",
+		},
     extend: {
       colors: {
         luxela_purple:"#5c2eaf",
@@ -20,6 +26,7 @@ const config: Config = {
       },
       backgroundImage: {
         'hero-pattern': "url('/assests/Hero Section.png')",
+        'mobile-background': "url('/assests/iPhone 14 & 15 Pro - 5.svg')"
       }
     },
   },

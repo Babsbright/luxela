@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+  background-color: #0E0E0E;
+  color: white;
+}
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -10,3 +16,13 @@ select {
   background: url(/assests/arrow.svg) right no-repeat;
 }
 
+
+/* Hide scrollbar for mobile */
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+  
