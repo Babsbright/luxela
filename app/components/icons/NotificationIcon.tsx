@@ -16,9 +16,9 @@ const NotificatIcon = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M7.5 17.5C8.16345 18.0182 9.03956 18.3333 10 18.3333C10.9604 18.3333 11.8366 18.0182 12.5 17.5"
         stroke="#F2F2F2"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
