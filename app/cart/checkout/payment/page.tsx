@@ -288,7 +288,7 @@ export default function Payment() {
           </div>
         </section>
       ) : (
-        <PaymentPage2 page={page} setPage={setPage} />
+        <PaymentPage2 />
       )}
     </>
   );
