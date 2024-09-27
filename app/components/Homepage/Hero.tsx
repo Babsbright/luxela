@@ -7,6 +7,7 @@ import Dress2 from "/public/assests/Frame 2087327428.svg"
 import Dress3 from "/public/assests/Frame 2087327427.svg"
 // import SolanaImage from "/public/assests/SOL 1.svg";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
 
 const MiddleSVG = () => (
   <svg width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,9 +121,9 @@ const Hero = () => {
           <div className="text-[15px] leading-[150%]  px-[20px] lg:hidden block font-spaceGrotesk mt-[12px]">
             <p>Connecting independent fashion brands to a global audience with transparency, sustainability, and a commitment to ethical practices</p>
           </div>
-          <div className="lg:max-w-[230px]  px-[20px] w-full mt-[32px] lg:mt-[20px] mx-auto">
+          <Link href="/Home" className="lg:max-w-[230px]  px-[20px] w-full mt-[32px] lg:mt-[20px] mx-auto">
             <Button>Shop Now</Button>
-          </div>
+          </Link>
         </div>
       </div>
 
