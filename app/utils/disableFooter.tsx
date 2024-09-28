@@ -3,6 +3,6 @@ export const disableFooter = [
     "/auth/signup",
     "/auth/signup/create",
     "/auth/signup/terms",
-
+    "/Brand"
   ]
   
