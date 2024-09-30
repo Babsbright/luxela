@@ -26,3 +26,21 @@ select {
     display: none; /* Chrome, Safari, and Opera */
   }
   
+  /* Sidebar.css */
+.scrollbar-thin {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #2B2B2B #1A1A1A; /* Firefox */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px; /* Set width of the scrollbar */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1A1A1A; /* Track color */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #2B2B2B; /* Scrollbar color */
+  border-radius: 32px; /* Round edges */
+}

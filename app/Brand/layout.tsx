@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Sidebar from "../components/BrandDashboard/Sidebar";
+import MobileHeader from "../components/BrandDashboard/MobileHeader";
 
 export default function Layout({
   children,
@@ -9,17 +10,21 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={` h-screen flex overflow-hidden`}>
-      <aside className="w-[265px]  lg:block text-center mx-auto text-secondary 2xl:w-[265px]">
-        <Image src={Logo} alt="logo" className="mx-6" />
-        <div className="flex h-[94%] overflow-y-hidden bg-[#141414] py-6 justify-between flex-col">
+    <div className={`flex lg:flex-row flex-col `}>
+      <aside className="w-[272px] overflow-y-auto fixed scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800 h-screen  hidden  lg:block pt-[24px] bg-[#141414] mx-auto text-secondary">
+        <Image
+          src={Logo}
+          alt="logo"
+          className="w-[148px] h-[24.15px] mx-auto"
+        />
+        <div className="bg-[#141414] ">
           <Sidebar />
-          <div className="flex items-center gap-2 px-6">
-            <h1 className="text-[#D80027]">Log out</h1>
-          </div>
         </div>
       </aside>
-      <main className="flex-1 px-4 lg:px-6 flex flex-col  py-3">
+      <aside className="lg:hidden block">
+        <MobileHeader />
+      </aside>
+      <main className="flex-1 flex flex-col lg:ml-[272px] px-[16px] lg:px-0 py-[24px] lg:py-[17px] overflow-y-auto h-full">
         {children}
       </main>
     </div>
