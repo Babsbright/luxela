@@ -12,9 +12,9 @@ const CancelIcon = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M19 5L5 19M5 5L19 19"
         stroke="#FEFEFE"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -5,7 +5,6 @@ import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 // import qrcode from "/public/assests/qrcode.svg";
 import check from "/public/assests/checkmark.svg";
-import { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 
 const items = [
@@ -30,11 +29,8 @@ const items = [
   },
 ];
 
-interface PaymentProps {
-  page: boolean;
-  setPage: Dispatch<SetStateAction<boolean>>;
-}
-export default function PaymentPage2(props: PaymentProps) {
+
+export default function PaymentPage2() {
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
       <div className="hidden lg:block">

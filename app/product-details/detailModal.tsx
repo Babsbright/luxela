@@ -1,8 +1,6 @@
 "use client";
 
-"use client";
-
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import {
   Dialog,
   DialogBackdrop,

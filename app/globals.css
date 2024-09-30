@@ -44,3 +44,9 @@ select {
   background-color: #2B2B2B; /* Scrollbar color */
   border-radius: 32px; /* Round edges */
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

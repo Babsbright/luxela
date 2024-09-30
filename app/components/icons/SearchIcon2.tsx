@@ -14,14 +14,14 @@ const SearchIcon2 = (props: React.SVGProps<SVGSVGElement>) => {
         cy="6.60156"
         r="6"
         stroke="white"
-        stroke-width="1.2"
+        strokeWidth="1.2"
       />
       <path
         d="M11 11L15.2426 15.2426"
         stroke="white"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

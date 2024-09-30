@@ -11,8 +11,8 @@ import Link from "next/link";
 
 const MiddleSVG = () => (
   <svg width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2L24.9016 15.1684C29.2864 17.6897 34.6902 17.6498 39.0373 15.064L61 2" stroke="url(#paint0_linear_402_1996)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M3 14.75L25.9016 27.9184C30.2864 30.4397 35.6902 30.3998 40.0373 27.814L62 14.75" stroke="url(#paint1_linear_402_1996)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M2 2L24.9016 15.1684C29.2864 17.6897 34.6902 17.6498 39.0373 15.064L61 2" stroke="url(#paint0_linear_402_1996)" strokeWidth="4" strokeLinecap="round"/>
+    <path d="M3 14.75L25.9016 27.9184C30.2864 30.4397 35.6902 30.3998 40.0373 27.814L62 14.75" stroke="url(#paint1_linear_402_1996)" strokeWidth="4" strokeLinecap="round"/>
     <defs>
       <linearGradient id="paint0_linear_402_1996" x1="0" y1="10.75" x2="61" y2="10.625" gradientUnits="userSpaceOnUse">
         <stop stop-color="#0E0E0E"/>
