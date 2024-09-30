@@ -9,13 +9,13 @@ import SettingsIcon from "../icons/Settings";
 import ShoppingCartIcon from "../icons/ShoppingCart";
 
 export const APP_URLS = {
-  COLLECTION: '/dashboard/gac/servicing',
-  SINGLEITEM: '/dashboard/gac/store',
+  COLLECTION: '/Brand/Newlisting/collection',
+  SINGLEITEM: '/Brand/Newlisting/single',
 };
 
 export const menuItems = [
   {
-    href: '/dashboard',
+    href: '/Brand',
     title: 'Dashboard',
     icon: DashboardIcon,
   },
