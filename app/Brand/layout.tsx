@@ -10,7 +10,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`flex lg:flex-row flex-col `}>
+    <div className={`lg:flex lg:flex-row `}>
       <aside className="w-[272px] overflow-y-auto fixed scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800 h-screen  hidden  lg:block pt-[24px] bg-[#141414] mx-auto text-secondary">
         <Image
           src={Logo}
@@ -21,8 +21,10 @@ export default function Layout({
           <Sidebar />
         </div>
       </aside>
-      <aside className="lg:hidden block">
-        <MobileHeader />
+      <aside className="lg:hidden block ">
+        <div className="">
+          <MobileHeader />
+        </div>
       </aside>
       <main className="flex-1 flex flex-col lg:ml-[272px] px-[16px] lg:px-0 py-[24px] lg:py-[17px] overflow-y-auto h-full">
         {children}
