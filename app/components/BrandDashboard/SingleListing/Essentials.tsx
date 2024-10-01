@@ -1,6 +1,24 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { addDays, format } from "date-fns";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import CalendarIcon from "../../icons/CalendarIcon";
 
 interface CurrencyOption {
   label: string;
@@ -10,6 +28,7 @@ interface CurrencyOption {
 const Essentials = () => {
   const [price, setPrice] = useState<number | string>("");
   const [currency, setCurrency] = useState<string>("USD");
+  const [date, setDate] = React.useState<Date>();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -158,6 +177,39 @@ const Essentials = () => {
           ))}
         </div>
       </div>
+      <div className="flex flex-col w-full">
+  <label  className="font-spaceGrotesk text-[14px] font-medium">Release date</label>
+  <Popover>
+    <PopoverTrigger asChild className="mt-[16px]">
+      <Button
+        variant={"luxela"}
+        className={cn(
+          "w-full justify-between items-center text-[13px] font-spaceGrotesk placeholder:text-[#666666] text-left font-normal",
+          !date && "text-muted-foreground"
+        )}
+      >
+        <span className="flex-grow">
+          {date ? format(date, "PPP") : <span className="text-[#666666]">DD-MM-YY</span>}
+        </span>
+        <CalendarIcon className="h-4 w-4 ml-2" />
+      </Button>
+    </PopoverTrigger>
+    <PopoverContent
+      align="start"
+      className="flex w-auto flex-col space-y-2 p-2"
+    >
+      <Select
+        onValueChange={(value) =>
+          setDate(addDays(new Date(), parseInt(value)))
+        }
+      ></Select>
+      <div className="rounded-md border">
+        <Calendar mode="single" selected={date} onSelect={setDate} />
+      </div>
+    </PopoverContent>
+  </Popover>
+</div>
+
     </div>
   );
 };
