@@ -30,7 +30,7 @@ const Sidebar: React.FC = () => {
             <input
               type="text"
               placeholder="Search"
-              className="w-full bg-[#1A1A1A] border border-solid border-[#2B2B2B] font-spaceGrotesk py-2 pl-10 pr-4 rounded-lg text-[#b3b3b3]"
+              className="w-full bg-[#1A1A1A] border border-solid focus:outline-none border-[#2B2B2B] font-spaceGrotesk py-2 pl-10 pr-4 rounded-lg text-[#b3b3b3]"
             />
             <SearchIcon className="absolute top-2.5 left-2 w-5 h-5 text-[#b3b3b3]" />
           </div>

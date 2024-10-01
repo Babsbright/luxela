@@ -117,9 +117,60 @@ const Page = () => {
 
               {/* Content Section */}
               <div className="mt-[24px]">
-                <p>{tabContent[activeTab].content}</p>
+                <div>{tabContent[activeTab].content}</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* mobile section */}
+      <div className="lg:hidden block">
+        <div>
+          <h2 className="font-spaceGrotesk text-[16px] text-white font-medium">
+            List a new item on Luxela
+          </h2>
+          <p className="font-spaceGrotesk text-[14px] mt-[12px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div className="mt-[24px] flex flex-col gap-[60px]">
+          <div className="flex gap-[10px] w-full">
+            {tabContent.map((tab, index) => (
+              <button
+                key={index}
+                className={`max-w-[113.67px] w-full h-[10px] rounded-full transition-colors duration-300 ${
+                  activeTab === index
+                    ? "bg-[#8451E1] border-[#8451E1] text-white"
+                    : "bg-[#333333] text-[#DCDCDC]"
+                }`}
+                onClick={() => setActiveTab(index)}
+              ></button>
+            ))}
+          </div>
+        
+          <div className="w-full max-w-[520px] sm:max-w-full">
+            <div className="mt-[40px]">
+              <div>{tabContent[activeTab].content}</div>
+            </div>
+            <div className="w-full flex justify-center mt-[60px] mb-[130px]">
+            {activeTab === 2 ? (
+              <button className="flex lg:hidden items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-full h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
+                Submit for Review
+                <span>
+                  <ArrowRightIcon />
+                </span>
+              </button>
+            ) : (
+              <button className="flex lg:hidden items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-full h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
+                Proceed
+                <span>
+                  <ArrowRightIcon />
+                </span>
+              </button>
+            )}
+          </div>
           </div>
         </div>
       </div>
