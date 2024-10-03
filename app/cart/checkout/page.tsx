@@ -1,34 +1,14 @@
 "use client";
-import AuthNavbar from "@/app/auth/AuthNavbar";
 import Image from "next/image";
-import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 import Button from "@/app/components/Button/button";
 import Link from "next/link";
 import { CheckoutInput } from "@/app/components/Input/input";
 import { useState } from "react";
+import Navbar from "../../components/Homepage/Navbar2";
+import MobileNav from "../../components/Homepage/MobileNav2";
+import {items} from "../data"
 
-const items = [
-  {
-    name: "Mamba uniform",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-
-  {
-    name: "B/W Wrangler",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-  {
-    name: "Cargo Pants",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-];
 export default function Checkout() {
   const [data, setData] = useState({
     emailAddress: "",
@@ -46,13 +26,10 @@ export default function Checkout() {
 
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
-      <div className="hidden lg:block">
-        <AuthNavbar />
-      </div>
+  <Navbar />
+  <MobileNav />
       <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-        <div className="lg:hidden flex justify-center items-center pt-4">
-          <Image className="max-sm:w-32" src={Logo} alt="logo" />
-        </div>
+     
 
         <section className="my-10">
           <div>
@@ -66,9 +43,12 @@ export default function Checkout() {
             <section className="bg-zinc-900 w-full lg:w-1/2 p-6 rounded-md">
               <div className="flex justify-between items-center mb-2">
                 <h2 className="text-sm mb-4">Order Summary</h2>
+                <Link href={"/cart"}>
                 <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
                   Edit details
                 </button>
+                </Link>
+                
               </div>
               <div className="flex flex-col gap-y-8 gap-x-8">
                 {items.map((item, index) => {
@@ -148,10 +128,6 @@ export default function Checkout() {
                   </span>{" "}
                 </div>
               </div>
-              <hr className="mt-3 w-full h-[0.2px] border border-gray-700/50" />
-              <Link href={"/cart/checkout/payment"}>
-                <Button>Proceed to checkout</Button>
-              </Link>
             </section>
 
             <section className="font-spaceGrotesk bg-zinc-900 w-full lg:w-1/2 p-6 rounded-md text-sm">
@@ -188,7 +164,13 @@ export default function Checkout() {
                   placeholder="Enter your shipping address"
                   onChange={handleChange}
                 />
+               
               </form>
+              <div className="mt-20">
+                  <Link href={"/cart/checkout/payment"}>
+                    <Button>Proceed to checkout</Button>
+                  </Link>
+                </div>
             </section>
           </section>
         </section>

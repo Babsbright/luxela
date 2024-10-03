@@ -1,34 +1,15 @@
 "use client";
-import AuthNavbar from "@/app/auth/AuthNavbar";
 import Image from "next/image";
-import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 // import qrcode from "/public/assests/qrcode.svg";
 import lock from "/public/assests/lock.svg";
 import { useState } from "react";
 import PaymentPage2 from "./paymentPage2";
+import Link from "next/link";
+import Navbar from "../../../components/Homepage/Navbar2";
+import MobileNav from "../../../components/Homepage/MobileNav2";
+import {items} from "../../data"
 
-const items = [
-  {
-    name: "Mamba uniform",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-
-  {
-    name: "B/W Wrangler",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-  {
-    name: "Cargo Pants",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-];
 
 export default function Payment() {
   const [page, setPage] = useState(false);
@@ -37,13 +18,10 @@ export default function Payment() {
     <>
       {!page ? (
         <section className="bg-black w-full min-h-[100vh] text-white">
-          <div className="hidden lg:block">
-            <AuthNavbar />
-          </div>
+         <Navbar />
+         <MobileNav />
           <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-            <div className="lg:hidden flex justify-center items-center pt-4">
-              <Image className="max-sm:w-32" src={Logo} alt="logo" />
-            </div>
+         
 
             <section className="my-10">
               <div>
@@ -60,9 +38,12 @@ export default function Payment() {
                   <section className="bg-zinc-900 w-full  p-6 rounded-md">
                     <div className="flex justify-between mb-2 items-center">
                       <h2 className="text-sm mb-4">Order Summary</h2>
+                      <Link href={"/cart"}>
+
                       <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
                         Edit details
                       </button>
+                      </Link>
                     </div>
                     <div className="flex flex-col gap-y-8 gap-x-8">
                       {items.map((item, index) => {

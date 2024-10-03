@@ -4,48 +4,24 @@ import Image from "next/image";
 import Logo from "@/public/assests/Luxela white logo 1.svg";
 import productBaz from "@/public/assests/product_baz.svg";
 import sol from "/public/assests/sol.svg";
-import arrow from "/public/assests/autharrow.svg";
+import arrow from "/public/assests/buyarrow.svg";
 import cart from "/public/assests/shopping-cart-01.svg";
 import { useState } from "react";
 import DetailModal from "./detailModal";
-
-const items = [
-  {
-    name: "Bat Tee Yellow Print",
-    price: "0.041",
-    image: "/assests/product1.svg",
-  },
-
-  {
-    name: "Track Pants",
-    price: "0.06",
-    image: "/assests/product 2.svg",
-  },
-  {
-    name: "Cargo Pants",
-    price: "0.06",
-    image: "/assests/product3.svg",
-  },
-  {
-    name: "Mamba Uniform",
-    price: "0.064",
-    image: "/assests/product4.svg",
-  },
-];
+import Link from "next/link";
+import { items, sizes } from "./data";
+import "./styles.css";
+import Navbar from "../components/Homepage/Navbar2";
+import MobileNav from "../components/Homepage/MobileNav2";
 
 export default function ProductDetails() {
   const [open, setOpen] = useState(false);
 
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
-      <div className="hidden lg:block">
-        <AuthNavbar />
-      </div>
+      <Navbar />
+      <MobileNav />
       <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-        <div className="lg:hidden flex justify-center items-center pt-4">
-          <Image className="max-sm:w-32" src={Logo} alt="logo" />
-        </div>
-
         <div>
           <p className=" font-spaceGrotesk my-10 text-xs flex gap-x-3 text-white/60">
             Home <span>&gt;</span>{" "}
@@ -111,25 +87,26 @@ export default function ProductDetails() {
               </button>
             </div>{" "}
             <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
-            <div>
-              <p className="text-[13px] mb-2 text-white/70">Select size</p>
-              <div className="flex gap-x-3 font-spaceGrotesk">
-                <button className="w-14 h-10 rounded-md hover:border hover:border-luxela_lilac text-xs">
-                  S
-                </button>
-                <button className="w-14 h-10 rounded-md hover:border hover:border-luxela_lilac text-xs">
-                  L
-                </button>
-                <button className="w-14 h-10 rounded-md hover:border hover:border-luxela_lilac text-xs">
-                  XL
-                </button>
-                <button className="w-14 h-10 rounded-md hover:border hover:border-luxela_lilac text-xs">
-                  XXL
-                </button>
-                <button className="w-14 h-10 rounded-md hover:border hover:border-luxela_lilac text-xs">
-                  XXXL
-                </button>
-              </div>
+            <p className="text-[13px] mb-2 text-white/70">Select size</p>{" "}
+            <div className="flex gap-x-3 text-sm font-spaceGrotesk" id="radios">
+              {sizes.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <input
+                      type="radio"
+                      name="rGroup"
+                      value={item.value}
+                      id={item.id}
+                    />
+                    <label
+                      className="check flex items-center justify-center w-14 h-10 rounded-md hover:border hover:border-luxela_lilac text-xs"
+                      htmlFor={item.id}
+                    >
+                      {item.name}
+                    </label>
+                  </div>
+                );
+              })}
             </div>
             <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
             <div>
@@ -157,20 +134,23 @@ export default function ProductDetails() {
               </div>
             </div>
             <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
-            <div className="flex flex-col lg:flex-row max-lg:gap-y-6 mt-4 justify-between items-end gap-x-3">
-              <button
-                className="flex items-center justify-center  gap-x-2 font-spaceGrotesk font-medium w-full h-10 bg-zinc-800
+            <div className="grid max-sm:gap-y-8 sm:grid-cols-2 gap-x-8 mt-8">
+              <Link href={"/cart"}>
+                <button
+                  className="flex items-center justify-center  gap-x-2 font-spaceGrotesk font-medium w-full h-10
                 bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
-              >
-                Buy now{" "}
-                <span>
-                  <Image
-                    className="w-5 fill-white text-white"
-                    src={arrow}
-                    alt="arrow"
-                  ></Image>
-                </span>
-              </button>
+                >
+                  Buy now{" "}
+                  <span>
+                    <Image
+                      className="w-5 fill-white text-white"
+                      src={arrow}
+                      alt="arrow"
+                    ></Image>
+                  </span>
+                </button>
+              </Link>
+
               <button
                 className="flex items-center justify-center  gap-x-2 font-spaceGrotesk font-medium w-full h-10 bg-zinc-800
                    rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"

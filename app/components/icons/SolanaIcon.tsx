@@ -51,8 +51,8 @@ const SolanaIcon = (props: React.SVGProps<SVGSVGElement>) => {
           y2="14.9327"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#00FFA3" />
-          <stop offset="1" stop-color="#DC1FFF" />
+          <stop stopColor="#00FFA3" />
+          <stop offset="1" stopColor="#DC1FFF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_471_4236"
@@ -62,8 +62,8 @@ const SolanaIcon = (props: React.SVGProps<SVGSVGElement>) => {
           y2="13.5762"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#00FFA3" />
-          <stop offset="1" stop-color="#DC1FFF" />
+          <stop stopColor="#00FFA3" />
+          <stop offset="1" stopColor="#DC1FFF" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_471_4236"
@@ -73,8 +73,8 @@ const SolanaIcon = (props: React.SVGProps<SVGSVGElement>) => {
           y2="14.2509"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#00FFA3" />
-          <stop offset="1" stop-color="#DC1FFF" />
+          <stop stopColor="#00FFA3" />
+          <stop offset="1" stopColor="#DC1FFF" />
         </linearGradient>
         <clipPath id="clip0_471_4236">
           <rect

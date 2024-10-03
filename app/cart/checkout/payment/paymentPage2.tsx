@@ -1,46 +1,20 @@
 "use client";
-import AuthNavbar from "@/app/auth/AuthNavbar";
 import Image from "next/image";
-import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 // import qrcode from "/public/assests/qrcode.svg";
 import check from "/public/assests/checkmark.svg";
 import Link from "next/link";
-
-const items = [
-  {
-    name: "Mamba uniform",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-
-  {
-    name: "B/W Wrangler",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-  {
-    name: "Cargo Pants",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-];
+import Navbar from "../../../components/Homepage/Navbar2";
+import MobileNav from "../../../components/Homepage/MobileNav2";
+import {items} from "../../data"
 
 
 export default function PaymentPage2() {
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
-      <div className="hidden lg:block">
-        <AuthNavbar />
-      </div>
+      <Navbar />
+      <MobileNav />
       <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-        <div className="lg:hidden flex justify-center items-center pt-4">
-          <Image className="max-sm:w-32" src={Logo} alt="logo" />
-        </div>
-
         <section className="my-10">
           <div>
             <p className="font-spaceGrotesk text-xs flex gap-x-3 mb-5 text-white/60">
@@ -182,7 +156,7 @@ export default function PaymentPage2() {
                   className="flex items-center justify-center  gap-x-2 font-spaceGrotesk font-medium w-full h-10 bg-zinc-800
                 bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
                 >
-                  <Link href={"/"}>Continue Shopping </Link>
+                  <Link href={"/Home"}>Continue Shopping </Link>
                 </button>
 
                 <button
