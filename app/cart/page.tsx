@@ -1,48 +1,17 @@
-import AuthNavbar from "../auth/AuthNavbar";
 import Image from "next/image";
-import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 import Button from "../components/Button/button";
 import Link from "next/link";
+import Navbar from "../components/Homepage/Navbar2";
+import MobileNav from "../components/Homepage/MobileNav2";
+import {items2} from "./data"
 
-const items = [
-  {
-    name: "Mamba uniform",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-
-  {
-    name: "B/W Wrangler",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-  {
-    name: "Cargo Pants",
-    price: "0.064",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-  {
-    name: "Track Pants",
-    price: "0.06",
-    size: "Size:XL",
-    image: "/assests/product2.svg",
-  },
-];
 export default function Cart() {
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
-      <div className="hidden lg:block">
-        <AuthNavbar />
-      </div>
+      <Navbar />
+      <MobileNav />
       <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-        <div className="lg:hidden flex justify-center items-center pt-4">
-          <Image className="max-sm:w-32" src={Logo} alt="logo" />
-        </div>
-
         <section className="my-10">
           <div>
             <p className=" font-spaceGrotesk text-xs flex gap-x-3 mb-5 text-white/60">
@@ -55,7 +24,7 @@ export default function Cart() {
               <h2 className="text-sm mb-4">Items in cart</h2>
 
               <div className="flex flex-col gap-y-8 gap-x-8">
-                {items.map((item, index) => {
+                {items2.map((item, index) => {
                   return (
                     <div key={index} className="flex justify-between gap-y-8">
                       <div className="flex justify-between gap-x-4 items-center">

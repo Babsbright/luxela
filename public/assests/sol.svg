@@ -1,5 +1,5 @@
 <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_441_2540)">
+<g clipPath="url(#clip0_441_2540)">
 <path d="M15.5 31C24.0604 31 31 24.0604 31 15.5C31 6.93959 24.0604 0 15.5 0C6.93959 0 0 6.93959 0 15.5C0 24.0604 6.93959 31 15.5 31Z" fill="black"/>
 <mask id="mask0_441_2540" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="6" y="7" width="20" height="16">
 <path d="M25.1875 7.75H6.78125V22.2812H25.1875V7.75Z" fill="white"/>

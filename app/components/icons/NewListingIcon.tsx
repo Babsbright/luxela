@@ -13,9 +13,9 @@ const NewListingIcon = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M12 8.64062V16.6406M16 12.6406H8"
         stroke="#212121"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
