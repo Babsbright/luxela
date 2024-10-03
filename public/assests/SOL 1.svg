@@ -12,16 +12,16 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear_258_1873" x1="12.1209" y1="3.09876" x2="6.81351" y2="13.191" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FFA3"/>
-<stop offset="1" stopColor="#DC1FFF"/>
+<stop stop-color="#00FFA3"/>
+<stop offset="1" stop-color="#DC1FFF"/>
 </linearGradient>
 <linearGradient id="paint1_linear_258_1873" x1="9.82655" y1="1.89218" x2="4.51912" y2="11.9844" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FFA3"/>
-<stop offset="1" stopColor="#DC1FFF"/>
+<stop stop-color="#00FFA3"/>
+<stop offset="1" stop-color="#DC1FFF"/>
 </linearGradient>
 <linearGradient id="paint2_linear_258_1873" x1="10.9664" y1="2.49014" x2="5.65902" y2="12.5824" gradientUnits="userSpaceOnUse">
-<stop stopColor="#00FFA3"/>
-<stop offset="1" stopColor="#DC1FFF"/>
+<stop stop-color="#00FFA3"/>
+<stop offset="1" stop-color="#DC1FFF"/>
 </linearGradient>
 <clipPath id="clip0_258_1873">
 <rect width="16" height="16" fill="white"/>

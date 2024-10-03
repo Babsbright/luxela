@@ -1,7 +1,5 @@
 "use client";
-import AuthNavbar from "../auth/AuthNavbar";
 import Image from "next/image";
-import Logo from "@/public/assests/Luxela white logo 1.svg";
 import productBaz from "@/public/assests/product_baz.svg";
 import sol from "/public/assests/sol.svg";
 import arrow from "/public/assests/buyarrow.svg";

@@ -15,14 +15,14 @@ const MiddleSVG = () => (
     <path d="M3 14.75L25.9016 27.9184C30.2864 30.4397 35.6902 30.3998 40.0373 27.814L62 14.75" stroke="url(#paint1_linear_402_1996)" strokeWidth="4" strokeLinecap="round"/>
     <defs>
       <linearGradient id="paint0_linear_402_1996" x1="0" y1="10.75" x2="61" y2="10.625" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#0E0E0E"/>
-        <stop offset="0.495537" stopColor="#8350E1" stopOpacity="0.6"/>
-        <stop offset="1" stopColor="#0E0E0E"/>
+        <stop stop-color="#0E0E0E"/>
+        <stop offset="0.495537" stop-color="#8350E1" stop-opacity="0.6"/>
+        <stop offset="1" stop-color="#0E0E0E"/>
       </linearGradient>
       <linearGradient id="paint1_linear_402_1996" x1="1" y1="23.5" x2="62" y2="23.375" gradientUnits="userSpaceOnUse">
-        <stop offset="0.184948" stopColor="#0E0E0E"/>
-        <stop offset="0.495537" stopColor="#8350E1" stopOpacity="0.6"/>
-        <stop offset="0.786353" stopColor="#0E0E0E"/>
+        <stop offset="0.184948" stop-color="#0E0E0E"/>
+        <stop offset="0.495537" stop-color="#8350E1" stop-opacity="0.6"/>
+        <stop offset="0.786353" stop-color="#0E0E0E"/>
       </linearGradient>
     </defs>
   </svg>
