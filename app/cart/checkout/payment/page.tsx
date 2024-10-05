@@ -47,9 +47,6 @@ export default function Payment() {
 
   // Function to connect to the Solflare wallet
   const connectWallet = async () => {
-    // Update button text immediately upon click
-    setButtonText("Wallet is Connected"); // Change button text upon click
-
     if (provider) {
       try {
         const response = await provider.connect();
@@ -59,12 +56,13 @@ export default function Payment() {
           setWalletAddress(response.publicKey.toString());
           console.log("Wallet connected:", response.publicKey.toString());
           localStorage.setItem("walletAddress", response.publicKey.toString());
+          setButtonText("Wallet is Connected"); // Update button text upon successful connection
         } else {
-          throw new Error("Wallet is Connected.");
+          throw new Error("Connection failed. No public key returned.");
         }
       } catch (err: any) {
         console.error("Failed to connect to wallet:", err);
-        alert(` ${err.message || "Unknown error"}`);
+        alert(`Connection to wallet failed: ${err.message || "Unknown error"}`);
       }
     } else {
       alert("Please install a Solana wallet like Solflare.");
