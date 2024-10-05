@@ -16,7 +16,7 @@ export default function SignUp() {
       <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
         <div className="flex justify-around items-start">
           <div className="hidden lg:block lg:w-1/2 mt-8">
-            <Image className="" src={AuthFrame} alt="auth" />
+            <Image className="" src={AuthFrame} alt="auth" priority={true} />
           </div>
 
           <div className="text-white mt-5 lg:mt-20 xl:mt-28 lg:max-w-md">
