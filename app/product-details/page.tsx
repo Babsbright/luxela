@@ -6,35 +6,10 @@ import Image from "next/image";
 import Logo from "@/public/assests/Luxela white logo 1.svg";
 import productBaz from "@/public/assests/product_baz.svg";
 import sol from "/public/assests/sol.svg";
-import arrow from "/public/assests/autharrow.svg";
-import cart from "/public/assests/shopping-cart-01.svg";
 import { useState } from "react";
 import DetailModal from "./detailModal";
 import { useCart } from '../context/CartContext';
 import { useRouter } from 'next/navigation'; // Change made here
-
-const items = [
-  {
-    name: "Bat Tee Yellow Print",
-    price: "0.041",
-    image: "/assests/product1.svg",
-  },
-  {
-    name: "Track Pants",
-    price: "0.06",
-    image: "/assests/product 2.svg",
-  },
-  {
-    name: "Cargo Pants",
-    price: "0.06",
-    image: "/assests/product3.svg",
-  },
-  {
-    name: "Mamba Uniform",
-    price: "0.064",
-    image: "/assests/product4.svg",
-  },
-];
 
 export default function ProductDetails() {
   const [open, setOpen] = useState(false);
