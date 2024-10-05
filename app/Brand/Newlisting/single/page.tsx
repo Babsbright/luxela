@@ -23,6 +23,16 @@ const Page = () => {
     fileInputRef.current?.click();
   };
 
+  const handleProceed = () => {
+    if (activeTab < tabContent.length - 1) {
+      // Move to the next tab if it's not the last one
+      setActiveTab((prevTab) => prevTab + 1);
+    } else {
+      // Handle submission or review when on the last tab
+      console.log("Submitting or Editing...");
+    }
+  };
+
   const tabContent = [
     { title: "Essential questions", content: <Essentials /> },
     { title: "Additional questions", content: <Additional /> },
@@ -36,12 +46,26 @@ const Page = () => {
           <h2 className="font-spaceGrotesk text-[20px] font-medium">
             List a new item on Luxela
           </h2>
-          <button className="flex items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-[149px] h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
-            Proceed
-            <span>
-              <ArrowRightIcon />
-            </span>
-          </button>
+          {activeTab === 2 ? (
+            <div className="flex gap-[12px]">
+              <button className="flex items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-[149px] h-[40px] border border-solid border-[#212121] bg-[#141414] rounded-lg text-sm text-white shadow-lg hover:bg-none focus:outline-none">
+                Edit input
+              </button>
+              <button className="flex items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-[195px] h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
+              Submit for review
+              <span>
+                <ArrowRightIcon />
+              </span>
+            </button>
+            </div>
+          ) : (
+            <button className="flex items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-[149px] h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac" onClick={handleProceed}>
+              Proceed
+              <span>
+                <ArrowRightIcon />
+              </span>
+            </button>
+          )}
         </div>
         <hr className="w-full mt-[17px] border-[#212121]" />
         <div className="px-[28px] mt-[24px]">
@@ -140,7 +164,7 @@ const Page = () => {
             {tabContent.map((tab, index) => (
               <button
                 key={index}
-                className={`max-w-[113.67px] w-full h-[10px] rounded-full transition-colors duration-300 ${
+                className={`max-w-[113.67px] sm:max-w-full w-full h-[10px] rounded-full transition-colors duration-300 ${
                   activeTab === index
                     ? "bg-[#8451E1] border-[#8451E1] text-white"
                     : "bg-[#333333] text-[#DCDCDC]"
@@ -149,28 +173,28 @@ const Page = () => {
               ></button>
             ))}
           </div>
-        
+
           <div className="w-full max-w-[520px] sm:max-w-full">
             <div className="mt-[40px]">
               <div>{tabContent[activeTab].content}</div>
             </div>
             <div className="w-full flex justify-center mt-[60px] mb-[130px]">
-            {activeTab === 2 ? (
-              <button className="flex lg:hidden items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-full h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
-                Submit for Review
-                <span>
-                  <ArrowRightIcon />
-                </span>
-              </button>
-            ) : (
-              <button className="flex lg:hidden items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-full h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
-                Proceed
-                <span>
-                  <ArrowRightIcon />
-                </span>
-              </button>
-            )}
-          </div>
+              {activeTab === 2 ? (
+                <button className="flex lg:hidden items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-full h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
+                  Submit for Review
+                  <span>
+                    <ArrowRightIcon />
+                  </span>
+                </button>
+              ) : (
+                <button className="flex lg:hidden items-center justify-center gap-[10px] font-spaceGrotesk font-medium w-full h-[40px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac" onClick={handleProceed}>
+                  Proceed
+                  <span>
+                    <ArrowRightIcon />
+                  </span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
