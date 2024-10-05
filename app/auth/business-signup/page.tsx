@@ -18,10 +18,9 @@ import {
   productType2,
   paymentMethod,
   refundPolicy,
-  shipping,
+  shipping
 } from "./data";
 import "./styles.css";
-import Link from "next/link";
 
 export default function BusinessSignup() {
   const [data, setData] = useState({
@@ -74,7 +73,7 @@ export default function BusinessSignup() {
             </div>
 
             <section className="bg-zinc-900  relative w-full p-4 rounded-md">
-              <div className="flex flex-col items-center cursor-pointer my-6">
+              <div className="flex flex-col items-center cursor-pointer my-4">
                 <Image className="w-12" src={camera} alt="camera" />
                 <p className="text-xs text-white/70 mt-2">
                   Supported formats are .png and .jpeg
@@ -156,6 +155,7 @@ export default function BusinessSignup() {
                       );
                     })}
                   </div>
+                  
 
                   <p className="text-sm mt-5">Refund Policy</p>
                   <div
@@ -318,9 +318,7 @@ export default function BusinessSignup() {
               </div>
             </section>
           </div>
-          <Link href="/auth/signin">
-            <Button>Proceed</Button>
-          </Link>
+          <Button>Proceed</Button>
         </div>
       </section>
     </>

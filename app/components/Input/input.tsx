@@ -37,7 +37,7 @@ const Input = (props: InputProps) => {
           className="px-2 w-full bg-zinc-800 text-sm
           rounded-lg border-none py-2 text-white shadow-sm
           focus:outline-none focus:shadow-outline
-           placeholder:text-gray-500 focus:outline-luxela_lilac
+           placeholder:text-white/70 focus:outline-luxela_lilac
             sm:text-sm sm:leading-6 placeholder:text-sm"
         />
       </div>
@@ -67,7 +67,7 @@ const CheckoutInput = (props: InputProps) => {
           className="px-2 w-full bg-zinc-800 text-sm
           rounded-lg border-none py-2 text-white shadow-sm
           focus:outline-none focus:shadow-outline
-           placeholder:text-gray-500 focus:outline-luxela_lilac
+           placeholder:text-white/70 focus:outline-luxela_lilac
             sm:text-sm sm:leading-6 placeholder:text-sm"
         />
       </div>
@@ -98,7 +98,7 @@ function CustomSelect<Value extends OptionValue>({
     className="mt-2 px-2 w-full bg-zinc-800 text-sm
     rounded-lg border-none py-2 text-white/70 shadow-sm
     focus:outline-none focus:shadow-outline
-     placeholder:text-gray-500 focus:outline-luxela_lilac
+     placeholder:text-white/70 focus:outline-luxela_lilac
       sm:text-sm sm:leading-6"
             value={value}
       onChange={(event: React.FormEvent<HTMLSelectElement>) => {

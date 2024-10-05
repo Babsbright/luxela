@@ -19,25 +19,25 @@ const featureData = [
   {
     title: "Make Payment in Crypto",
     description:
-      "Buying and selling in the Solana crypto token ($SOL) ensures lightning fast, absolutely cheap and seamless transactions.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: Screenshot1,
   },
   {
     title: "NFTs to Serve Various Purposes",
     description:
-      "NFTs will be integrated as a way for brands to reward their loyal customers. The more you purchase from your favourite brand, the higher the value of the NFT you’ll get (e.g Gucci Gold customer NFT). This NFT will make you eligible for exclusive discounts, free products/merch, airdrops etc. from your favourite brand.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: Screenshot2,
   },
   {
-    title: "Cost-effective platform for your brand",
+    title: "Be Closer to Your Favorite Designer",
     description:
-      "No expensive subscriptions, no unnecessary fees, just put out your products for the world to see. We only take a small commission from every sale you make.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: Screenshot3,
   },
   {
-    title: "Say Bye to Counterfeits",
+    title: "Limited Fashion Pieces",
     description:
-      "Luxela will ensure real brands with their original products make it to the marketplace and also ensure you can verify the authenticity of the product before making a purchase. This way, you get original brand products and not counterfeits.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: Screenshot4,
   },
 ];
@@ -78,53 +78,11 @@ const brandData = [
   },
 ];
 
-const faqData = [
-  {
-    title: "1. What is Luxela?",
-    description:
-      "Luxela is a platform built on the Solana blockchain that allows independent designers and small-scale brands to showcase and sell their creations directly to consumers globally, enabling fast and secure transactions.",
-  },
-  {
-    title: "2. How does the marketplace benefit independent designers?",
-    description:
-      "The marketplace empowers designers by providing them full control over their products, reducing transaction fees, and offering global exposure without the restrictions of traditional platforms and payment systems. Designers can set their prices and retain their brand identity.",
-  },
-  {
-    title: "3. What are the transaction fees for sellers?",
-    description:
-      "There are no subscription models or unnecessary fees. Luxela aims to keep transaction fees low compared to traditional platforms, allowing designers to maximize their earnings. The exact fees/commision will be transparently displayed on the platform.",
-  },
-  {
-    title: "4. How do buyers make purchases on Luxela?",
-    description:
-      "Buyers can browse products, select their desired items, and complete purchases through a simple and secure checkout process using their Solana Wallet.",
-  },
-  {
-    title: "5. Is my personal information secure on the platform?",
-    description:
-      "Yes, we prioritize user privacy and security. Our platform leverages blockchain technology, ensuring that your transactions are secure and your personal information remains confidential.",
-  },
-  {
-    title: "6. What payment methods are accepted?",
-    description:
-      "Currently, we accept only the Solana native token ($SOL), with plans to expand payment options based on user feedback and demand.",
-  },
-  {
-    title: "7. How can I become a seller on Luxela?",
-    description:
-      "Interested designers can sign up on our website by filling out an application form. Once approved, they will have access to create their shop, list products, and start selling.",
-  },
-  {
-    title: "8. How does Luxela ensure product quality?",
-    description:
-      "We ensure designers provide detailed product descriptions, high-quality images, video descriptions and transparent information about their products. Customer reviews and ratings will also help maintain product quality standards.",
-  },
-  {
-    title: "9. What support does Luxela offer to brands?",
-    description:
-      "We provide resources and support for brands, including guides on listing products, marketing tips, and a dedicated support team to assist with any inquiries",
-  },
-];
+const faqData = Array(6).fill({
+  title: "Title or Header",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+});
 
 const FeatureCard = ({
   title,
@@ -282,10 +240,12 @@ export default function Home() {
           What Exactly is Luxela?
         </h2>
         <p className="text-[#BFBFBF] text-[18px] px-[20px] lg:px-0 font-spaceGrotesk mt-[20px]">
-          Luxela is a decentralized marketplace that connects local brands and
-          independent designers to a global audience. Luxela offers fast, cheap
-          and seamless transactions and ensures customers get original products
-          from brands and not counterfeits.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur.
         </p>
         <div className="lg:mt-[68px] mt-[72px]">
           <Image src={WhatLuxela} alt="what is exactly luxela" />
