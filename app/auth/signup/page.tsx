@@ -20,14 +20,14 @@ export default function SignUp() {
           </div>
 
           <div className="text-white mt-5 lg:mt-20 xl:mt-28 lg:max-w-md">
-            <div className="flex justify-between items-center font-aeonik lg:mb-16">
+            <div className="flex justify-between items-center font-aeonik lg:mb-14">
               <Link href={"/"}>
                 <Image className="max-sm:w-32" src={Logo} alt="logo" priority />
               </Link>
               <Link href={"/auth/signin"}>
                 <button
                   className="flex items-center gap-x-2 py-1.5 px-3 sm:px-4 hover:bg-luxela_purple hover:text-white
-             text-luxela_lilac rounded-sm bg-luxela_lilac/30 text-sm"
+             text-luxela_lilac rounded-md bg-luxela_lilac/30 text-sm"
                 >
                   Sign in{" "}
                   <span>
@@ -50,7 +50,7 @@ export default function SignUp() {
                 <h1 className="text-sm">Connect your wallet</h1>
                 <div
                   className="flex items-center justify-center 
-              gap-x-2 py-2.5 w-full text-center rounded-sm cursor-pointer
+              gap-x-2 py-2.5 w-full text-center rounded-md cursor-pointer
               hover:border hover:border-luxela_lilac text-sm bg-zinc-900"
                 >
                   Phantom
@@ -74,7 +74,7 @@ export default function SignUp() {
 
                 <div
                   className="flex items-center justify-center cursor-pointer
-              gap-x-2 py-1.5 lg:py-2 w-full text-center rounded-sm hover:border
+              gap-x-2 py-1.5 lg:py-2 w-full text-center rounded-md hover:border
                hover:border-luxela_lilac text-sm bg-zinc-900"
                 >
                   Backpack
@@ -86,7 +86,7 @@ export default function SignUp() {
 
                 <div
                   className="flex items-center justify-center gap-x-2 py-1.5 lg:py-2
-               w-full text-center rounded-sm hover:border cursor-pointer
+               w-full text-center rounded-md hover:border cursor-pointer
                 hover:border-luxela_lilac text-sm bg-zinc-900"
                 >
                   Wallet Connect
@@ -99,7 +99,7 @@ export default function SignUp() {
                 <div
                   className="text-center flex items-center
                justify-center gap-x-3 text-sm cursor-pointer
-               hover:border hover:border-luxela_lilac hover:py-1.5 lg:py-2"
+               hover:border hover:border-luxela_lilac hover:py-1.5 hover:lg:py-2"
                 >
                   {" "}
                   <Image src={help} alt="help-circle" />
@@ -107,6 +107,20 @@ export default function SignUp() {
                     <p>I don&apos;t have a wallet</p>
                   </Link>
                 </div>
+                <div className="flex items-center gap-x-4">
+                  <hr className="border border-zinc-600 w-1/2" />
+                  <h1>Or</h1>
+                  <hr className="border border-zinc-600 w-1/2" />
+                </div>
+                <Link href={"/auth/business-signup"}>
+                  <div
+                    className="mt-4 flex items-center justify-center gap-x-2 py-1.5 lg:py-2.5
+               w-full text-center rounded-md hover:border cursor-pointer
+                hover:border-luxela_lilac text-sm bg-zinc-900"
+                  >
+                    <p>Register as a business</p>
+                  </div>
+                </Link>
               </section>
             </div>{" "}
           </div>

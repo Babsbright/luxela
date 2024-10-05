@@ -157,7 +157,7 @@ export default function ProductDetails({ params }: Props) {
               </div>
               <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
               <div className="grid max-sm:gap-y-8 sm:grid-cols-2 gap-x-8 mt-8">
-                <Link href={"/cart"}>
+                <Link href={"/cart/checkout"}>
                   <button
                     className="flex items-center justify-center  gap-x-2 font-spaceGrotesk font-medium w-full h-10
                 bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
