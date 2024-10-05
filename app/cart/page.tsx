@@ -14,13 +14,12 @@ export default function CartPage() {
   const [totalAmount, setTotalAmount] = useState(0.0);
 
   // Calculate the total amount
-  const calculateTotal = () => {
-    const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    setTotalAmount(total);
-  };
 
   useEffect(() => {
-    calculateTotal();
+    (() => {
+      const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      setTotalAmount(total);
+    })();
   }, [cartItems]);
 
   return (
