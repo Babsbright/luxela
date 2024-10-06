@@ -226,7 +226,9 @@ export default function ProductDetails({ params }: Props) {
           </section>
         </div>
       ) : (
-        <p className="capitalize flex flex-col justify-center text-3xl">product not found</p>
+        <div className="flex flex-col justify-center p-20 bg-luxela-lilac">
+        <p className="capitalize text-white text-3xl">Product not found</p>
+        </div>
       )}
 
       {/* DETAIL MODAL */}
