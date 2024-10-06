@@ -1,15 +1,14 @@
 "use client";
 import Image from "next/image";
 import { useCart } from '../../../context/CartContext';
-import sol from "/public/assests/sol.svg";
+// import sol from "/public/assests/sol.svg";
 import lock from "/public/assests/lock.svg";
 import { useState } from "react";
 import PaymentPage2 from "./paymentPage2";
-import AuthNavbar from "@/app/auth/AuthNavbar";
-import Link from "next/link";
+// import Link from "next/link";
 import Navbar from "../../../components/Homepage/Navbar2";
 import MobileNav from "../../../components/Homepage/MobileNav2";
-import { items } from "../../data";
+// import { items } from "../../data";
 
 export default function Payment() {
   const [page, setPage] = useState<boolean>(false);
@@ -51,14 +50,10 @@ export default function Payment() {
     <>
       {!page ? (
         <section className="bg-black w-full min-h-[100vh] text-white">
-          <div className="hidden lg:block">
-            <AuthNavbar />
-          </div>
-          <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-            <div className="lg:hidden flex justify-center items-center pt-4">
-              <Image className="max-sm:w-32" src={"/public/assests/Luxela white logo 1.svg"} alt="logo" width={150} height={50} />
-            </div>
-
+        <Navbar />
+        <MobileNav />
+         <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
+      
             <section className="my-10">
               <div>
                 <p className="font-spaceGrotesk text-xs flex gap-x-3 mb-5 text-white/60">

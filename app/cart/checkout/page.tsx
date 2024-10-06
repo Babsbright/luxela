@@ -1,14 +1,15 @@
 // app/cart/checkout/page.tsx
 "use client";
 import { useCart } from '../../context/CartContext'; 
-import AuthNavbar from "@/app/auth/AuthNavbar";
 import Image from "next/image";
-import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 import Button from "@/app/components/Button/button";
 import Link from "next/link";
 import { CheckoutInput } from "@/app/components/Input/input";
 import { useState } from "react";
+import Navbar from "../../components/Homepage/Navbar2";
+import MobileNav from "../../components/Homepage/MobileNav2";
+
 
 export default function Checkout() {
   const { cartItems, removeFromCart } = useCart(); // Access cart items from context
@@ -47,13 +48,11 @@ export default function Checkout() {
 
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
-      <div className="hidden lg:block">
-        <AuthNavbar />
-      </div>
-      <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-        <div className="lg:hidden flex justify-center items-center pt-4">
-          <Image className="max-sm:w-32" src={Logo} alt="logo" />
-        </div>
+    <Navbar />
+    <MobileNav />
+     <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
+    
+
 
         <section className="my-10">
           <div>
