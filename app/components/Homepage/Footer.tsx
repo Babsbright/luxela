@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 import React from "react";
 import Logo from "/public/assests/Luxela white logo 1.svg";
