@@ -3,7 +3,6 @@ import { useCart } from "../../../context/CartContext";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import PaymentPage2 from "./paymentPage2";
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 // import {
 //   Connection,
 //   PublicKey,
@@ -19,7 +18,9 @@ export default function Payment() {
   // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const [provider, setProvider] = useState<any>(null);
   // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+  const [
+    // walletAddress, 
+    setWalletAddress] = useState<string | null>(null);
   const { cartItems } = useCart();
   const [buttonText, setButtonText] = useState("Connect Your Wallet"); // State for button text
 
