@@ -10,7 +10,6 @@ import Collection1 from "/public/assests/Twitter header - 12.svg";
 import Collection2 from "/public/assests/Twitter header - 12 (1).svg";
 import Collection3 from "/public/assests/Twitter header - 12 (2).svg";
 import Collection4 from "/public/assests/Twitter header - 12 (3).svg";
-import Explore from "/public/assests/Twitter header - 13.png";
 import { ArrowRightIcon } from "../components/icons";
 import SolanaIcon from "../components/icons/SolanaIcon";
 import { items } from "../product-details/data";
