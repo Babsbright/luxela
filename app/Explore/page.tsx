@@ -8,6 +8,7 @@ import FilterIcon from "../components/icons/FilterIcon";
 import MobileFilterIcon from "../components/icons/MobileFilterIcon";
 import SearchIcon2 from "../components/icons/SearchIcon2";
 import { items } from "../product-details/data";
+// @typescript-eslint/ban-ts-comment
 //  @ts-ignore
 import Link from "next/link";
 const Page = () => {
@@ -57,6 +58,7 @@ const Page = () => {
                 key={collection.id}
                 className=" rounded-[4px] p-[12px] bg-[#1A1A1A] hover:scale-105 hover:border hover:border-luxela_lilac cursor-pointer"
               >
+                {/* @typescript-eslint/ban-ts-comment */}
                 {/* @ts-ignore */}
                 <Link href={`/product-details/${collection.name.trim().toLowerCase().split(" ").join("-")}`}>
                   <div>
