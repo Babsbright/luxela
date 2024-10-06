@@ -3,16 +3,14 @@ import Navbar from "../components/Homepage/Navbar2";
 import MobileNav from "../components/Homepage/MobileNav2";
 import { ArrowRightIcon } from "../components/icons";
 import SolanaIcon from "../components/icons/SolanaIcon";
-import Explore from "/public/assests/Twitter header - 13.png";
 import Image from "next/image";
 import FilterIcon from "../components/icons/FilterIcon";
 import MobileFilterIcon from "../components/icons/MobileFilterIcon";
 import SearchIcon2 from "../components/icons/SearchIcon2";
 import { items } from "../product-details/data";
-//  @ts-ignore
+//  @ts-expect-error
 import Link from "next/link";
 const Page = () => {
-
   return (
     <div>
       <Navbar />
@@ -58,8 +56,14 @@ const Page = () => {
                 key={collection.id}
                 className=" rounded-[4px] p-[12px] bg-[#1A1A1A] hover:scale-105 hover:border hover:border-luxela_lilac cursor-pointer"
               >
-                {/* @ts-ignore */}
-                <Link href={`/product-details/${collection.name.trim().toLowerCase().split(" ").join("-")}`}>
+                {/* @ts-expect-error */}
+                <Link
+                  href={`/product-details/${collection.name
+                    .trim()
+                    .toLowerCase()
+                    .split(" ")
+                    .join("-")}`}
+                >
                   <div>
                     <Image
                       src={collection.image}
