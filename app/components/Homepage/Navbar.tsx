@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-
+import Link from "next/link";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import { ShopCartIcon } from "../icons";
 
@@ -10,10 +10,22 @@ const Navbar = () => {
       <div className="flex items-center justify-between max-w-[1440px] mx-auto px-[40px] py-[18px] text-white">
         <div className="flex items-center gap-[162px]">
           <ul className="flex font-spaceGrotesk gap-[36px] text-[14px] font-light">
-            <li>About Us</li>
-            <li>Featured Brands</li>
-            <li>Features</li>
-            <li>How to?</li>
+            <Link href={"/"}>
+              {" "}
+              <li>About Us</li>
+            </Link>
+            <Link href={"/Explore"}>
+              {" "}
+              <li>Featured Brands</li>
+            </Link>
+            <Link href={"/Explore"}>
+              {" "}
+              <li>Features</li>
+            </Link>
+            <Link href={"/"}>
+              {" "}
+              <li>How to?</li>
+            </Link>
           </ul>
 
           <div className="">

@@ -18,7 +18,7 @@ const Page = () => {
       <Navbar />
       <MobileNav />
       <div>
-        <div className="mt-[24px] lg:mt-[40px] lg:pb-[160.5px] pb-[100px] px-[16px] lg:px-[40px]">
+        <div className="mt-[24px] lg:mt-[40px] lg:pb-20 px-[16px] lg:px-[40px]">
           <div className="lg:hidden flex">
             <div className="border-[#2B2B2B] px-[10px] py-[12.5px] flex justify-between items-center rounded-[4px] w-full h-[42px] border border-solid">
               <div className="flex items-center gap-[12px]">
