@@ -1,33 +1,50 @@
 "use client";
-import { useCart } from "../../../context/CartContext";
-import { useState } from "react";
 import Image from "next/image";
+import { useCart } from '../../../context/CartContext';
+import sol from "/public/assests/sol.svg";
+import lock from "/public/assests/lock.svg";
+import { useState } from "react";
 import PaymentPage2 from "./paymentPage2";
 import AuthNavbar from "@/app/auth/AuthNavbar";
-import lock from "/public/assests/lock.svg";
+import Link from "next/link";
+import Navbar from "../../../components/Homepage/Navbar2";
+import MobileNav from "../../../components/Homepage/MobileNav2";
+import { items } from "../../data";
 
 export default function Payment() {
-  const [page, setPage] = useState(false);
+  const [page, setPage] = useState<boolean>(false);
   const { cartItems } = useCart();
-  // eslint-disable-next-line
-  const [buttonText, setButtonText] = useState("Proceed to Payment");
+  const [buttonText] = useState("Proceed to Payment");
 
   const calculateTotal = () => {
-    const subtotal = cartItems.reduce(
-      (acc: number, item: { price: number }) => acc + item.price,
-      0
-    );
-    const shippingFee = 1.47; // Example shipping fee
+    const subtotal = cartItems.reduce((acc: number, item: { price: number; }) => acc + item.price, 0);
+    const shippingFee = 1.47; 
     const total = subtotal + shippingFee;
     return { subtotal, shippingFee, total };
   };
 
   const { subtotal, shippingFee, total = 0 } = calculateTotal();
 
+  // Redirect to payment link
   const handlePayment = () => {
-    // Payment handling logic can be added here
-    console.log("Proceeding to payment...");
-    setPage(true);
+    const totalAmount = calculateTotal();
+    const actionLink = process.env.NEXT_PUBLIC_PAYMENT_ENDPOINT;
+    const publicKey = process.env.NEXT_PUBLIC_PAYMENT_API_KEY;
+
+    const paymentUrl = `${actionLink}&amount=${totalAmount}&apiKey=${publicKey}`;
+    
+    window.open(paymentUrl, "_blank");
+    
+    // Simulate a payment result (success or failure)
+    setTimeout(() => {
+      const paymentSuccess = Math.random() > 0.5;
+      if (paymentSuccess) {
+        alert("🎉 Payment was successful!");
+        setPage(true); 
+      } else {
+        alert("😓 Payment failed. Please try again.");
+      }
+    }, 5000);
   };
 
   return (
@@ -39,13 +56,7 @@ export default function Payment() {
           </div>
           <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
             <div className="lg:hidden flex justify-center items-center pt-4">
-              <Image
-                className="max-sm:w-32"
-                src={"/public/assests/Luxela white logo 1.svg"}
-                alt="logo"
-                width={150}
-                height={50}
-              />
+              <Image className="max-sm:w-32" src={"/public/assests/Luxela white logo 1.svg"} alt="logo" width={150} height={50} />
             </div>
 
             <section className="my-10">
@@ -69,10 +80,7 @@ export default function Payment() {
                     </div>
                     <div className="flex flex-col gap-y-8 gap-x-8">
                       {cartItems.map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex justify-between gap-y-8"
-                        >
+                        <div key={index} className="flex justify-between gap-y-8">
                           <div className="flex justify-between gap-x-4 items-center">
                             <div className="bg-zinc-800 rounded-sm p-2">
                               <Image
@@ -84,10 +92,10 @@ export default function Payment() {
                             </div>
                             <div className="text-xs">
                               <p className="text-white/70">{item.name}</p>
-                              <p className="flex items-center">{item.price} </p>
-                              <p className="text-[10px] text-white/70">
-                                {item.size}
+                              <p className="flex items-center">
+                                {item.price}{" "}
                               </p>
+                              <p className="text-[10px] text-white/70">{item.size}</p>
                             </div>
                           </div>
                         </div>
@@ -101,14 +109,10 @@ export default function Payment() {
                       </div>
                       <div className="flex flex-col space-y-4 items-end">
                         <div className="text-xs flex gap-x-1">
-                          <span className="text-white/70 text-[10px]">
-                            ${subtotal.toFixed(2)}
-                          </span>
+                          <span className="text-white/70 text-[10px]">${subtotal.toFixed(2)}</span>
                         </div>
                         <div className="text-xs flex gap-x-1">
-                          <span className="text-white/70 text-[10px]">
-                            ${shippingFee.toFixed(2)}
-                          </span>
+                          <span className="text-white/70 text-[10px]">${shippingFee.toFixed(2)}</span>
                         </div>
                       </div>
                     </div>
@@ -116,9 +120,7 @@ export default function Payment() {
                     <div className="text-xs mt-4 flex justify-between items-center">
                       <p className="text-white/70">Total amount</p>
                       <div className="flex gap-x-1">
-                        <span className="text-[10px] text-white/70">
-                          ${total.toFixed(2)}
-                        </span>
+                        <span className="text-[10px] text-white/70">${total.toFixed(2)}</span>
                       </div>
                     </div>
                   </section>
