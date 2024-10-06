@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import PaymentPage2 from "./paymentPage2";
 // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-import {
-  Connection,
-  PublicKey,
-  SystemProgram,
-  clusterApiUrl,
-} from "@solana/web3.js";
+// import {
+//   Connection,
+//   PublicKey,
+//   SystemProgram,
+//   clusterApiUrl,
+// } from "@solana/web3.js";
 import AuthNavbar from "@/app/auth/AuthNavbar";
 import sol from "/public/assests/sol.svg";
 import lock from "/public/assests/lock.svg";
