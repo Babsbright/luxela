@@ -1,33 +1,48 @@
 "use client";
-import { useCart } from "../../../context/CartContext";
-import { useState } from "react";
 import Image from "next/image";
-import PaymentPage2 from "./paymentPage2";
-import AuthNavbar from "@/app/auth/AuthNavbar";
+import sol from "/public/assests/sol.svg";
 import lock from "/public/assests/lock.svg";
+import { useState } from "react";
+import PaymentPage2 from "./paymentPage2";
+import Link from "next/link";
+import Navbar from "../../../components/Homepage/Navbar2";
+import MobileNav from "../../../components/Homepage/MobileNav2";
+import { items } from "../../data";
 
 export default function Payment() {
   const [page, setPage] = useState(false);
   const { cartItems } = useCart();
-  // eslint-disable-next-line
   const [buttonText, setButtonText] = useState("Proceed to Payment");
 
   const calculateTotal = () => {
-    const subtotal = cartItems.reduce(
-      (acc: number, item: { price: number }) => acc + item.price,
-      0
-    );
-    const shippingFee = 1.47; // Example shipping fee
+    const subtotal = cartItems.reduce((acc: number, item: { price: number; }) => acc + item.price, 0);
+    const shippingFee = 1.47; /
     const total = subtotal + shippingFee;
     return { subtotal, shippingFee, total };
   };
 
   const { subtotal, shippingFee, total = 0 } = calculateTotal();
 
+  // Redirect to payment link
   const handlePayment = () => {
-    // Payment handling logic can be added here
-    console.log("Proceeding to payment...");
-    setPage(true);
+    const totalAmount = calculateTotal();
+    const actionLink = process.env.NEXT_PUBLIC_PAYMENT_ENDPOINT;
+    const publicKey = process.env.NEXT_PUBLIC_PAYMENT_API_KEY;
+
+    const paymentUrl = `${actionLink}&amount=${totalAmount}&apiKey=${publicKey}`;
+    
+    window.open(paymentUrl, "_blank");
+
+    // Simulate a payment result (success or failure)
+    setTimeout(() => {
+      const paymentSuccess = Math.random() > 0.5;
+      if (paymentSuccess) {
+        alert("🎉 Payment was successful!");
+        setPage(true); 
+      } else {
+        alert("😓 Payment failed. Please try again.");
+      }
+    }, 5000);
   };
 
   return (
