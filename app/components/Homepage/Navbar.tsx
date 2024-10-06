@@ -14,11 +14,11 @@ const Navbar = () => {
               {" "}
               <li>About Us</li>
             </Link>
-            <Link href={"/Explore"}>
+            <Link href={"/Home"}>
               {" "}
               <li>Featured Brands</li>
             </Link>
-            <Link href={"/Explore"}>
+            <Link href={"/Home"}>
               {" "}
               <li>Features</li>
             </Link>
@@ -28,15 +28,19 @@ const Navbar = () => {
             </Link>
           </ul>
 
-          <div className="">
-            <Image src={Logo} alt="logo" />
+          <div className="cursor-pointer">
+            <Link href="/">
+              <Image src={Logo} alt="logo" />
+            </Link>
           </div>
         </div>
 
         <div className="flex gap-[8px] bg-[#000000]/20 border-[#FFFFFF]/10 py-[12.5px] rounded-[4px] px-[10px] border border-solid w-[159px] h-[42px] items-center justify-center">
-          <button className="text-[14px] font-spaceGrotesk font-medium">
-            Shop now
-          </button>
+          <Link href="/Home">
+            <button className="text-[14px] font-spaceGrotesk font-medium">
+              Shop now
+            </button>
+          </Link>
           <ShopCartIcon />
         </div>
       </div>
