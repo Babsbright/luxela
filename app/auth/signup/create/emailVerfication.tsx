@@ -16,7 +16,7 @@ export default function EmailVerification(props: Formprops) {
   };
   useEffect(() => {
     props.setLastPage(true);
-       // eslint-disable-next-line react-hooks/exhaustive-deps
+       // eslint-disable-next-line  @typescript-eslint/no-explicit-any react-hooks/exhaustive-deps
   }, []);
   return (
     <>

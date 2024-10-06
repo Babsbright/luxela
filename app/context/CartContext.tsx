@@ -1,5 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState } from 'react';
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
 import { v4 as uuidv4 } from 'uuid';
 
 type CartItem = {

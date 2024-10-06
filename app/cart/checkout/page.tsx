@@ -18,6 +18,7 @@ export default function Checkout() {
     shippingAddress: "",
   });
 
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const handleChange = (e: { target: { value: any; name: any; }; }) => {
     const value = e.target.value;
     setData({

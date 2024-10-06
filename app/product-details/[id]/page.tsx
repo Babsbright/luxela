@@ -12,7 +12,7 @@ import Navbar from "../../components/Homepage/Navbar2";
 import MobileNav from "../../components/Homepage/MobileNav2";
 
 interface Props {
-  // eslint-disable-next-line
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   params: any;
 }
 

@@ -1,22 +1,33 @@
 "use client";
-import { useCart } from '../../../context/CartContext';
+import { useCart } from "../../../context/CartContext";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import PaymentPage2 from "./paymentPage2";
-import { Connection, PublicKey, SystemProgram, clusterApiUrl } from "@solana/web3.js";
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+import {
+  Connection,
+  PublicKey,
+  SystemProgram,
+  clusterApiUrl,
+} from "@solana/web3.js";
 import AuthNavbar from "@/app/auth/AuthNavbar";
 import sol from "/public/assests/sol.svg";
 import lock from "/public/assests/lock.svg";
 
 export default function Payment() {
   const [page, setPage] = useState(false);
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const [provider, setProvider] = useState<any>(null);
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
   const { cartItems } = useCart();
   const [buttonText, setButtonText] = useState("Connect Your Wallet"); // State for button text
 
   const calculateTotal = () => {
-    const subtotal = cartItems.reduce((acc: number, item: { price: number; }) => acc + item.price, 0);
+    const subtotal = cartItems.reduce(
+      (acc: number, item: { price: number }) => acc + item.price,
+      0
+    );
     const shippingFee = 1.47; // Example shipping fee
     const total = subtotal + shippingFee;
     return { subtotal, shippingFee, total };
@@ -26,6 +37,7 @@ export default function Payment() {
 
   useEffect(() => {
     if ("solflare" in window) {
+      // eslint-disable-next-line  @typescript-eslint/no-explicit-any
       const solflareProvider = (window as any).solflare;
       if (solflareProvider?.isSolflare) {
         setProvider(solflareProvider);
@@ -60,6 +72,7 @@ export default function Payment() {
         } else {
           throw new Error("Connection failed. No public key returned.");
         }
+        // eslint-disable-next-line  @typescript-eslint/no-explicit-any
       } catch (err: any) {
         console.error("Failed to connect to wallet:", err);
         alert(`Connection to wallet failed: ${err.message || "Unknown error"}`);
@@ -84,7 +97,13 @@ export default function Payment() {
           </div>
           <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
             <div className="lg:hidden flex justify-center items-center pt-4">
-              <Image className="max-sm:w-32" src={"/public/assests/Luxela white logo 1.svg"} alt="logo" width={150} height={50} />
+              <Image
+                className="max-sm:w-32"
+                src={"/public/assests/Luxela white logo 1.svg"}
+                alt="logo"
+                width={150}
+                height={50}
+              />
             </div>
 
             <section className="my-10">
@@ -108,7 +127,10 @@ export default function Payment() {
                     </div>
                     <div className="flex flex-col gap-y-8 gap-x-8">
                       {cartItems.map((item, index) => (
-                        <div key={index} className="flex justify-between gap-y-8">
+                        <div
+                          key={index}
+                          className="flex justify-between gap-y-8"
+                        >
                           <div className="flex justify-between gap-x-4 items-center">
                             <div className="bg-zinc-800 rounded-sm p-2">
                               <Image
@@ -123,10 +145,16 @@ export default function Payment() {
                               <p className="flex items-center">
                                 {item.price}{" "}
                                 <span>
-                                  <Image className="w-5 h-5" src={sol} alt="sol" />
+                                  <Image
+                                    className="w-5 h-5"
+                                    src={sol}
+                                    alt="sol"
+                                  />
                                 </span>
                               </p>
-                              <p className="text-[10px] text-white/70">{item.size}</p>
+                              <p className="text-[10px] text-white/70">
+                                {item.size}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -140,14 +168,18 @@ export default function Payment() {
                       </div>
                       <div className="flex flex-col space-y-4 items-end">
                         <div className="text-xs flex gap-x-1">
-                          <span className="text-white/70 text-[10px]">${subtotal.toFixed(2)}</span>
+                          <span className="text-white/70 text-[10px]">
+                            ${subtotal.toFixed(2)}
+                          </span>
                           <span>{subtotal.toFixed(3)}</span>
                           <span>
                             <Image className="w-5 h-5" src={sol} alt="sol" />
                           </span>
                         </div>
                         <div className="text-xs flex gap-x-1">
-                          <span className="text-white/70 text-[10px]">${shippingFee.toFixed(2)}</span>
+                          <span className="text-white/70 text-[10px]">
+                            ${shippingFee.toFixed(2)}
+                          </span>
                           <span>{shippingFee.toFixed(3)}</span>
                           <span>
                             <Image className="w-5 h-5" src={sol} alt="sol" />
@@ -159,7 +191,9 @@ export default function Payment() {
                     <div className="text-xs mt-4 flex justify-between items-center">
                       <p className="text-white/70">Total amount (SOL)</p>
                       <div className="flex gap-x-1">
-                        <span className="text-[10px] text-white/70">${total.toFixed(2)}</span>
+                        <span className="text-[10px] text-white/70">
+                          ${total.toFixed(2)}
+                        </span>
                         <span>{total.toFixed(3)}</span>
                         <span>
                           <Image className="w-5 h-5" src={sol} alt="sol" />
