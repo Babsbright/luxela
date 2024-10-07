@@ -1,43 +1,59 @@
 "use client";
-import { useCart } from '../../../context/CartContext';
-import { useState } from "react";
 import Image from "next/image";
-import PaymentPage2 from "./paymentPage2";
-import AuthNavbar from "@/app/auth/AuthNavbar";
+import { useCart } from '../../../context/CartContext';
+// import sol from "/public/assests/sol.svg";
 import lock from "/public/assests/lock.svg";
+import { useState } from "react";
+import PaymentPage2 from "./paymentPage2";
+// import Link from "next/link";
+import Navbar from "../../../components/Homepage/Navbar2";
+import MobileNav from "../../../components/Homepage/MobileNav2";
+// import { items } from "../../data";
 
 export default function Payment() {
-  const [page, setPage] = useState(false);
+  const [page, setPage] = useState<boolean>(false);
   const { cartItems } = useCart();
-  const [buttonText, setButtonText] = useState("Proceed to Payment");
+  const [buttonText] = useState("Proceed to Payment");
 
   const calculateTotal = () => {
     const subtotal = cartItems.reduce((acc: number, item: { price: number; }) => acc + item.price, 0);
-    const shippingFee = 1.47; // Example shipping fee
+    const shippingFee = 1.47; 
     const total = subtotal + shippingFee;
     return { subtotal, shippingFee, total };
   };
 
   const { subtotal, shippingFee, total = 0 } = calculateTotal();
 
+  // Redirect to payment link
   const handlePayment = () => {
-    // Payment handling logic can be added here
-    console.log("Proceeding to payment...");
-    setPage(true);
+    const totalAmount = calculateTotal();
+    const actionLink = process.env.NEXT_PUBLIC_PAYMENT_ENDPOINT;
+    const publicKey = process.env.NEXT_PUBLIC_PAYMENT_API_KEY;
+
+    const paymentUrl = `${actionLink}&amount=${totalAmount}&apiKey=${publicKey}`;
+    
+    window.open(paymentUrl, "_blank");
+    
+    // Simulate a payment result (success or failure)
+    setTimeout(() => {
+      const paymentSuccess = Math.random() > 0.5;
+      if (paymentSuccess) {
+        alert("🎉 Payment was successful!");
+        setPage(true); 
+      } else {
+        alert("😓 Payment failed. Please try again.");
+      }
+    }, 5000);
   };
 
   return (
     <>
       {!page ? (
         <section className="bg-black w-full min-h-[100vh] text-white">
-          <div className="hidden lg:block">
-            <AuthNavbar />
-          </div>
-          <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
-            <div className="lg:hidden flex justify-center items-center pt-4">
-              <Image className="max-sm:w-32" src={"/public/assests/Luxela white logo 1.svg"} alt="logo" width={150} height={50} />
-            </div>
-
+        <Navbar />
+        <MobileNav />
+         <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
+      
             <section className="my-10">
               <div>
                 <p className="font-spaceGrotesk text-xs flex gap-x-3 mb-5 text-white/60">

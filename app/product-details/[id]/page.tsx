@@ -102,7 +102,7 @@ export default function ProductDetails({ params }: Props) {
         </div>
       ) : (
         <div className="flex flex-col justify-center p-20 bg-luxela-lilac">
-          <p className="capitalize text-white text-3xl">Product not found</p>
+        <p className="capitalize text-white text-3xl">Product not found</p>
         </div>
       )}
 

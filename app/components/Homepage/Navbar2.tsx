@@ -18,11 +18,17 @@ const Navbar = () => {
               <Link href="/Explore">
                 <li>Explore</li>
               </Link>
-              <li>Brands</li>
-              <li>Limited Offers</li>
+              <Link href="/">
+                {" "}
+                <li>Brands</li>
+              </Link>
+              <Link href="/">
+                {" "}
+                <li>Limited Offers</li>
+              </Link>
             </ul>
           </div>
-          <Link href="/Home" >
+          <Link href="/Home">
             <Image src={Logo} alt="logo" />
           </Link>
 

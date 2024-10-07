@@ -7,6 +7,7 @@ import HamburgerIcon from "../icons/Hamburger";
 import CancelIcon from "../icons/CancelIcon";
 import { ShopCartIcon } from "../icons";
 import LinkArrowIcon from "../icons/LinkArrow";
+import Link from "next/link";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,22 +44,31 @@ const MobileNav = () => {
         <div className="fixed top-[80px] inset-0  bg-[#0E0E0E] border-none z-50 px-[20px]">
           <nav className="mt-[40px] px-[20px]">
             <ul className="space-y-[33px] font-spaceGrotesk text-white text-[18px]">
-              <li className="flex justify-between items-center">
-                <span>About Us</span>
-                <LinkArrowIcon />
-              </li>
-              <li className="flex justify-between items-center">
-                <span>Featured Brands</span>
-                <LinkArrowIcon />
-              </li>
-              <li className="flex justify-between items-center">
-                <span>Features</span>
-                <LinkArrowIcon />
-              </li>
-              <li className="flex justify-between items-center">
-                <span>How to?</span>
-                <LinkArrowIcon />
-              </li>
+              <Link href={"/"}>
+                <li className="flex justify-between items-center cursor-pointer">
+                  <span>About Us</span>
+                  <LinkArrowIcon />
+                </li>
+              </Link>
+              <Link href={"/Home"}>
+                <li className="flex justify-between items-center cursor-pointer">
+                  <span>Featured Brands</span>
+                  <LinkArrowIcon />
+                </li>
+              </Link>
+
+              <Link href={"/Home"}>
+                <li className="flex justify-between items-center cursor-pointer">
+                  <span>Features</span>
+                  <LinkArrowIcon />
+                </li>
+              </Link>
+              <Link href={"/"}>
+                <li className="flex justify-between items-center cursor-pointer">
+                  <span>How to?</span>
+                  <LinkArrowIcon />
+                </li>
+              </Link>
             </ul>
           </nav>
 

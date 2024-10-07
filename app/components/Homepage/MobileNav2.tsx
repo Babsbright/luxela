@@ -9,13 +9,13 @@ const MobileNav = () => {
   return (
     <div className="lg:hidden block py-[15px] px-[20px]">
       <div className="flex justify-between items-center">
-        <div>
+        <div className="cursor-pointer">
           <ShoppingCartIcon />
         </div>
         <div className="">
           <Image src={Logo} alt="logo" className="w-[132px] h-[22px] mx-auto" />
         </div>
-        <div className="flex items-center gap-[20px]">
+        <div className="flex items-center gap-[20px] cursor-pointer">
           <SearchIcon />
           <HamburgerIcon />
         </div>

@@ -1,9 +1,11 @@
 "use client";
-import AuthNavbar from "@/app/auth/AuthNavbar";
 import Image from "next/image";
 import sol from "/public/assests/sol.svg";
 import check from "/public/assests/checkmark.svg";
 import Link from 'next/link';
+import Navbar from "../../../components/Homepage/Navbar2";
+import MobileNav from "../../../components/Homepage/MobileNav2";
+
 
 interface PaymentPage2Props {
   total: number;
@@ -13,9 +15,8 @@ interface PaymentPage2Props {
 const PaymentPage2: React.FC<PaymentPage2Props> = ({ total, items }) => {
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
-      <div className="hidden lg:block">
-        <AuthNavbar />
-      </div>
+     <Navbar />
+     <MobileNav />
       <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
         <section className="my-10">
           <div>

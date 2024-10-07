@@ -102,7 +102,7 @@ const Hero = () => {
       </div>
 
       <div className="lg:mt-[72px] mt-[44px] flex flex-col justify-center">
-        <div className="border border-solid mx-auto border-[#B8A3E1] text-[#FEC5F3] rounded-[34px] w-auto bg-[#1C1111] py-[6px] px-[12px] lg:py-[8px] lg:px-[20px]">
+        <div className="border border-solid cursor-pointer mx-auto border-[#B8A3E1] text-[#FEC5F3] rounded-[34px] w-auto bg-[#1C1111] py-[6px] px-[12px] lg:py-[8px] lg:px-[20px]">
           <p className="font-spaceGrotesk text-[12px] lg:text-[14px] whitespace-nowrap">
             Pay With Crypto
           </p>
