@@ -18,9 +18,20 @@ export default function ComingSoon() {
     });
   };
 
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    toast.success("You have been added to the waitlist!", {
+      theme: "colored",
+      autoClose: 3000,
+    });
+    setData({
+      emailAddress: "",
+    });
+  };
+
   return (
     <>
-     
       <main className="grid min-h-full max-w[1440px] px-4 md:px-12 bg-zinc-900 text-white font-spaceGrotesk">
         <div className="mt-10 mb-6">
           <a
@@ -38,9 +49,13 @@ export default function ComingSoon() {
               We are currently working hard to build this page but you can
               submit your email for update once the page is up.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
               <div className="w-full sm:w-2/3">
                 <input
+                  required
                   name="emailAddress"
                   type="email"
                   value={data.emailAddress}
@@ -55,19 +70,14 @@ export default function ComingSoon() {
               </div>
               <div className="w-full sm:w-1/3">
                 <button
-                  onClick={() => {
-                    toast.success("Product added to cart", {
-                      theme: "colored",
-                      autoClose: 2000,
-                    });
-                  }}
+                  type="submit"
                   className="font-spaceGrotesk font-medium w-full h-10  bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple justify-center 
                    rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac"
                 >
                   Notify Me
                 </button>
               </div>{" "}
-            </div>
+            </form>
             <p className="text-sm mt-4 text-center">
               Don&apos;t worry, we will not spam you{" "}
             </p>
