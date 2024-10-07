@@ -116,13 +116,15 @@ const Hero = () => {
           </div>
           <div className="hidden lg:block mt-[16px] text-[16px] font-spaceGrotesk">
             <p>
-              Connecting independent fashion brands to a global audience with
-              transparency, sustainability, and a
+            Connecting Independent & small-scale fashion brands to a global audience and enabling
             </p>
-            <p>commitment to ethical practices</p>
+            <p>fast, cheap and seamless transactions.
+</p>
           </div>
           <div className="text-[15px] leading-[150%]  px-[20px] lg:hidden block font-spaceGrotesk mt-[12px]">
-            <p>Connecting independent fashion brands to a global audience with transparency, sustainability, and a commitment to ethical practices</p>
+            <p>
+            Connecting Independent & small-scale fashion brands to a global audience and enabling fast, cheap and seamless transactions.
+            </p>
           </div>
           <Link href="/Home" className="lg:max-w-[230px]  px-[20px] w-full mt-[32px] lg:mt-[20px] mx-auto">
             <Button>Shop Now</Button>
