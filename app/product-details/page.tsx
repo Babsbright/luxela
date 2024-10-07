@@ -21,19 +21,25 @@ export default function ProductDetails() {
   const [quantity, setQuantity] = useState(1); // Quantity
 
   const handleAddToCart = () => {
-    const product = {
-      id: uuidv4(), // Generates a unique id
-      name: 'B/W Wrangler',
-      price: 0.06,
+    if (!product) return; // Prevent adding if there's no product
+
+    const cartItem = {
+      id: uuidv4(),
+      name: product.name,
+      price: product.price,
       size: selectedSize,
-      image: '/assests/product_baz.svg',
+      image: product.image,
       quantity: quantity,
     };
 
-    addToCart(product); // Add item to cart
-    router.push('/cart'); // Redirect to cart page
+    addToCart(cartItem);
+    router.push('/cart');
   };
 
+  // Render nothing if no product is provided
+  if (!product) {
+    return null; // or a loading indicator/message
+  }
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
       <div className="hidden lg:block">
