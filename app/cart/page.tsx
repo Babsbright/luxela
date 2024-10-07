@@ -6,20 +6,16 @@ import Logo from "/public/assests/Luxela white logo 1.svg";
 import sol from "/public/assests/sol.svg";
 import Button from "../components/Button/button";
 import Link from "next/link";
-import { useCart } from '../context/CartContext'; // Ensure CartContext is correctly imported
+import { useCart } from '../context/CartContext'; 
 import { useEffect, useState } from "react";
 
 export default function CartPage() {
   const { cartItems, incrementQuantity, decrementQuantity, removeFromCart } = useCart();
   const [totalAmount, setTotalAmount] = useState(0.0);
 
-  // Calculate the total amount
-
   useEffect(() => {
-    (() => {
-      const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-      setTotalAmount(total);
-    })();
+    const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    setTotalAmount(total);
   }, [cartItems]);
 
   return (
@@ -65,7 +61,7 @@ export default function CartPage() {
                               <Image className="w-5 h-5" src={sol} alt="sol" />
                             </span>
                           </p>
-                          <p className="text-[10px] text-white/70">Size: {item.size}</p> {/* Display selected size */}
+                          <p className="text-[10px] text-white/70">Size: {item.size}</p>
                         </div>
                       </div>
 
@@ -73,7 +69,7 @@ export default function CartPage() {
                         <div className="flex justify-center rounded-sm">
                           <button
                             className="py-1.5 px-4 bg-zinc-800 hover:bg-zinc-700"
-                            onClick={() => decrementQuantity(item.id)} // Decrement by 1
+                            onClick={() => decrementQuantity(item.id)}
                           >
                             -
                           </button>
@@ -82,7 +78,7 @@ export default function CartPage() {
                           </button>
                           <button
                             className="py-1.5 px-4 bg-zinc-800 hover:bg-zinc-700"
-                            onClick={() => incrementQuantity(item.id)} // Increment by 1
+                            onClick={() => incrementQuantity(item.id)}
                           >
                             +
                           </button>
@@ -91,7 +87,7 @@ export default function CartPage() {
                         <div className="flex flex-col items-end">
                           <button
                             className="font-spaceGrotesk text-[10px] px-2 mt-2 py-1 rounded-md bg-red-500/10 text-red-600 hover:bg-red-500 hover:text-white/70"
-                            onClick={() => removeFromCart(item.id)} // Remove item from cart
+                            onClick={() => removeFromCart(item.id)}
                           >
                             Remove item
                           </button>
@@ -105,7 +101,6 @@ export default function CartPage() {
               </div>
             </section>
 
-            {/* Detail Summary */}
             <section className="font-spaceGrotesk bg-zinc-900 w-full lg:w-1/2 p-6 rounded-md text-sm">
               <h2 className="mb-4 text-sm">Detail Summary</h2>
 
