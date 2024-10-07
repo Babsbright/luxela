@@ -6,7 +6,7 @@ type CartItem = {
   id: string;
   name: string;
   price: number;
-  size: string;
+  size?: string;
   image: string;
   quantity: number;
 };
@@ -25,6 +25,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (item: CartItem) => {
+    console.log("heyy")
     setCartItems((prevItems) => {
       // Check if the item is already in the cart
       const existingItem = prevItems.find((cartItem) => cartItem.id === item.id);

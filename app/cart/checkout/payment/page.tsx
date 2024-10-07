@@ -5,7 +5,7 @@ import { useCart } from '../../../context/CartContext';
 import lock from "/public/assests/lock.svg";
 import { useState } from "react";
 import PaymentPage2 from "./paymentPage2";
-// import Link from "next/link";
+import Link from "next/link";
 import Navbar from "../../../components/Homepage/Navbar2";
 import MobileNav from "../../../components/Homepage/MobileNav2";
 // import { items } from "../../data";
@@ -69,9 +69,11 @@ export default function Payment() {
                   <section className="bg-zinc-900 w-full p-6 rounded-md">
                     <div className="flex justify-between mb-2 items-center">
                       <h2 className="text-sm mb-4">Order Summary</h2>
+                      <Link href={"/cart"}>
                       <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
                         Edit details
                       </button>
+                      </Link>
                     </div>
                     <div className="flex flex-col gap-y-8 gap-x-8">
                       {cartItems.map((item, index) => (

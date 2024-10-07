@@ -60,28 +60,28 @@ export const items = [
   {
     id: "1",
     name: "Grey Thread Baggy Pants",
-    price: "0.06",
+    price: 0.06,
     brand: "BAZ Fashion",
     image: "/assests/product3.svg",
   },
   {
     id: "2",
     name: "BW Wrangler",
-    price: "0.0051",
+    price: 0.0051,
     brand: "BAZ Fashion",
     image: "/assests/product4.svg",
   },
   {
     id: "3",
     name: "Bat Tee Black Print",
-    price: "0.003",
+    price: 0.003,
     brand: "BAZ Fashion",
     image: "/assests/product1.svg",
   },
   {
     id: "4",
     name: "Baz Athletics",
-    price: "0.0021",
+    price: 0.0021,
     brand: "BAZ Fashion",
     image: "/assests/product 2.svg",
   },
@@ -89,7 +89,7 @@ export const items = [
   {
     id: "5",
     name: "Baz Athletics",
-    price: "0.0021",
+    price: 0.0021,
     brand: "BAZ Fashion",
     image: "/assests/product 2.svg",
   },
@@ -98,7 +98,7 @@ export const items = [
   {
     id: "6",
     name: "Bat Tee Black Print",
-    price: "0.003",
+    price: 0.003,
     brand: "BAZ Fashion",
     image: "/assests/product1.svg",
   },
@@ -106,8 +106,8 @@ export const items = [
 
   {
     id: "7",
-    name: "B/W Wrangler",
-    price: "0.0051",
+    name: "BW Wrangler",
+    price: 0.0051,
     brand: "BAZ Fashion",
     image: "/assests/product4.svg",
   },
@@ -115,7 +115,7 @@ export const items = [
   {
     id: "8",
     name: "Grey Thread Baggy Pants",
-    price: "0.06",
+    price: 0.06,
     brand: "BAZ Fashion",
     image: "/assests/product3.svg",
   },

@@ -66,9 +66,11 @@ export default function Checkout() {
             <section className="bg-zinc-900 w-full lg:w-1/2 p-6 rounded-md">
               <div className="flex justify-between items-center mb-2">
                 <h2 className="text-sm mb-4">Order Summary</h2>
+                <Link href={"/cart"}>
                 <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
                   Edit details
-                </button>
+                </button></Link>
+               
               </div>
               <div className="flex flex-col gap-y-8 gap-x-8">
                 {cartItems.length > 0 ? (

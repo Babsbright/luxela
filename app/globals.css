@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '~react-toastify/dist/ReactToastify.min.css';
+
 
 body {
   background-color: #0E0E0E;
@@ -49,4 +51,21 @@ select {
   :root {
     --radius: 0.5rem;
   }
+}
+
+@font-face {
+  font-family: 'space'; 
+  src: url('./fonts/SpaceGrotesk-Regular.ttf');
+}
+
+.Toastify__toast--success {
+  background: black !important;
+}
+.toastBody {
+  font-family: "space";
+  color: #fff;
+  font-size: 0.875rem !important;
+}
+.toastProgress {
+  background: #5c2eaf!important;
 }

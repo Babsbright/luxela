@@ -9,7 +9,7 @@ import MobileNav from "../../../components/Homepage/MobileNav2";
 
 interface PaymentPage2Props {
   total: number;
-  items: { name: string; price: number; size: string; image: string; }[]; // Define the shape of your items here
+  items: { name: string; price: number; size?: string; image: string; }[]; // Define the shape of your items here
 }
 
 const PaymentPage2: React.FC<PaymentPage2Props> = ({ total, items }) => {

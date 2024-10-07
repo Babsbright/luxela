@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import { useCart } from "../../context/CartContext";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Avartar from "/public/assests/sparkles.svg";
 import Image from "next/image";
@@ -9,6 +10,9 @@ import ShoppingCartIcon from "../icons/ShoppingCart";
 import Link from "next/link";
 
 const Navbar = () => {
+  const { cartItems } = useCart(); // Access cart items from context
+
+  console.log(cartItems.length);
   return (
     <>
       <div className="max-w-[1440px] border-b-[#2B2B2B] border-b border-solid  px-[40px] py-[18px] mx-auto hidden lg:block">
@@ -33,18 +37,25 @@ const Navbar = () => {
           </Link>
 
           <div className="flex items-center  gap-[20px]">
-            <div className="bg-[#141414] border border-solid border-[#212121] rounded-[6px] p-[12px]">
+            <div className="bg-[#141414] border cursor-pointer border-solid border-[#212121] rounded-[6px] p-[12px]">
               <SearchIcon />
             </div>
-            <div className="bg-[#141414] border border-solid border-[#212121] rounded-[6px] p-[12px]">
+            <div className="bg-[#141414] cursor-pointer border border-solid border-[#212121] rounded-[6px] p-[12px]">
               <NotificatIcon />
             </div>
+            <Link href="/cart">
+              <div
+                dir="rtl"
+                className="bg-[#141414] cursor-pointer relative border border-solid border-[#212121] rounded-[6px] p-[12px]"
+              >
+                <ShoppingCartIcon />{" "}
+                <span className="text-white font-bold text-[12px] absolute top-0 start-0">
+                  2
+                </span>
+              </div>
+            </Link>
 
-            <div className="bg-[#141414] border border-solid border-[#212121] rounded-[6px] p-[12px]">
-              <ShoppingCartIcon />
-            </div>
-
-            <div className="flex items-center bg-[#141414] border border-solid border-[#212121] rounded-[6px] py-[6px] px-[16px] gap-[10px] ">
+            <div className="flex items-center cursor-pointer bg-[#141414] border border-solid border-[#212121] rounded-[6px] py-[6px] px-[16px] gap-[10px] ">
               <Image src={Avartar} alt="user image" />
               <p className="text-[14px] text-white font-medium font-spaceGrotesk">
                 jondoe54
