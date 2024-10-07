@@ -14,6 +14,7 @@ import sol from "/public/assests/sol.svg";
 import { ToastContainer, toast } from "react-toastify";
 
 interface Props {
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   params: any;
 }
 
@@ -61,13 +62,11 @@ export default function ProductDetails({ params }: Props) {
             <p className=" font-spaceGrotesk my-10 text-xs flex gap-x-3 text-white/60 cursor-pointer">
               Home <span>&gt;</span>{" "}
               <Link href={"/"}>
-              <span className="text-white/60">{product.brand}</span>
-              <span>&gt;</span>
+                <span className="text-white/60">{product.brand}</span>
+                <span>&gt;</span>
               </Link>
-
               <span className="text-white">{product.name}</span>
             </p>
-          
           </div>
           <section className="font-spaceGrotesk flex flex-col lg:flex-row gap-x-8 mb-4">
             <section className="w-full rounded-md">
@@ -113,10 +112,10 @@ export default function ProductDetails({ params }: Props) {
                   <p className="text-xs text-white/70 my-1">{product.brand}</p>
                 </div>
                 <Link href={"/Explore"}>
-                <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
-                  View collection <span className="ml-2 font-bold">&gt;</span>
-                </button></Link>
-               
+                  <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
+                    View collection <span className="ml-2 font-bold">&gt;</span>
+                  </button>
+                </Link>
               </div>{" "}
               <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
               <div className="flex gap-x-2 font-spaceGrotesk items-center">
