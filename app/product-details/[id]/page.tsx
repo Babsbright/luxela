@@ -2,7 +2,7 @@
 import Image from "next/image";
 import arrow from "/public/assests/buyarrow.svg";
 import cart from "/public/assests/shopping-cart-01.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DetailModal from "../detailModal";
 import Link from "next/link";
 import { items, sizes } from "../data";
@@ -23,11 +23,18 @@ export default function ProductDetails({ params }: Props) {
   const [open, setOpen] = useState(false);
   const [quantity, setQuantity] = useState(1); // Track quantity state
   const { id } = params;
+  const [details, setDetails] = useState({});
 
   const product = items.find(
     (prodct) =>
       prodct.name.trim().toLowerCase().split(" ").join("-") === `${id}`
   );
+  
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  useEffect(() => {
+    setDetails((prev) => ({ ...prev, product }));
+  }, []);
+
 
   const incrementQuantity = () => {
     setQuantity((prev) => prev + 1);
@@ -271,8 +278,7 @@ export default function ProductDetails({ params }: Props) {
           <p className="capitalize text-white text-3xl">Product not found</p>
         </div>
       )}
-
-      {open && <DetailModal open={open} setOpen={setOpen} />}
+      {open && <DetailModal open={open} setOpen={setOpen} products={details} />}
       <ToastContainer
         progressClassName="toastProgress"
         bodyClassName="toastBody"

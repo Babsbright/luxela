@@ -81,6 +81,7 @@ const Desktopproducts = [
     name: "Layla Dress",
     price: "0.25",
     usdPrice: "$40.50",
+    image: TrackPants,
   },
   {
     marginLeft: "0",
@@ -90,6 +91,7 @@ const Desktopproducts = [
     name: "Layla Dress",
     price: "0.25",
     usdPrice: "$40.50",
+    image: TrackPants,
   },
 ];
 

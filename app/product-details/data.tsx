@@ -63,6 +63,8 @@ export const items = [
     price: 0.06,
     brand: "BAZ Fashion",
     image: "/assests/product3.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
   {
     id: "2",
@@ -70,6 +72,8 @@ export const items = [
     price: 0.0051,
     brand: "BAZ Fashion",
     image: "/assests/product4.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
   {
     id: "3",
@@ -77,6 +81,8 @@ export const items = [
     price: 0.003,
     brand: "BAZ Fashion",
     image: "/assests/product1.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
   {
     id: "4",
@@ -84,6 +90,8 @@ export const items = [
     price: 0.0021,
     brand: "BAZ Fashion",
     image: "/assests/product 2.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
 
   {
@@ -92,8 +100,9 @@ export const items = [
     price: 0.0021,
     brand: "BAZ Fashion",
     image: "/assests/product 2.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
-
 
   {
     id: "6",
@@ -101,8 +110,9 @@ export const items = [
     price: 0.003,
     brand: "BAZ Fashion",
     image: "/assests/product1.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
-
 
   {
     id: "7",
@@ -110,6 +120,8 @@ export const items = [
     price: 0.0051,
     brand: "BAZ Fashion",
     image: "/assests/product4.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
 
   {
@@ -118,5 +130,7 @@ export const items = [
     price: 0.06,
     brand: "BAZ Fashion",
     image: "/assests/product3.svg",
+    description:
+      "The Urban Wave Oversized Tee embodies street style with its relaxed fit and bold urban graphic. Made from soft, breathable cotton, it’s perfect for all-day comfort, whether you’re hitting the streets or hanging out.",
   },
 ];

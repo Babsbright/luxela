@@ -79,42 +79,50 @@ const brandData = [
 const faqData = [
   {
     title: "What is Luxela?",
-    description: "Luxela is a platform built on the Solana blockchain that allows independent designers and small-scale brands to showcase and sell their creations directly to consumers globally, enabling fast and secure transactions.",
+    description:
+      "Luxela is a platform built on the Solana blockchain that allows independent designers and small-scale brands to showcase and sell their creations directly to consumers globally, enabling fast and secure transactions.",
   },
   {
     title: "How does the marketplace benefit independent designers?",
-    description: "The marketplace empowers designers by providing them full control over their products, reducing transaction fees, and offering global exposure without the restrictions of traditional platforms and payment systems. Designers can set their prices and retain their brand identity.",
+    description:
+      "The marketplace empowers designers by providing them full control over their products, reducing transaction fees, and offering global exposure without the restrictions of traditional platforms and payment systems. Designers can set their prices and retain their brand identity.",
   },
   {
     title: "What are the transaction fees for sellers?",
-    description: "There are no subscription models or unnecessary fees. Luxela aims to keep transaction fees low compared to traditional platforms, allowing designers to maximize their earnings. The exact fees/commision will be transparently displayed on the platform.",
+    description:
+      "There are no subscription models or unnecessary fees. Luxela aims to keep transaction fees low compared to traditional platforms, allowing designers to maximize their earnings. The exact fees/commision will be transparently displayed on the platform.",
   },
   {
     title: "How do buyers make purchases on Luxela?",
-    description: "Buyers can browse products, select their desired items, and complete purchases through a simple and secure checkout process using their Solana Wallet.",
+    description:
+      "Buyers can browse products, select their desired items, and complete purchases through a simple and secure checkout process using their Solana Wallet.",
   },
   {
     title: "Is my personal information secure on the platform?",
-    description: "Yes, we prioritize user privacy and security. Our platform leverages blockchain technology, ensuring that your transactions are secure and your personal information remains confidential.",
+    description:
+      "Yes, we prioritize user privacy and security. Our platform leverages blockchain technology, ensuring that your transactions are secure and your personal information remains confidential.",
   },
 
   {
     title: "What payment methods are accepted?",
-    description: "Currently, we accept only the Solana native token ($SOL), with plans to expand payment options based on user feedback and demand.",
+    description:
+      "Currently, we accept only the Solana native token ($SOL), with plans to expand payment options based on user feedback and demand.",
   },
   {
     title: "How can I become a seller on Luxela?",
-    description: "Interested designers can sign up on our website by filling out an application form. Once approved, they will have access to create their shop, list products, and start selling.",
+    description:
+      "Interested designers can sign up on our website by filling out an application form. Once approved, they will have access to create their shop, list products, and start selling.",
   },
   {
     title: "How does Luxela ensure product quality?",
-    description: "We ensure designers provide detailed product descriptions, high-quality images, video descriptions and transparent information about their products. Customer reviews and ratings will also help maintain product quality standards.",
+    description:
+      "We ensure designers provide detailed product descriptions, high-quality images, video descriptions and transparent information about their products. Customer reviews and ratings will also help maintain product quality standards.",
   },
   {
     title: "What support does Luxela offer to brands?",
-    description: "We provide resources and support for brands, including guides on listing products, marketing tips, and a dedicated support team to assist with any inquiries.",
+    description:
+      "We provide resources and support for brands, including guides on listing products, marketing tips, and a dedicated support team to assist with any inquiries.",
   },
-
 ];
 
 const FeatureCard = ({
@@ -159,7 +167,7 @@ const BrandCard = ({
       <h3 className="text-white text-[18px] font-spaceGrotesk font-bold">
         {name}
       </h3>
-      <p className="text-[#DCDCDC] text-[16px] lg:text-[24px] font-spaceGrotesk mt-[12px] lg:mt-[4px]">
+      <p className="text-[#DCDCDC] text-[16px] lg:text-[20px] font-spaceGrotesk mt-[12px] lg:mt-[4px]">
         {description}
       </p>
     </div>
@@ -310,16 +318,16 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-[99px] lg:py-[100px]  lg:max-w-[1440px] mx-auto">
+      <div className="mb-[100px] mt-[50px] lg:max-w-[1440px] mx-auto">
         <div className="lg:text-center">
-          <h2 className="font-aeonik px-[20px] lg:px-0 lg:text-[32px] text-white">
+          <h2 className="font-aeonik px-[20px] text-[20px] lg:px-0 lg:text-[32px] text-white">
             Frequently Asked Questions
           </h2>
-          <p className="font-spaceGrotesk text-[16px] lg:text-[18px] pl-[20px] pr-[20px] lg:pl-[200.5px] lg:pr-[199.5px] mt-[20px] text-[#BFBFBF]">
+          {/* <p className="font-spaceGrotesk text-[16px] lg:text-[18px] pl-[20px] pr-[20px] lg:pl-[200.5px] lg:pr-[199.5px] mt-[20px] text-[#BFBFBF]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam.
-          </p>
+          </p> */}
         </div>
         <div className="mt-[72px] grid grid-cols-1 px-[20px] lg:grid-cols-3 gap-[12px] lg:px-[60px]">
           {faqData.map((faq, index) => (
@@ -333,7 +341,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="lg:mt-[99px] mt-[50px] bg-[#1A1A1A] lg:bg-[#0E0E0E] px-[20.5px] lg:px-[60px] py-[100px]">
+      {/* <div className="lg:mt-[99px] mt-[50px] bg-[#1A1A1A] lg:bg-[#0E0E0E] px-[20.5px] lg:px-[60px] py-[100px]">
         <div className="lg:bg-[#1A1A1A] lg:py-[95px] text-center ">
           <h2 className="font-aeonik text-white text-[24px] lg:text-[32px]">
             Frequently Asked Questions
@@ -349,7 +357,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
