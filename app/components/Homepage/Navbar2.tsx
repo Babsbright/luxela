@@ -48,7 +48,7 @@ const Navbar = () => {
               >
                 <ShoppingCartIcon />{" "}
                 <span className="text-white font-bold text-[12px] absolute top-0 start-0">
-                  2
+                  {cartItems.length}
                 </span>
               </div>
             </Link>
