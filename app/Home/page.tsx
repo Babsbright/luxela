@@ -23,16 +23,30 @@ interface Slide {
 }
 
 const Page = () => {
-  const brands = [1, 2];
+  const brands = [
+    {
+      title: "City Vibes",
+      description:
+        "Immerse yourself in the rhythm of the streets with City Vibes, a streetwear collection that speaks to the soul of urban culture. Each piece is designed to channel the pulse of the city, combining bold patterns and relaxed fits for those who own their style and stand out effortlessly.",
+        image:Fashion
+      },
+    {
+      title: "Street Monarch",
+      description:
+        "Rule the urban landscape with Street Monarch, a collection inspired by the gritty beauty and raw power of city life. These pieces fuse street-savvy design with bold, standout details—crafted for those who embrace their individuality and command attention wherever they go.",
+        image:MobileFashion
+    },
+  ];
 
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const slidesRef = useRef<HTMLDivElement | null>(null);
+  
 
   const collections = [
-    { id: 1, title: "Name of series", image: Collection1 },
-    { id: 2, title: "Name of series", image: Collection2 },
-    { id: 3, title: "Name of series", image: Collection3 },
-    { id: 4, title: "Name of series", image: Collection4 },
+    { id: 1, title: "Midnight Hustle", image: Collection1 },
+    { id: 2, title: "Neon Drift", image: Collection2 },
+    { id: 3, title: "Block Legends", image: Collection3 },
+    { id: 4, title: "Rogue Waves", image: Collection4 },
   ];
 
   // const explore = [
@@ -45,32 +59,19 @@ const Page = () => {
   const slides: Slide[] = [
     {
       id: 1,
-      title: "Name of collection",
+      title: "City Vibes",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "Immerse yourself in the rhythm of the streets with City Vibes, a streetwear collection that speaks to the soul of urban culture. Each piece is designed to channel the pulse of the city, combining bold patterns and relaxed fits for those who own their style and stand out effortlessly.",
       image: MobileFashion,
     },
     {
       id: 2,
-      title: "Name of collection",
+      title: "Street Monarch",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      image: MobileFashion,
+        "Rule the urban landscape with Street Monarch, a collection inspired by the gritty beauty and raw power of city life. These pieces fuse street-savvy design with bold, standout details—crafted for those who embrace their individuality and command attention wherever they go.",
+      image: Fashion,
     },
-    {
-      id: 3,
-      title: "Name of collection",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      image: MobileFashion,
-    },
-    {
-      id: 4,
-      title: "Name of collection",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      image: MobileFashion,
-    },
+   
   ];
 
   const handleSlideChange = (index: number) => {
@@ -116,7 +117,7 @@ const Page = () => {
       </div>
 
       <div className="mt-[24px] lg:flex hidden overflow-x-scroll scrollbar-hide gap-[40px] pl-[40px]">
-        {brands.map((_, index) => (
+        {brands.map((brand, index) => (
           <div
             key={index}
             className="bg-[#1A1A1A] p-[28px] border border-solid border-[#2B2B2B] rounded-[20px] h-[520px] flex-shrink-0 min-w-[1100px]"
@@ -125,14 +126,9 @@ const Page = () => {
               {/* Text Section */}
               <div className="max-w-[502px] mt-[104px] flex flex-col justify-center  w-full">
                 <div>
-                  <h2 className="font-aeonik text-[28px]">
-                    Limited Fashion Pieces
-                  </h2>
+                  <h2 className="font-aeonik text-[28px]">{brand.title}</h2>
                   <p className="mt-[24px] text-base lg:text-lg font-spaceGrotesk">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.{" "}
+                    {brand.description}{" "}
                   </p>
                 </div>
 
@@ -146,7 +142,7 @@ const Page = () => {
                 </div>
               </div>
 
-              <Image src={Fashion} alt="Featured brand images" />
+              <Image src={brand.image} alt="Featured brand images" />
             </div>
           </div>
         ))}

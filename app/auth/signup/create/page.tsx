@@ -3,7 +3,7 @@ import Image from "next/image";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Button from "@/app/components/Button/button";
 import EmailVerification from "./emailVerfication";
-import Header from "../header";
+// import Header from "../header";
 import Stepper from "../stepper";
 import { useState } from "react";
 import CreateForm from "./createForm";
@@ -28,10 +28,17 @@ export default function Create() {
           </div>
       <div className="max-w[1440px] px-4 md:px-8 flex flex-col mx-auto justify-center items-center">
         <div className="text-white mt-5 max-w-md">
-          <div className="lg:hidden flex justify-center items-center">
+          <div className="mb-8 lg:mb-16 lg:hidden flex justify-center items-center">
             <Image className="max-sm:w-32" src={Logo} alt="logo" />
           </div>
-          <Header />
+          {/* <div className="my-8 lg:mt-16 text-center">
+        <h2 className="font-medium text-lg font-aeonik">Let’s Get Started</h2>
+        <p className="font-spaceGrotesk max-w-md lg:max-w-lg mt-2 mx-auto text-white/80 text-sm">
+          Kindly fill in the details below to create your Luxela account and
+          join a community of fashion lovers. We’re excited to have you on
+          board!
+        </p>
+      </div> */}
 
           <Stepper currentStep={currentStep} numberOfSteps={NUMBER_OF_STEPS} />
 

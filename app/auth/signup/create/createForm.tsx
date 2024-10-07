@@ -1,5 +1,5 @@
 "use client";
-import {Input} from "@/app/components/Input/input";
+import { Input } from "@/app/components/Input/input";
 import { useState } from "react";
 import Image from "next/image";
 import profile from "/public/assests/profilepic.svg";
@@ -21,6 +21,16 @@ export default function CreateForm() {
   return (
     <>
       <section className="">
+        <div className="my-8 lg:mt-16 text-center">
+          <h2 className="font-medium text-lg font-aeonik">
+            Let&apos;s Get Started
+          </h2>
+          <p className="font-spaceGrotesk max-w-md lg:max-w-lg mt-2 mx-auto text-white/80 text-sm">
+            Kindly fill in the details below to create your Luxela account and
+            join a community of fashion lovers. We&apos;re excited to have you
+            on board!
+          </p>
+        </div>
         <div className="flex justify-center cursor-pointer my-4">
           <Image
             className="w-20 lg:w-28 hover:bg-luxela_lilac"
