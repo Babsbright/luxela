@@ -38,7 +38,6 @@ export default function ProductDetails({ params }: Props) {
   };
 
   const handleAddToCart = () => {
-    console.log("working");
     addToCart({ ...product, quantity }); // Add product to cart with the specified quantity
   };
 

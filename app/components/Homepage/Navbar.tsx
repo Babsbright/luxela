@@ -10,20 +10,20 @@ const Navbar = () => {
       <div className="flex items-center justify-between max-w-[1440px] mx-auto px-[40px] py-[18px] text-white">
         <div className="flex items-center gap-[162px]">
           <ul className="flex font-spaceGrotesk gap-[36px] text-[14px] font-light">
-            <Link href={"/"}>
-              {" "}
+          <Link href={"/coming-soon"}>
+          {" "}
               <li>About Us</li>
             </Link>
             <Link href={"/Home"}>
               {" "}
               <li>Featured Brands</li>
             </Link>
-            <Link href={"/Home"}>
-              {" "}
+            <Link href={"/coming-soon"}>
+            {" "}
               <li>Features</li>
             </Link>
-            <Link href={"/"}>
-              {" "}
+            <Link href={"/coming-soon"}>
+            {" "}
               <li>How to?</li>
             </Link>
           </ul>

@@ -44,8 +44,8 @@ const MobileNav = () => {
         <div className="fixed top-[80px] inset-0  bg-[#0E0E0E] border-none z-50 px-[20px]">
           <nav className="mt-[40px] px-[20px]">
             <ul className="space-y-[33px] font-spaceGrotesk text-white text-[18px]">
-              <Link href={"/"}>
-                <li className="flex justify-between items-center cursor-pointer">
+            <Link href={"/coming-soon"}>
+            <li className="flex justify-between items-center cursor-pointer">
                   <span>About Us</span>
                   <LinkArrowIcon />
                 </li>
@@ -57,13 +57,13 @@ const MobileNav = () => {
                 </li>
               </Link>
 
-              <Link href={"/Home"}>
+              <Link href={"/coming-soon"}>
                 <li className="flex justify-between items-center cursor-pointer">
                   <span>Features</span>
                   <LinkArrowIcon />
                 </li>
               </Link>
-              <Link href={"/"}>
+              <Link href={"/coming-soon"}>
                 <li className="flex justify-between items-center cursor-pointer">
                   <span>How to?</span>
                   <LinkArrowIcon />

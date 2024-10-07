@@ -11,8 +11,6 @@ import Link from "next/link";
 
 const Navbar = () => {
   const { cartItems } = useCart(); // Access cart items from context
-
-  console.log(cartItems.length);
   return (
     <>
       <div className="max-w-[1440px] border-b-[#2B2B2B] border-b border-solid  px-[40px] py-[18px] mx-auto hidden lg:block">
@@ -22,11 +20,11 @@ const Navbar = () => {
               <Link href="/Explore">
                 <li>Explore</li>
               </Link>
-              <Link href="/">
+              <Link href={"/coming-soon"}>
                 {" "}
                 <li>Brands</li>
               </Link>
-              <Link href="/">
+              <Link href={"/coming-soon"}>
                 {" "}
                 <li>Limited Offers</li>
               </Link>
