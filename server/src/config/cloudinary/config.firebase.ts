@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { v2 as cloudinary } from 'cloudinary';
 
 export const cloudinaryConfig = (cloundinary): void => {

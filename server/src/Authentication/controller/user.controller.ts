@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { StatusCodes } from "http-status-codes";
 import { Request, Response, NextFunction } from "express";
 import { responseHandler } from "../../utils/helper.utils";

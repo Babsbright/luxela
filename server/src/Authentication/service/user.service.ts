@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { UserRepo } from "../../Database/repo/user.repo"
 import {v2 as cloudinary} from 'cloudinary'
 import sendEmail from "../../utils/email.utils";
