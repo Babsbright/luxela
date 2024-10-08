@@ -50,8 +50,7 @@ const mailTransporter = async (): Promise<Transporter> => {
 
 
 const sendEmail = async (mailPayload: IMailOption): Promise<void> => {
-    console.log(mailPayload.htmlContent)
-    const content = htmlcontent(mailPayload.htmlContent as any)
+    const content = htmlcontent(mailPayload.htmlContent)
     
     const mailOptions = {
       from: 'official@luxela.com',
@@ -104,7 +103,7 @@ const htmlcontent = (data: {code: string, username: string}) => {
                         </tr>
                         <tr>
                             <td style="padding:20px; margin:0; font-family:'Helvetica Neue', Helvetica, Arial, Geneva, Tahoma, Geneva, Verdana, sans-serif; font-size:14px; line-height:22px; color:#666666;">
-                            Dear ${data?.username},
+                            Dear ${data?.username|| 'user'},
                             <br>
                             We've received your request for OTP verification. Please enter the following code we've sent to your phone:
                             <br>
