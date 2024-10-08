@@ -7,7 +7,7 @@ import Logo from "@/public/assests/Luxela white logo 1.svg";
 import productBaz from "@/public/assests/product_baz.svg";
 import sol from "/public/assests/sol.svg";
 import { useState } from "react";
-import DetailModal from "./detailModal";
+// import DetailModal from "./detailModal";
 import { useCart } from '../context/CartContext';
 import { useRouter } from 'next/navigation'; // Change made here
 

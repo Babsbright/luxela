@@ -29,12 +29,12 @@ export default function ProductDetails({ params }: Props) {
     (prodct) =>
       prodct.name.trim().toLowerCase().split(" ").join("-") === `${id}`
   );
-  
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+
+  // eslint-disable-next-line
   useEffect(() => {
     setDetails((prev) => ({ ...prev, product }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   const incrementQuantity = () => {
     setQuantity((prev) => prev + 1);
