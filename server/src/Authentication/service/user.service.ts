@@ -5,9 +5,9 @@ import { signToken } from "../../utils/jwt.utils";
 import BadRequestAPIError from "../../errors/BadrequestError";
 import CustomAPIError from "../../errors/CustomAPIError";
 import { StatusCodes } from "http-status-codes";
-import { buffer } from './../../../node_modules/rxjs/dist/esm5/internal/operators/buffer';
+// import { buffer } from './../../../node_modules/rxjs/dist/esm5/internal/operators/buffer';
 import {IBuyer, UserRole}  from '../types/constant.types'
-import NotFoundAPIError from "../../errors/NotFoundError";
+// import NotFoundAPIError from "../../errors/NotFoundError";
 
 /**
  * @class Userservice 
