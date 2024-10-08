@@ -1,7 +1,5 @@
-import { firestore } from 'firebase-admin';
 import { InitializeDb } from "../../config/firebase/config.firebase.";
-import { Firestore, getFirestore } from "firebase-admin/firestore";
-import { collection, doc, setDoc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore';
+import { Firestore } from "firebase-admin/firestore";
 import CustomAPIError from '../../errors/CustomAPIError';
 import { uuid } from '../../utils/helper.utils';
 import { IBuyer, ISeller } from '../../Authentication/types/constant.types';

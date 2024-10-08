@@ -5,9 +5,8 @@ import { signToken } from "../../utils/jwt.utils";
 import BadRequestAPIError from "../../errors/BadrequestError";
 import CustomAPIError from "../../errors/CustomAPIError";
 import { StatusCodes } from "http-status-codes";
-import { buffer } from './../../../node_modules/rxjs/dist/esm5/internal/operators/buffer';
 import {IBuyer, UserRole}  from '../types/constant.types'
-import NotFoundAPIError from "../../errors/NotFoundError";
+// import NotFoundAPIError from "../../NotFoundError";
 
 /**
  * @class Userservice 
@@ -38,7 +37,6 @@ export class UserService {
     public async signup(data: {username: string, email: string, picture: string, role: string}) {
         try {
             const {role} = data;
-            const token = signToken(data)
             if(role === UserRole.BUYER){
                 return await this.signupBuyer(data)
             } else if(role === UserRole.SELLER) {
