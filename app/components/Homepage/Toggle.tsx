@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Logo from "/public/assests/Luxela white logo 1.svg";
 import HamburgerIcon from "../icons/Hamburger";
 import CancelIcon from "../icons/CancelIcon";
 import { ShopCartIcon } from "../icons";

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import React from "react";
 import ShoppingCartIcon from "../icons/ShoppingCart";
 import SearchIcon from "../icons/SearchIcon";
-import HamburgerIcon from "../icons/Hamburger";
-import Toggle from "./Toggle"
+// import HamburgerIcon from "../icons/Hamburger";
+import Toggle from "./Toggle";
 import Image from "next/image";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Link from "next/link";
@@ -38,7 +38,9 @@ const MobileNav = () => {
         </Link>
 
         <div className="flex items-center gap-[20px] cursor-pointer">
-          {/* <SearchIcon /> */}
+          <div className="bg-[#141414] border cursor-pointer border-solid border-[#212121] rounded-[6px]">
+            <SearchIcon />
+          </div>
           <Toggle />
           {/* <HamburgerIcon /> */}
         </div>
