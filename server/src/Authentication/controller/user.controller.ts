@@ -7,10 +7,6 @@ import { UserService } from "../service/user.service";
 import { UploadedFile } from "express-fileupload";
 import BadRequestAPIError from "../../errors/BadrequestError";
 
-// import { SolanaSignInInput, SolanaSignInOutput } from '@solana/wallet-standard-features'
-// import { base58 } from './../../../node_modules/@scure/base/lib/esm/index';
-import { verifySignIn, gravatarIconUrl } from "../../utils/solana.util";
-
 const service = new UserService();
 class User {
   constructor() {}

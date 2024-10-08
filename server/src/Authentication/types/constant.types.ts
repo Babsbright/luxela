@@ -12,7 +12,7 @@ export enum ExtraInfo {
     OTHERS = 'others'
 }
 
-export interface IBuyer {
+export interface ISeller {
     id?: string,
     role: string,
     userId: string,
@@ -26,7 +26,7 @@ export interface IBuyer {
     website: string,
     LogisticInfo: {
         typesOfShipping: string,
-        refundPolicy: Boolean,
+        refundPolicy: boolean,
         refundExpPeriod: string,
         EstimatedShippingTime: {
             days: number,
@@ -45,7 +45,7 @@ export interface IBuyer {
     }
 }
 
-export interface ISeller {
+export interface IBuyer {
     id?: string,
     role: string,
     email: string,
