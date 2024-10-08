@@ -1,0 +1,48 @@
+{
+  "name": "luxela-backend",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jest": "jest --watchAll",
+    "start": "node dist/server.js",
+    "build": "tsc -p .",
+    "dev": "nodemon src/server.ts"
+  },
+  "keywords": [],
+  "author": "Abdulrasaq Taofeeq",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/wallet-standard-features": "^1.2.0",
+    "@solana/web3.js": "^1.95.3",
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/nodemailer": "^6.4.16",
+    "@types/uuid": "^10.0.0",
+    "@web3auth/default-solana-adapter": "^9.1.0",
+    "base58": "^2.0.1",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.5.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-fileupload": "^1.5.1",
+    "firebase": "^10.14.0",
+    "firebase-admin": "^12.5.0",
+    "helmet": "^8.0.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.15",
+    "nodemon": "^3.1.7",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/express-fileupload": "^1.5.1",
+    "typescript": "^5.6.2"
+  }
+}
