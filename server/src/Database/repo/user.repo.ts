@@ -57,9 +57,9 @@ export class UserRepo {
       const { otpCode, ...userData } = await this.getUserByMail(payload.email);
       return userData;
     } catch (error) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //  @ts-ignore
       throw new CustomAPIError(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //  @ts-ignore
         `Failed to create seller account: ${error.message}`,
         500
       );
@@ -83,6 +83,8 @@ export class UserRepo {
       return userData;
     } catch (error) {
       throw new CustomAPIError(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //  @ts-ignore
         `Failed to create seller account: ${error.message}`,
         500
       );
@@ -102,6 +104,8 @@ export class UserRepo {
       return { id: userdoc.id, ...userdoc.data() };
     } catch (error) {
       throw new CustomAPIError(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //  @ts-ignore
         `Failed to fetch user data: ${error.message}`,
         500
       );
@@ -123,6 +127,8 @@ export class UserRepo {
       return true;
     } catch (error) {
       throw new CustomAPIError(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //  @ts-ignore
         `Failed to check if user exist: ${error.message}`,
         500
       );
@@ -141,7 +147,11 @@ export class UserRepo {
       if (!snapshot.data()) return null;
       return { id: snapshot.id, ...snapshot.data() };
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       console.error("{Error} fetching single user:", error.message);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       throw new CustomAPIError(`Failed to fetch user: ${error.message}`, 500);
     }
   }
@@ -155,7 +165,11 @@ export class UserRepo {
       const snapshot = await this.model.get();
       return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       console.error("{Error} fetching all users:", error.message);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       throw new CustomAPIError(`Failed to fetch users: ${error.message}`, 500);
     }
   }
@@ -171,7 +185,11 @@ export class UserRepo {
       const response = await this.model.doc(id).update(payload);
       return response;
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       console.error("Error updating user:", error.message);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       throw new CustomAPIError(`Failed to update user: ${error.message}`, 500);
     }
   }
@@ -185,7 +203,11 @@ export class UserRepo {
       const response = await this.model.doc(userId).delete();
       return response;
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       console.error("Error deleting user:", error.message);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //  @ts-ignore
       throw new CustomAPIError(`Failed to delete user: ${error.message}`, 500);
     }
   }
