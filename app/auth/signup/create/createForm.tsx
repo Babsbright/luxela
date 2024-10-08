@@ -38,11 +38,9 @@ export default function CreateForm() {
         if (response.data.token) {
             router.push('/login')
         }
-        setLoading(false)
         toast.success("Account Created Successfully", { autoClose: 3000 });
       })
       .catch((error) => {
-        setLoading(false)
         if (error.response) {
             toast.error(`${error.response.data.msg}`, { autoClose: 3000 });
         } else if (error.request) {
