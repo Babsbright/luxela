@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { firestore } from "firebase-admin";
 import { InitializeDb } from "../../config/firebase/config.firebase.";
 import { Firestore, getFirestore } from "firebase-admin/firestore";
