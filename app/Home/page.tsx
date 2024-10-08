@@ -131,12 +131,14 @@ const Page = () => {
                 </div>
 
                 <div className="mt-[92px]">
-                  <button className="font-spaceGrotesk flex items-center pl-4 gap-[12px] font-medium w-[184px] h-[48px] bg-gradient-to-b from-luxela_lilac to-luxela_purple2 text-[16px] rounded-[8px] text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-none">
-                    View Collection
-                    <span className="flex items-center justify-center bg-black rounded-[6px] w-[28px] h-[28px]">
-                      <ArrowRightIcon />
-                    </span>
-                  </button>
+                  <Link href="/coming-soon">
+                    <button className="font-spaceGrotesk flex items-center pl-4 gap-[12px] font-medium w-[184px] h-[48px] bg-gradient-to-b from-luxela_lilac to-luxela_purple2 text-[16px] rounded-[8px] text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-none">
+                      View Collection
+                      <span className="flex items-center justify-center bg-black rounded-[6px] w-[28px] h-[28px]">
+                        <ArrowRightIcon />
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               </div>
 

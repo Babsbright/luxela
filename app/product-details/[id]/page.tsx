@@ -117,7 +117,7 @@ export default function ProductDetails({ params }: Props) {
                   <h1>{product.name}</h1>
                   <p className="text-xs text-white/70 my-1">{product.brand}</p>
                 </div>
-                <Link href={"/Explore"}>
+                <Link href={"/coming-soon"}>
                   <button className="px-2 py-1 hover:bg-luxela_purple hover:text-white text-luxela_lilac rounded-lg bg-luxela_lilac/30 text-xs">
                     View collection <span className="ml-2 font-bold">&gt;</span>
                   </button>
