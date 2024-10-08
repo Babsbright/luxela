@@ -12,7 +12,6 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function CreateForm() {
   const router = useRouter();
-  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState({
     userName: "",
     emailAddress: "",
@@ -27,7 +26,6 @@ export default function CreateForm() {
   };
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
-    // setLoading(true)
     e.preventDefault();
     const userData = {
       name: data.userName,
