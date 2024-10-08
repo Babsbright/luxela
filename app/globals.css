@@ -61,6 +61,10 @@ select {
 .Toastify__toast--success {
   background: black !important;
 }
+
+.Toastify__toast--error {
+  background: black !important;
+}
 .toastBody {
   font-family: "space";
   color: #fff;
