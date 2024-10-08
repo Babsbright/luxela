@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import ShoppingCartIcon from "../icons/ShoppingCart";
 import SearchIcon from "../icons/SearchIcon";
