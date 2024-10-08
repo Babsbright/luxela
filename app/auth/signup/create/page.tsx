@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Logo from "/public/assests/Luxela white logo 1.svg";
-import Button from "@/app/components/Button/button";
+// import Button from "@/app/components/Button/button";
 import CreateForm from "./createForm";
 import AuthNavbar from "../../AuthNavbar";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function Create() {
 
@@ -30,9 +30,7 @@ export default function Create() {
           <div className="mt-4">
             <CreateForm />
           </div>
-          <Link href="/auth/signup/emailVerification">
-            <Button>Proceed</Button>
-          </Link>
+        
         </div>
       </div>
     </section>

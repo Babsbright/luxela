@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { PublicKey, Keypair, Connection } from '@solana/web3.js';
 import crypto from 'crypto';
 

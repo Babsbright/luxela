@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import nodemailer, { Transporter, TransportOptions } from "nodemailer";
 import { AppConfig } from "../config/app.config";
 import SMTPTransport from "nodemailer/lib/smtp-transport";

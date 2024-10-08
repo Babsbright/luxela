@@ -3,19 +3,56 @@ import { Input } from "@/app/components/Input/input";
 import { useState } from "react";
 import Image from "next/image";
 import profile from "/public/assests/profilepic.svg";
-import Stepper from "../stepper"
+import Stepper from "../stepper";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import Link from "next/link";
+import Button from "@/app/components/Button/button";
+import { ToastContainer, toast } from "react-toastify";
+
 export default function CreateForm() {
+  const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState({
     userName: "",
     emailAddress: "",
   });
 
-  const handleChange = (e: { target: { value: string; name: string } }) => {
+  const handleChange = (e: { target: { value: unknown; name: string } }) => {
     const value = e.target.value;
     setData({
       ...data,
       [e.target.name]: value,
     });
+  };
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    // setLoading(true)
+    e.preventDefault();
+    const userData = {
+      name: data.userName,
+      email: data.emailAddress,
+      role: "buyer",
+    };
+    axios
+      .post("http://localhost:6020/api/v1/luxela/auth/signup", userData)
+      .then((response) => {
+        if (response.data.token) {
+            router.push('/login')
+        }
+        setLoading(false)
+        toast.success("Account Created Successfully", { autoClose: 3000 });
+      })
+      .catch((error) => {
+        setLoading(false)
+        if (error.response) {
+            toast.error(`${error.response.data.msg}`, { autoClose: 3000 });
+        } else if (error.request) {
+            toast.error("Network Error", { autoClose: 3000 });
+        } else {
+            console.log(error);
+        }
+      });
   };
 
   return (
@@ -62,9 +99,16 @@ export default function CreateForm() {
                 onChange={handleChange}
                 placeholder="Enter your email address"
               />
+              <Link href="/auth/signup/emailVerification">
+                <Button onClick={handleSubmit}>Proceed</Button>
+              </Link>
             </form>
           </div>
         </div>
+        <ToastContainer
+        progressClassName="toastProgress"
+        bodyClassName="toastBody"
+      />
       </section>
     </>
   );

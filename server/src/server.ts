@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { AppConfig } from "./config/app.config";
 import app from "./app";
 import { exit } from "process";

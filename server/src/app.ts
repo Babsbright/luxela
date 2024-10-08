@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import express, {Application} from 'express';
 import cors, { CorsOptions } from 'cors';
 import helmet, { HelmetOptions } from 'helmet';

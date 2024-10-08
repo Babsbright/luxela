@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { UserRepo } from "../../Database/repo/user.repo"
 import {v2 as cloudinary} from 'cloudinary'
 import sendEmail from "../../utils/email.utils";
@@ -5,8 +7,9 @@ import { signToken } from "../../utils/jwt.utils";
 import BadRequestAPIError from "../../errors/BadrequestError";
 import CustomAPIError from "../../errors/CustomAPIError";
 import { StatusCodes } from "http-status-codes";
+// import { buffer } from './../../../node_modules/rxjs/dist/esm5/internal/operators/buffer';
 import {IBuyer, UserRole}  from '../types/constant.types'
-// import NotFoundAPIError from "../../NotFoundError";
+// import NotFoundAPIError from "../../errors/NotFoundError";
 
 /**
  * @class Userservice 

@@ -38,6 +38,11 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.15",
+<<<<<<< HEAD
+=======
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+>>>>>>> e89b31b36da547c56485be1c4fa3bdfa4a0098b5
     "uuid": "^10.0.0"
   },
   "devDependencies": {
