@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+**/node_modules/
+./server/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -28,6 +30,9 @@ yarn-error.log*
 # local env files
 .env*.local
 process.env.local
+**.env
+.env
+./server/.env
 
 # vercel
 .vercel
