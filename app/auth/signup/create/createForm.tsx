@@ -3,7 +3,7 @@ import { Input } from "@/app/components/Input/input";
 import { useState } from "react";
 import Image from "next/image";
 import profile from "/public/assests/profilepic.svg";
-
+import Stepper from "../stepper"
 export default function CreateForm() {
   const [data, setData] = useState({
     userName: "",
@@ -21,7 +21,7 @@ export default function CreateForm() {
   return (
     <>
       <section className="">
-        <div className="my-8 lg:mt-16 text-center">
+        <div className="text-center">
           <h2 className="font-medium text-lg font-aeonik">
             Let&apos;s Get Started
           </h2>
@@ -31,6 +31,9 @@ export default function CreateForm() {
             on board!
           </p>
         </div>
+
+        <Stepper currentStep={1} numberOfSteps={2} />
+
         <div className="flex justify-center cursor-pointer my-4">
           <Image
             className="w-20 lg:w-28 hover:bg-luxela_lilac"

@@ -10,7 +10,7 @@ export default function Stepper(props: Step) {
   // const isFinalStep = (index: any) => index === props.currentStep - 1;
 
   return (
-    <div className="flex justify-center items-center gap-x-3">
+    <div className="flex justify-center items-center gap-x-3 my-8">
       {Array.from({ length: props.numberOfSteps }).map((_, index) => (
         <React.Fragment key={index}>
           <div className={`w-36 lg:w-48 h-1.5 rounded-lg ${activeColor(index)}`}></div>

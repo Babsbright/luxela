@@ -14,7 +14,7 @@ const Navbar = () => {
           {" "}
               <li>About Us</li>
             </Link>
-            <Link href={"/Home"}>
+            <Link href={"/Brand"}>
               {" "}
               <li>Featured Brands</li>
             </Link>

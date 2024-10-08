@@ -50,7 +50,7 @@ const MobileNav = () => {
                   <LinkArrowIcon />
                 </li>
               </Link>
-              <Link href={"/Home"}>
+              <Link href={"/Brand"}>
                 <li className="flex justify-between items-center cursor-pointer">
                   <span>Featured Brands</span>
                   <LinkArrowIcon />

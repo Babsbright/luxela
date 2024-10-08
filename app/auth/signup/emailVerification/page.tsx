@@ -1,27 +1,26 @@
 "use client";
 import { Input } from "@/app/components/Input/input";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Button from "@/app/components/Button/button";
+import Stepper from "../stepper";
+import AuthNavbar from "../../AuthNavbar";
 
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
-interface Formprops {
-  lastPage: boolean;
-  setLastPage: Dispatch<SetStateAction<boolean>>;
-}
-export default function EmailVerification(props: Formprops) {
+
+export default function EmailVerification() {
   const [value, setValue] = useState("");
   const handleChange = (e: InputEvent) => {
     setValue(e.target.value);
   };
-  useEffect(() => {
-    props.setLastPage(true);
-    // eslint-disable-next-line
-  }, []);
   return (
     <>
+     <section className="bg-black w-full min-h-[100vh] pb-20">
+      <div className="hidden lg:block">
+        <AuthNavbar />
+      </div>
       <div className="font-spaceGrotesk">
-        <div className="my-8 lg:mt-16 text-center">
+        <div className="mt-8 text-center">
           <h2 className="font-medium text-lg font-aeonik">
             {" "}
             Verify Your Email
@@ -32,6 +31,8 @@ export default function EmailVerification(props: Formprops) {
             Luxela account secure and ready for your fashion journey.
           </p>
         </div>
+
+        <Stepper currentStep={2} numberOfSteps={2} />
 
         <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
           <form className="space-y-4">
@@ -44,13 +45,13 @@ export default function EmailVerification(props: Formprops) {
               onChange={handleChange}
             />
           </form>
-          {props.lastPage && (
             <Link href={"/auth/signup/terms"}>
               <Button>Proceed</Button>
             </Link>
-          )}
+        
         </div>
       </div>
+      </section>
     </>
   );
 }
