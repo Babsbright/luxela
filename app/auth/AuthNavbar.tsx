@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import Logo from "/public/assests/Luxela white logo 1.svg";
-// import { ShopCartIcon } from "../components/icons";
 import Link from "next/link";
 const AuthNavbar = () => {
   return (
