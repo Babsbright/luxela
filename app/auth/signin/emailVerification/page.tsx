@@ -26,7 +26,7 @@ export default function EmailVerification() {
             Verify Your Account
           </h2>
           <p className="font-spaceGrotesk max-w-md lg:max-w-lg mt-2 mx-auto text-white/80 text-sm">
-          Please enter the OTP sent to your Email address, this verfication process ensures your account's security. Your OTP is valid for 5 minutes.
+          Please enter the OTP sent to your Email address, this verfication process ensures your account&apos;s security. Your OTP is valid for 5 minutes.
           </p>
         </div>
 

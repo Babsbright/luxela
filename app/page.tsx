@@ -283,10 +283,7 @@ export default function Home() {
           What Exactly is Luxela?
         </h2>
         <p className="text-[#BFBFBF] text-[18px] px-[20px] lg:px-0 font-spaceGrotesk mt-[20px]">
-          Luxela is a decentralized marketplace that connects local brands and
-          independent designers to a global audience. Luxela offers fast, cheap
-          and seamless transactions and ensures customers get original products
-          from brands and not counterfeits.
+        Luxela is a decentralized marketplace connecting local brands and independent designers with a global audience, offering fast, affordable, and seamless transactions while ensuring authenticity and originality of products directly from brands, eliminating counterfeits.
         </p>
         <div className="lg:mt-[68px] mt-[72px]">
           <Image src={WhatLuxela} alt="what is exactly luxela" />
