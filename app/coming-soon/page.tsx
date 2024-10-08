@@ -4,6 +4,8 @@ import { useState } from "react";
 import coming from "/public/assests/comingsoon.svg";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
+import Navbar from "../components/Homepage/Navbar2";
+import MobileNav from "../components/Homepage/MobileNav2";
 
 export default function ComingSoon() {
   const [data, setData] = useState({
@@ -32,7 +34,10 @@ export default function ComingSoon() {
 
   return (
     <>
+          <Navbar />
+          <MobileNav />
       <main className="grid min-h-full max-w[1440px] px-4 md:px-12 bg-zinc-900 text-white font-spaceGrotesk">
+
         <div className="mt-10 mb-6">
           <a
             href="/"

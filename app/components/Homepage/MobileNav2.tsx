@@ -3,6 +3,7 @@ import React from "react";
 import ShoppingCartIcon from "../icons/ShoppingCart";
 import SearchIcon from "../icons/SearchIcon";
 import HamburgerIcon from "../icons/Hamburger";
+import Toggle from "./Toggle"
 import Image from "next/image";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Link from "next/link";
@@ -12,7 +13,7 @@ const MobileNav = () => {
   const { cartItems } = useCart(); // Access cart items from context
 
   return (
-    <div className="lg:hidden block py-[15px] px-[20px]">
+    <div className="lg:hidden block py-[15px] px-[10px]">
       <div className="flex justify-between items-center">
         <Link href="/cart">
           <div
@@ -37,8 +38,9 @@ const MobileNav = () => {
         </Link>
 
         <div className="flex items-center gap-[20px] cursor-pointer">
-          <SearchIcon />
-          <HamburgerIcon />
+          {/* <SearchIcon /> */}
+          <Toggle />
+          {/* <HamburgerIcon /> */}
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ import { ShopCartIcon } from "../icons";
 import LinkArrowIcon from "../icons/LinkArrow";
 import Link from "next/link";
 
-const MobileNav = () => {
+const Toggle = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -31,10 +31,10 @@ const MobileNav = () => {
     <>
       <div className="w-full lg:hidden block py-[20px] px-[20px]">
         <div className="flex items-center justify-between">
-         <Link href={"/"}>
+         {/* <Link href={"/"}>
          <div className="w-[132px] h-[21.54px] mx-auto">
             <Image src={Logo} alt="logo" />
-          </div></Link>
+          </div></Link> */}
           <div onClick={toggleMenu}>
             {isOpen ? <CancelIcon /> : <HamburgerIcon />}
           </div>
@@ -44,8 +44,8 @@ const MobileNav = () => {
       {isOpen && (
         <div className="fixed top-[80px] inset-0  bg-[#0E0E0E] border-none z-50 px-[20px]">
           <nav className="mt-[40px] px-[20px]">
-          <ul className="flex flex-col space-y-4 font-spaceGrotesk text-white text-[18px]">
-          <Link href={"/coming-soon"}>
+            <ul className="flex flex-col space-y-4 font-spaceGrotesk text-white text-[18px]">
+              <Link href={"/coming-soon"}>
                 <li className="flex justify-between items-center cursor-pointer">
                   <span>About Us</span>
                   <LinkArrowIcon />
@@ -88,4 +88,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav;
+export default Toggle;
