@@ -27,7 +27,7 @@ const MobileNav = () => {
           </div>
         </Link>
 
-        <Link href={"/Home"}>
+        <Link href={"/"}>
           <div className="">
             <Image
               src={Logo}
@@ -38,9 +38,10 @@ const MobileNav = () => {
         </Link>
 
         <div className="flex items-center gap-[20px] cursor-pointer">
+          <Link href={"/coming-soon"}>
           <div className="bg-[#141414] border cursor-pointer border-solid border-[#212121] rounded-[6px]">
             <SearchIcon />
-          </div>
+          </div></Link>
           <Toggle />
           {/* <HamburgerIcon /> */}
         </div>

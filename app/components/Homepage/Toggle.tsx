@@ -49,7 +49,7 @@ const Toggle = () => {
                   <LinkArrowIcon />
                 </li>
               </Link>
-              <Link href={"/Brand"}>
+              <Link href={"/coming-soon"}>
                 <li className="flex justify-between items-center cursor-pointer">
                   <span>Featured Brands</span>
                   <LinkArrowIcon />

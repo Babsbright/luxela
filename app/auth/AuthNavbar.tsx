@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Link from "next/link";
+
 const AuthNavbar = () => {
   return (
     <div className="w-full bg-transparent">
@@ -11,7 +12,7 @@ const AuthNavbar = () => {
             {" "}
             <li className="cursor-pointer">Explore</li>
           </Link>
-          <Link href={"/Brand"}>
+          <Link href={"/coming-soon"}>
             {" "}
             <li className="cursor-pointer">Brands</li>
           </Link>

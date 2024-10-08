@@ -1,4 +1,5 @@
 "use client";
+import React from 'react'
 import Image from "next/image";
 import AuthFrame from "/public/assests/authsection.svg";
 import Logo from "/public/assests/Luxela white logo 1.svg";
@@ -105,6 +106,16 @@ export default function SignUp() {
                     <p>I don&apos;t have a wallet</p>
                   </Link>
                 </div>
+
+                <Link href={"/auth/signin/form"}>
+                  <div
+                    className="mt-4 flex items-center justify-center gap-x-2 py-1.5 lg:py-2.5
+               w-full text-center rounded-md hover:border cursor-pointer
+                hover:border-luxela_lilac text-sm bg-zinc-900"
+                  >
+                    <p>Sign in with your Email</p>
+                  </div>
+                </Link>
               </section>
             </div>{" "}
           </div>

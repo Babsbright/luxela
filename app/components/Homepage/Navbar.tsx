@@ -14,7 +14,7 @@ const Navbar = () => {
           {" "}
               <li>About Us</li>
             </Link>
-            <Link href={"/Brand"}>
+            <Link href={"/coming-soon"}>
               {" "}
               <li>Featured Brands</li>
             </Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-[8px] bg-[#000000]/20 border-[#FFFFFF]/10 py-[12.5px] rounded-[4px] px-[10px] border border-solid w-[159px] h-[42px] items-center justify-center">
-          <Link href="/auth/signin">
+          <Link href="/auth/signup">
             <button className="text-[14px] font-spaceGrotesk font-medium">
               Shop now
             </button>

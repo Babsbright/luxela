@@ -38,7 +38,7 @@ const Input = (props: InputProps) => {
           rounded-lg border-none py-2 text-white shadow-sm
           focus:outline-none focus:shadow-outline
            placeholder:text-white/70 focus:outline-luxela_lilac
-            sm:text-sm sm:leading-6 placeholder:text-sm"
+            sm:text-sm sm:leading-6 placeholder:text-sm focus:bg-transparent"
         />
       </div>
     </div>

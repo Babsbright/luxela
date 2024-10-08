@@ -51,7 +51,7 @@ const MobileNav = () => {
                   <LinkArrowIcon />
                 </li>
               </Link>
-              <Link href={"/Brand"}>
+              <Link href={"/coming-soon"}>
                 <li className="flex justify-between items-center cursor-pointer">
                   <span>Featured Brands</span>
                   <LinkArrowIcon />
@@ -75,7 +75,7 @@ const MobileNav = () => {
 
           {/* Shop Now Button */}
           <div className="absolute bottom-10 left-0 w-full px-6">
-            <Link href={"/auth/signin"}>
+            <Link href={"/auth/signup"}>
               <button className="font-spaceGrotesk font-medium w-full h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac flex items-center justify-center">
                 Shop now
                 <ShopCartIcon className="ml-2" />

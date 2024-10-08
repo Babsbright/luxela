@@ -20,7 +20,7 @@ const Navbar = () => {
               <Link href="/Explore">
                 <li>Explore</li>
               </Link>
-              <Link href={"/Brand"}>
+              <Link href={"/coming-soon"}>
                 {" "}
                 <li>Brands</li>
               </Link>
@@ -30,17 +30,23 @@ const Navbar = () => {
               </Link>
             </ul>
           </div>
-          <Link href="/Home">
+          <Link href="/">
             <Image src={Logo} alt="logo" />
           </Link>
 
           <div className="flex items-center  gap-[20px]">
-            <div className="bg-[#141414] border cursor-pointer border-solid border-[#212121] rounded-[6px] p-[12px]">
-              <SearchIcon />
-            </div>
-            <div className="bg-[#141414] cursor-pointer border border-solid border-[#212121] rounded-[6px] p-[12px]">
-              <NotificatIcon />
-            </div>
+            <Link href={"/coming-soon"}>
+              <div className="bg-[#141414] border cursor-pointer border-solid border-[#212121] rounded-[6px] p-[12px]">
+                <SearchIcon />
+              </div>
+            </Link>
+
+            <Link href={"/coming-soon"}>
+              <div className="bg-[#141414] cursor-pointer border border-solid border-[#212121] rounded-[6px] p-[12px]">
+                <NotificatIcon />
+              </div>
+            </Link>
+
             <Link href="/cart">
               <div
                 dir="rtl"
@@ -52,13 +58,14 @@ const Navbar = () => {
                 </span>
               </div>
             </Link>
-
-            <div className="flex items-center cursor-pointer bg-[#141414] border border-solid border-[#212121] rounded-[6px] py-[6px] px-[16px] gap-[10px] ">
-              <Image src={Avartar} alt="user image" />
-              <p className="text-[14px] text-white font-medium font-spaceGrotesk">
-                jondoe54
-              </p>
-            </div>
+            <Link href={"/coming-soon"}>
+              <div className="flex items-center cursor-pointer bg-[#141414] border border-solid border-[#212121] rounded-[6px] py-[6px] px-[16px] gap-[10px] ">
+                <Image src={Avartar} alt="user image" />
+                <p className="text-[14px] text-white font-medium font-spaceGrotesk">
+                  jondoe54
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
