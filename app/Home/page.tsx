@@ -28,19 +28,18 @@ const Page = () => {
       title: "City Vibes",
       description:
         "Immerse yourself in the rhythm of the streets with City Vibes, a streetwear collection that speaks to the soul of urban culture. Each piece is designed to channel the pulse of the city, combining bold patterns and relaxed fits for those who own their style and stand out effortlessly.",
-        image:Fashion
-      },
+      image: Fashion,
+    },
     {
       title: "Street Monarch",
       description:
         "Rule the urban landscape with Street Monarch, a collection inspired by the gritty beauty and raw power of city life. These pieces fuse street-savvy design with bold, standout details—crafted for those who embrace their individuality and command attention wherever they go.",
-        image:MobileFashion
+      image: MobileFashion,
     },
   ];
 
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const slidesRef = useRef<HTMLDivElement | null>(null);
-  
 
   const collections = [
     { id: 1, title: "Midnight Hustle", image: Collection1 },
@@ -71,7 +70,6 @@ const Page = () => {
         "Rule the urban landscape with Street Monarch, a collection inspired by the gritty beauty and raw power of city life. These pieces fuse street-savvy design with bold, standout details—crafted for those who embrace their individuality and command attention wherever they go.",
       image: Fashion,
     },
-   
   ];
 
   const handleSlideChange = (index: number) => {
@@ -164,9 +162,11 @@ const Page = () => {
                 <p>{slide.description}</p>
               </div>
               <div className="mt-[29px]">
-                <button className="font-spaceGrotesk font-medium w-full h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
-                  Shop Now
-                </button>
+                <Link href="/Explore">
+                  <button className="font-spaceGrotesk font-medium w-full h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
+                    Shop Now
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

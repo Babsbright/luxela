@@ -30,7 +30,7 @@ export default function Create() {
           <div className="mt-4">
             <CreateForm />
           </div>
-          <Link href="/auth/signup/emailVerification">
+          <Link href="/auth/emailVerification">
             <Button>Proceed</Button>
           </Link>
         </div>

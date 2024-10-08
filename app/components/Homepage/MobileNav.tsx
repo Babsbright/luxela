@@ -31,9 +31,10 @@ const MobileNav = () => {
     <>
       <div className="w-full lg:hidden block py-[20px] px-[20px]">
         <div className="flex items-center justify-between">
-          <div className="w-[132px] h-[21.54px] mx-auto">
+         <Link href={"/"}>
+         <div className="w-[132px] h-[21.54px] mx-auto">
             <Image src={Logo} alt="logo" />
-          </div>
+          </div></Link>
           <div onClick={toggleMenu}>
             {isOpen ? <CancelIcon /> : <HamburgerIcon />}
           </div>
@@ -44,8 +45,8 @@ const MobileNav = () => {
         <div className="fixed top-[80px] inset-0  bg-[#0E0E0E] border-none z-50 px-[20px]">
           <nav className="mt-[40px] px-[20px]">
             <ul className="space-y-[33px] font-spaceGrotesk text-white text-[18px]">
-            <Link href={"/coming-soon"}>
-            <li className="flex justify-between items-center cursor-pointer">
+              <Link href={"/coming-soon"}>
+                <li className="flex justify-between items-center cursor-pointer">
                   <span>About Us</span>
                   <LinkArrowIcon />
                 </li>
@@ -74,10 +75,12 @@ const MobileNav = () => {
 
           {/* Shop Now Button */}
           <div className="absolute bottom-10 left-0 w-full px-6">
-            <button className="font-spaceGrotesk font-medium w-full h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac flex items-center justify-center">
-              Shop now
-              <ShopCartIcon className="ml-2" />
-            </button>
+            <Link href={"/auth/signin"}>
+              <button className="font-spaceGrotesk font-medium w-full h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac flex items-center justify-center">
+                Shop now
+                <ShopCartIcon className="ml-2" />
+              </button>
+            </Link>
           </div>
         </div>
       )}

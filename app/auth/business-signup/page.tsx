@@ -68,8 +68,9 @@ export default function BusinessSignup() {
                 Create your account
               </h2>
               <p className="font-spaceGrotesk mt-2 text-white/80 text-sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                dicta similique
+              Kindly fill in the details below to create your Luxela business account and
+            join a community of fashion lovers. We&apos;re excited to have you
+            on board!
               </p>
             </div>
 

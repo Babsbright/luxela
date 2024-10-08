@@ -128,7 +128,7 @@ const Hero = () => {
             Connecting Independent & small-scale fashion brands to a global audience and enabling fast, cheap and seamless transactions.
             </p>
           </div>
-          <Link href="/Home" className="lg:max-w-[230px]  px-[20px] w-full mt-[32px] lg:mt-[20px] mx-auto">
+          <Link href="/auth/signin" className="lg:max-w-[230px]  px-[20px] w-full mt-[32px] lg:mt-[20px] mx-auto">
             <Button>Shop Now</Button>
           </Link>
         </div>

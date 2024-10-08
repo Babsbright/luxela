@@ -6,7 +6,7 @@ import SolanaLogo2 from "/public/assests/image 3.svg";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import { QuestionIcon } from "./components/icons";
-
+import Link from "next/link"
 import WhatLuxela from "/public/assests/Frame 20873272581.svg";
 import Screenshot1 from "/public/assests/Frame 2087327522.svg";
 import Screenshot2 from "/public/assests/Frame 2087327260.svg";
@@ -192,9 +192,11 @@ const BrandCard = ({
       </div>
     </div>
     <div className="text-left px-[20px] lg:px-0 lg:hidden block mt-[52px]">
+      <Link href="/Explore">
       <button className="font-spaceGrotesk font-medium w-full h-[44px] bg-gradient-to-b from-luxela_lilac via-luxela_purple2 to-luxela_purple rounded-lg text-sm text-white shadow-lg hover:bg-none hover:text-luxela_lilac hover:border hover:border-luxela_lilac focus:outline-luxela_lilac">
         Shop Now
-      </button>
+      </button></Link>
+     
     </div>
   </div>
 );
@@ -323,11 +325,6 @@ export default function Home() {
           <h2 className="font-aeonik px-[20px] text-[20px] lg:px-0 lg:text-[32px] text-white">
             Frequently Asked Questions
           </h2>
-          {/* <p className="font-spaceGrotesk text-[16px] lg:text-[18px] pl-[20px] pr-[20px] lg:pl-[200.5px] lg:pr-[199.5px] mt-[20px] text-[#BFBFBF]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p> */}
         </div>
         <div className="mt-[72px] grid grid-cols-1 px-[20px] lg:grid-cols-3 gap-[12px] lg:px-[60px]">
           {faqData.map((faq, index) => (

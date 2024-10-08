@@ -155,8 +155,7 @@ const Page = () => {
             List a new item on Luxela
           </h2>
           <p className="font-spaceGrotesk text-[14px] mt-[12px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          We do not exist as a singular element. Our genetic make up is a stepping stone to our individuality, but even then, our genetic make up is not a singular entity. As we grow, we learn and unlearn, we experience and we forget, we take and we give back. There’s more variation in our individuality per day.
           </p>
         </div>
         <div className="mt-[24px] flex flex-col gap-[60px]">

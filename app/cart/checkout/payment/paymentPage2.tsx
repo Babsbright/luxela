@@ -2,21 +2,20 @@
 import Image from "next/image";
 import sol from "/public/assests/sol.svg";
 import check from "/public/assests/checkmark.svg";
-import Link from 'next/link';
+import Link from "next/link";
 import Navbar from "../../../components/Homepage/Navbar2";
 import MobileNav from "../../../components/Homepage/MobileNav2";
 
-
 interface PaymentPage2Props {
   total: number;
-  items: { name: string; price: number; size?: string; image: string; }[]; // Define the shape of your items here
+  items: { name: string; price: number; size?: string; image: string }[]; // Define the shape of your items here
 }
 
 const PaymentPage2: React.FC<PaymentPage2Props> = ({ total, items }) => {
   return (
     <section className="bg-black w-full min-h-[100vh] text-white">
-     <Navbar />
-     <MobileNav />
+      <Navbar />
+      <MobileNav />
       <div className="max-w-[1440px] px-4 md:px-8 flex flex-col mx-auto">
         <section className="my-10">
           <div>
@@ -52,7 +51,9 @@ const PaymentPage2: React.FC<PaymentPage2Props> = ({ total, items }) => {
                               <Image className="w-5 h-5" src={sol} alt="sol" />
                             </span>
                           </p>
-                          <p className="text-[10px] text-white/70">{item.size}</p>
+                          <p className="text-[10px] text-white/70">
+                            {item.size}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -62,7 +63,9 @@ const PaymentPage2: React.FC<PaymentPage2Props> = ({ total, items }) => {
                 <div className="text-xs mt-4 flex justify-between items-center">
                   <p className="text-white/70">Total amount (SOL)</p>
                   <div className="flex gap-x-1">
-                    <span className="text-[10px] text-white/70">${total.toFixed(2)}</span>
+                    <span className="text-[10px] text-white/70">
+                      ${total.toFixed(2)}
+                    </span>
                     <span>{total.toFixed(3)}</span>
                     <span>
                       <Image className="w-5 h-5" src={sol} alt="sol" />
@@ -103,20 +106,19 @@ const PaymentPage2: React.FC<PaymentPage2Props> = ({ total, items }) => {
                 <div className="text-xs text-white/70 my-2">
                   <p className="mb-2">Shipping address</p>
                   <p className="text-white leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Maxime veniam eius corporis recusandae tempore
-                    necessitatibus eligendi ab dolor, doloribus iusto a, aliquam
-                    excepturi atque sint eveniet soluta ipsam consequatur
-                    ducimus?
+                    The transaction for Jane Doe, residing at 123 Fashion
+                    Avenue, Lekki Phase 1, Lagos, Nigeria, was completed on
+                    October 6, 2024.
                   </p>
                 </div>
                 <hr className="my-3 w-full h-[0.2px] border border-gray-700/50" />
                 <div className="text-white/70 text-xs my-2">
                   <p className="mb-2">Delivery date</p>
                   <p>
-                    Delivery between{" "}
+                    Estimated Delivery Date
                     <span className="text-white">
-                      23 Sep and 25 Sep (7-10 days from now)
+                      {" "}
+                      {""} October 12-15, 2024
                     </span>
                   </p>
                 </div>
