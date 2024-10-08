@@ -59,7 +59,7 @@ select {
 }
 
 .Toastify__toast--success {
-  background: black !important;
+  background: black !important; /* success toast */
 }
 
 .Toastify__toast--error {
