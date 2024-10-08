@@ -2,7 +2,7 @@
 // @ts-nocheck
 import { v2 as cloudinary } from 'cloudinary';
 
-export const cloudinaryConfig = (cloundinary): void => {
+export const cloudinaryConfig = (): void => {
     cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
     api_key: process.env.CLOUDINARY_API_KEY, 

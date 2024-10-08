@@ -35,7 +35,7 @@ export class UserRepo {
    * @private model firebase users collection
    * @description house the users colection for easy access in  the public functions
    */
-  private model: any;
+  private model: unknown;
 
   constructor() {
     this.db = InitializeDb.getDb();
@@ -48,7 +48,7 @@ export class UserRepo {
    * @param payload containing the new seller data to be created
    * @throws {Error} - message: Failed to create seller account: 'error message', with 500 status code
    */
-  public async createSeller(payload: Partial<ISeller>): Promise<any> {
+  public async createSeller(payload: Partial<ISeller>): Promise<unknown> {
     try {
       const data = {
         userId: uuid(),
@@ -74,7 +74,7 @@ export class UserRepo {
    * @param payload containing the new buyer data to be created
    * @throws {Error} - message: Failed to create buyer account: 'error message', with 500 status code
    */
-  public async createBuyer(payload: Partial<IBuyer>): Promise<any> {
+  public async createBuyer(payload: Partial<IBuyer>): Promise<unknown> {
     try {
       const data = {
         userId: uuid(),
@@ -99,7 +99,7 @@ export class UserRepo {
    * @return user data and
    * @throws {Error} - message: Failed to fetch user data with status code 500
    */
-  public async getUserByMail(email: string): Promise<any> {
+  public async getUserByMail(email: string): Promise<unknown> {
     try {
       const snapshot = await this.model.where("email", "==", email).get();
       const userdoc = snapshot.docs[0];
@@ -120,7 +120,7 @@ export class UserRepo {
    * @returns boolean - true: if user data exist and false: is user data does not exist
    * @throws {Error} - message: Failed to check if user exist: with status code 500
    */
-  public async checkExist(email: string): Promise<any> {
+  public async checkExist(email: string): Promise<unknown> {
     try {
       const isExist = await this.model.where("email", "==", email).get();
       if (isExist.empty) {
@@ -143,7 +143,7 @@ export class UserRepo {
    * @param id identifier for query database for specfic user data
    * @throws {Error} - message: Failed to fetch user data with status code 500
    */
-  public async getSingle(id: string): Promise<any> {
+  public async getSingle(id: string): Promise<unknown> {
     try {
       const snapshot = await this.model.doc(id).get();
       if (!snapshot.data()) return null;
@@ -162,7 +162,7 @@ export class UserRepo {
    * @description for fetching all user data
    * @deprecated not currently in used in this application
    */
-  public async getAll(): Promise<any[]> {
+  public async getAll(): Promise<unknown[]> {
     try {
       const snapshot = await this.model.get();
       return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -182,7 +182,7 @@ export class UserRepo {
    * @param payload data to update with
    * @return firebase native response
    */
-  public async update(id: string, payload: any): Promise<void> {
+  public async update(id: string, payload: unknown): Promise<void> {
     try {
       const response = await this.model.doc(id).update(payload);
       return response;
