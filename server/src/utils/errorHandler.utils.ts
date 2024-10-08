@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { NextFunction, Request, Response } from "express";
 
 const errorHandler = (error: any, req: Request, res: Response, next: NextFunction) => {

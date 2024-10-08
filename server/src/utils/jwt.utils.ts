@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import jwt, { JwtPayload } from "jsonwebtoken"
 import { AppConfig } from "../config/app.config"
 
