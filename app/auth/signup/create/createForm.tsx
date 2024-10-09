@@ -12,7 +12,6 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function CreateForm() {
   const router = useRouter();
-  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState({
     userName: "",
     emailAddress: "",
@@ -27,7 +26,6 @@ export default function CreateForm() {
   };
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
-    // setLoading(true)
     e.preventDefault();
     const userData = {
       name: data.userName,
@@ -40,12 +38,12 @@ export default function CreateForm() {
         if (response.data.token) {
           router.push("/login");
         }
-        setLoading(false);
+        setLoading(false)
         toast.success("Account Created Successfully", { autoClose: 3000 });
         router.push("/auth/signup/emailVerification")
       })
       .catch((error) => {
-        setLoading(false);
+        setLoading(false)
         if (error.response) {
           toast.error(`${error.response.data.msg}`, { autoClose: 3000 });
         } else if (error.request) {

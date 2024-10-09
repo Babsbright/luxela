@@ -8,7 +8,7 @@ import BadRequestAPIError from "../../errors/BadrequestError";
 import CustomAPIError from "../../errors/CustomAPIError";
 import { StatusCodes } from "http-status-codes";
 // import { buffer } from './../../../node_modules/rxjs/dist/esm5/internal/operators/buffer';
-import {IBuyer, UserRole}  from '../types/constant.types'
+import {IBuyer, ISeller, UserRole}  from '../types/constant.types'
 // import NotFoundAPIError from "../../errors/NotFoundError";
 
 /**
@@ -40,15 +40,14 @@ export class UserService {
     public async signup(data: {username: string, email: string, picture: string, role: string}) {
         try {
             const {role} = data;
-            const token = signToken(data)
-            if(role === UserRole.BUYER){
-                return await this.signupBuyer(data)
-            } else if(role === UserRole.SELLER) {
+            if(role === UserRole.SELLER){
                 return await this.signupSeller(data)
+            } else if(role === UserRole.BUYER) {
+                return await this.signupBuyer(data)
             } else{
                 throw new BadRequestAPIError('Kindly specify the user role!')
             }
-        } catch (error: Error | any) {
+        } catch (error: Error | unknown) {
             console.log(error.message)
             throw error
         }
@@ -63,23 +62,16 @@ export class UserService {
      * @returns this fuction also return the user details with token if the user is an already register user as the design for login is not available
      * @throws error 500
     */
-    public async signupBuyer(data: Partial<IBuyer>) {
+    public async signupSeller(data: Partial<ISeller>) {
         try {
             const token = signToken(data)
             const isExist = await this.repository.checkExist(data.email)
             if(isExist) {
              throw new BadRequestAPIError('User Account already exist!')
             }
-            const saveData = await this.repository.createBuyer(data)
-            const code = '';
-            const mailPayload = {
-                emailTo: data.email,
-                subject: 'NEW BUYER REGISTRATION ALERT',
-                htmlContent: {code, username: data.brandName}
-            }
-            await sendEmail(mailPayload)
+            const saveData = await this.repository.createSeller(data)
             return {saveData, token}
-        } catch (error: Error | any) {
+        } catch (error: Error | unknown) {
             throw error
         }
     }
@@ -93,16 +85,16 @@ export class UserService {
      * @returns this fuction also return the user details with token if the user is an already register user as the design for login is not available
      * @throws error 500
     */
-    private async signupSeller(data: {username: string, email: string, picture: string, role: string}) {
+    private async signupBuyer(data: {username: string, email: string, picture: string, role: string}) {
         try {
-            const {username, email, role} = data;
+            const {username, email} = data;
             const token = signToken(data)
             const isExist = await this.repository.checkExist(email)
             if(isExist) {
                 const saveData = await this.repository.getUserByMail(email)
                 return {saveData, token}
             }
-            let code = Math.floor(1000000 + Math.random() * 999999).toString();
+            const code = Math.floor(1000000 + Math.random() * 999999).toString();
             const credential = {
                 ...data, 
                 otpCode: {
@@ -110,15 +102,18 @@ export class UserService {
                     exp: new Date(Date.now() + 10 * 60 * 1000)
                 }
             }
-            const saveData = await this.repository.createSeller(credential)
+            const saveData = await this.repository.createBuyer(credential)
             const mailPayload = {
                 emailTo: email,
                 subject: 'SECURITY OTP',
-                htmlContent: {code, username}
+                htmlContent: {
+                    code, 
+                    username
+                }
             }
             await sendEmail(mailPayload)
             return saveData
-        } catch (error: Error | any) {
+        } catch (error: Error | unknown) {
             console.log(error.message)
             throw error
         }
@@ -139,16 +134,17 @@ export class UserService {
             if(data.otpCode.code !== otp) throw new CustomAPIError('Invalid OTP code!', StatusCodes.BAD_REQUEST)
             const currentTime = new Date()
             const expiryTime = new Date(data.otpCode.exp) 
-            console.log(currentTime)
-            console.log(expiryTime)
-            console.log(data.otpCode.exp)
             if(currentTime < expiryTime) {
-                let code = Math.floor(1000000 + Math.random() * 999999).toString();
-                await this.repository.update(data.id, { otpCode: {code, exp: currentTime}})
+                const newCode = Math.floor(1000000 + Math.random() * 999999).toString();
+                await this.repository.update(data.id, { 
+                    otpCode: {
+                        code:newCode, 
+                        exp: currentTime
+                    }})
                 const mailPayload = {
                     emailTo: email,
                     subject: 'NEW SECURITY OTP',
-                    htmlContent: {code, username:data.username}
+                    htmlContent: {code: newCode, username:data.username}
                 }
                 await sendEmail(mailPayload)
                 throw new CustomAPIError('OTP code expired, check your mail for a new code and retry!', StatusCodes.BAD_REQUEST)

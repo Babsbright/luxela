@@ -7,113 +7,32 @@ import { UserService } from "../service/user.service";
 import { UploadedFile } from "express-fileupload";
 import BadRequestAPIError from "../../errors/BadrequestError";
 
-// import { SolanaSignInInput, SolanaSignInOutput } from '@solana/wallet-standard-features'
-// import { base58 } from './../../../node_modules/@scure/base/lib/esm/index';
-import { verifySignIn, gravatarIconUrl } from "../../utils/solana.util";
-
 const service = new UserService();
 class User {
   constructor() {}
 
-  // async createSignInData(req: Request, res: Response, next: NextFunction) {
-  //     try {
-  //     const now: Date = new Date()
-  //     const uri = req.headers.origin || ''
-  //     const currentUrl = new URL(uri)
-  //     const domain = currentUrl.host
-  //     const currentDateTime = now.toISOString()
-
-  //     const signInData: SolanaSignInInput = {
-  //         domain,
-  //         statement:
-  //         'Clicking Sign or Approve only means you have proved this wallet is owned by you. This request will not trigger any blockchain transaction or cost any gas fee.',
-  //         version: '1',
-  //         nonce: 'oBbLoEldZs',
-  //         chainId: 'solana:mainnet',
-  //         issuedAt: currentDateTime,
-  //         resources: ['https://skeet.dev', 'https://phantom.app/'],
-  //     }
-
-  //     res.json({
-  //         signInData,
-  //     })
-  //     } catch (error) {
-  //     res.status(500).json({ status: 'error', message: String(error) })
-  //     next(error)
-  //     }
-  // }
-
-  // async verifySignInData(req: Request, res: Response, next: NextFunction) {
-  //     try {
-  //       const backendInput: SolanaSignInInput = req.body.input
-  //       const { output } = req.body
-
-  //       const backendOutput: SolanaSignInOutput = {
-  //         account: {
-  //           ...output.account,
-  //           publicKey: new Uint8Array(Object.values(output.account.publicKey)),
-  //         },
-  //         signature: new Uint8Array(Buffer.from(output.signature)),
-  //         signedMessage: new Uint8Array(Buffer.from(output.signedMessage)),
-  //       }
-
-  //       if (!verifySignIn(backendInput, backendOutput)) {
-  //         console.error('Sign In verification failed!')
-  //         throw new Error('Sign In verification failed!')
-  //       }
-
-  //       const uid = base58.encode(backendOutput.account.publicKey)
-  //       const userRef = await get<User>(db, 'User', uid)
-  //       const userParams = {
-  //         uid,
-  //         email: '',
-  //         username: uid.slice(0, 8),
-  //         iconUrl: gravatarIconUrl('info@skeet.dev'),
-  //       }
-  //       console.log(userParams)
-  //       if (!userRef) {
-  //         await add<User>(db, 'User', userParams, uid)
-  //       }
-
-  //       const token = await getAuth().createCustomToken(uid)
-
-  //       res.json({
-  //         status: 'success',
-  //         token,
-  //       })
-  //     } catch (error) {
-  //       console.error(error)
-  //       res.status(500).json({ status: 'error', message: String(error) })
-  //     }
-  // }
-  /**
-   * @description this controller takes in the body object for both seller and buyer
-   * @argument req.body.seller {email,username,picture}
-   * @argument req.body.buyer IBuyer data structure
-   */
-  async signup(
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ): Promise<void | any> {
-    try {
-      if (!req.body.email.includes("@"))
-        throw new BadRequestAPIError("Submit a valid email address!");
-      else if (!req.body.role)
-        throw new BadRequestAPIError("User role is required!");
-
-      const data = await service.signup(req.body);
-      return responseHandler({
-        res,
-        StatusCodes: StatusCodes.OK,
-        message: "User signup successfully",
-        data,
-      });
-    } catch (error: Error | any) {
-      console.error("Error in signup:", error);
-      next(error);
+    /**
+     * @description this controller takes in the body object for both seller and buyer
+     * @argument req.body.seller {email,username,picture}
+     * @argument req.body.buyer IBuyer data structure
+    */
+    async signup(req: Request, res: Response, next: NextFunction): Promise<void | any> {
+        try {
+            if(!req.body.email.includes('@')) throw new BadRequestAPIError('Submit a valid email address!')
+                else if(!req.body.role) throw new BadRequestAPIError('User role is required!')
+            
+            const data = await service.signup(req.body)
+            return responseHandler({
+                res, 
+                StatusCodes: StatusCodes.OK,
+                message: 'User signup successfully',
+                data
+            })
+        } catch (error: Error | any) {
+            console.error('Error in signup:', error);
+            next(error)
+        }
     }
-  }
 
   async verifyOTP(
     req: Request,
