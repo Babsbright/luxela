@@ -38,14 +38,12 @@ export default function CreateForm() {
       .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
       .then((response) => {
         console.log(response)
-        if (response.data.token) {
-          router.push("/login");
-        }
         setLoading(false);
         toast.success("Account Created Successfully", { autoClose: 3000 });
-        router.push("/auth/signup/emailVerification");
+        router.push("/auth/signin");
       })
       .catch((error) => {
+        console.log(error)
         setLoading(false);
         if (error.response) {
           toast.error(`${error.response.data.error}`, { autoClose: 3000 });
@@ -83,7 +81,7 @@ export default function CreateForm() {
 
         <div className="font-spaceGrotesk">
           <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
-            <form className="space-y-4">
+            <form className="space-y-6">
               <Input
                 label="Username"
                 name="userName"
@@ -101,11 +99,11 @@ export default function CreateForm() {
                 onChange={handleChange}
                 placeholder="Enter your email address"
               />
-              <Link href="/auth/signup/emailVerification">
+              {/* <Link href="/auth/signin"> */}
                 <Button onClick={handleSubmit}>
                   {loading ? "Submitting..." : "Proceed"}
                 </Button>
-              </Link>
+              {/* </Link> */}
             </form>
           </div>
         </div>

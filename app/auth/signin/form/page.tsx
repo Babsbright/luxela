@@ -43,19 +43,19 @@ export default function SignIn() {
         }
         toast.success("Signed in successfully", { autoClose: 3000 });
         // Save token or session data as needed
-        router.push("/auth/signin/emailVerification");
+        router.push("/Home");
       })
       .catch((error) => {
         setLoading(false);
         if (error.response) {
-          // if (
-          //   error.response.data.error ===
-          //   "Failed to fetch user data: Cannot read properties of undefined (reading 'id')"
-          // ) {
-          //   toast.error(`User does not exist`, { autoClose: 3000 });
-          // } else {
+          if (
+            error.response.data.error ===
+            "User not register!"
+          ) {
+            toast.error(`User not registered!`, { autoClose: 3000 });
+          } else {
             toast.error(`${error.response.data.error}`, { autoClose: 3000 });
-          // }
+          }
         } else if (error.request) {
           toast.error("Network Error", { autoClose: 3000 });
         } else {
@@ -87,7 +87,7 @@ export default function SignIn() {
 
             <div className="font-spaceGrotesk">
               <div className="mt-5 sm:mx-auto sm:w-full max-w-md">
-                <form className="space-y-4">
+                <form className="space-y-6">
                   <Input
                     label="Email Address"
                     name="emailAddress"
