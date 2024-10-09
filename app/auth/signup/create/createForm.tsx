@@ -35,22 +35,23 @@ export default function CreateForm() {
       role: "buyer",
     };
     axios
-      .post("http://localhost:6020/api/v1/luxela/auth/signup", userData)
+      .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
       .then((response) => {
         if (response.data.token) {
-            router.push('/login')
+          router.push("/login");
         }
-        setLoading(false)
+        setLoading(false);
         toast.success("Account Created Successfully", { autoClose: 3000 });
+        router.push("/auth/signup/emailVerification")
       })
       .catch((error) => {
-        setLoading(false)
+        setLoading(false);
         if (error.response) {
-            toast.error(`${error.response.data.msg}`, { autoClose: 3000 });
+          toast.error(`${error.response.data.msg}`, { autoClose: 3000 });
         } else if (error.request) {
-            toast.error("Network Error", { autoClose: 3000 });
+          toast.error("Network Error", { autoClose: 3000 });
         } else {
-            console.log(error);
+          console.log(error);
         }
       });
   };
@@ -100,15 +101,17 @@ export default function CreateForm() {
                 placeholder="Enter your email address"
               />
               <Link href="/auth/signup/emailVerification">
-                <Button onClick={handleSubmit}>Proceed</Button>
+                <Button onClick={handleSubmit}>
+                  {loading ? "Submitting..." : "Proceed"}
+                </Button>
               </Link>
             </form>
           </div>
         </div>
         <ToastContainer
-        progressClassName="toastProgress"
-        bodyClassName="toastBody"
-      />
+          progressClassName="toastProgress"
+          bodyClassName="toastBody"
+        />
       </section>
     </>
   );
