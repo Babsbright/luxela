@@ -37,6 +37,7 @@ export default function CreateForm() {
     axios
       .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
       .then((response) => {
+        console.log(response)
         if (response.data.token) {
           router.push("/login");
         }
