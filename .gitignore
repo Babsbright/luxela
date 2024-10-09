@@ -28,10 +28,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
-process.env.local
-**.env
-.env
+# .env*.local
+# process.env.local
+# **.env
+# .env
 ./server/.env
 
 # vercel
