@@ -7,9 +7,9 @@ import Stepper from "../stepper";
 import AuthNavbar from "../../AuthNavbar";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Image from "next/image";
-import axios from "axios";
+// import axios from "axios";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
@@ -28,35 +28,35 @@ export default function EmailVerification() {
     });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    const userData = {
-      name: data.otpCode,
-    };
-    setLoading(true);
-    axios
-      .post(
-        "https://luxela.onrender.com/api/v1/luxela/auth/otp/verify",
-        userData
-      )
-      .then((response) => {
-        console.log(response);
-        setLoading(false);
-        toast.success("Account Created Successfully", { autoClose: 3000 });
-        router.push("/auth/signup/emailVerification");
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-        if (error.response) {
-          toast.error(`${error.response.data.error}`, { autoClose: 3000 });
-        } else if (error.request) {
-          toast.error("Network Error", { autoClose: 3000 });
-        } else {
-          console.log(error);
-        }
-      });
-  };
+  // const handleSubmit = (e: { preventDefault: () => void }) => {
+  //   e.preventDefault();
+  //   const userData = {
+  //     name: data.otpCode,
+  //   };
+  //   setLoading(true);
+  //   axios
+  //     .post(
+  //       "https://luxela.onrender.com/api/v1/luxela/auth/otp/verify",
+  //       userData
+  //     )
+  //     .then((response) => {
+  //       console.log(response);
+  //       setLoading(false);
+  //       toast.success("Account Created Successfully", { autoClose: 3000 });
+  //       router.push("/auth/signup/emailVerification");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       setLoading(false);
+  //       if (error.response) {
+  //         toast.error(`${error.response.data.error}`, { autoClose: 3000 });
+  //       } else if (error.request) {
+  //         toast.error("Network Error", { autoClose: 3000 });
+  //       } else {
+  //         console.log(error);
+  //       }
+  //     });
+  // };
 
   return (
     <>
@@ -94,7 +94,9 @@ export default function EmailVerification() {
               />
             </form>
             <Link href={"/auth/signup/terms"}>
-              <Button onClick={handleSubmit}>
+              <Button
+              // onClick={handleSubmit}
+              >
                 {loading ? "Submitting..." : "Proceed"}
               </Button>{" "}
             </Link>

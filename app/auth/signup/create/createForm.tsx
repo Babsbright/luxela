@@ -5,10 +5,9 @@ import Image from "next/image";
 import profile from "/public/assests/profilepic.svg";
 import Stepper from "../stepper";
 import { useRouter } from "next/navigation";
-import axios from "axios";
-import Link from "next/link";
+// import axios from "axios";
 import Button from "@/app/components/Button/button";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 
 export default function CreateForm() {
   const router = useRouter();
@@ -26,34 +25,32 @@ export default function CreateForm() {
     });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    const userData = {
-      name: data.userName,
-      email: data.emailAddress,
-      role: "buyer",
-    };
-    setLoading(true)
-    axios
-      .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
-      .then((response) => {
-        console.log(response)
-        setLoading(false);
-        toast.success("Account Created Successfully", { autoClose: 3000 });
-        router.push("/auth/signin");
-      })
-      .catch((error) => {
-        console.log(error)
-        setLoading(false);
-        if (error.response) {
-          toast.error(`${error.response.data.error}`, { autoClose: 3000 });
-        } else if (error.request) {
-          toast.error("Network Error", { autoClose: 3000 });
-        } else {
-          console.log(error);
-        }
-      });
-  };
+  // const handleSubmit = (e: { preventDefault: () => void }) => {
+  //   e.preventDefault();
+  //   const userData = {
+  //     name: data.userName,
+  //     email: data.emailAddress,
+  //     role: "buyer",
+  //   };
+  //   setLoading(true)
+  //   axios
+  //     .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
+  //     .then((response) => {
+  //       setLoading(false);
+  //       toast.success("Account Created Successfully", { autoClose: 3000 });
+  //       router.push("/auth/signin");
+  //     })
+  //     .catch((error) => {
+  //       setLoading(false);
+  //       if (error.response) {
+  //         toast.error(`${error.response.data.error}`, { autoClose: 3000 });
+  //       } else if (error.request) {
+  //         toast.error("Network Error", { autoClose: 3000 });
+  //       } else {
+  //         console.log(error);
+  //       }
+  //     });
+  // };
 
   return (
     <>
@@ -100,17 +97,19 @@ export default function CreateForm() {
                 placeholder="Enter your email address"
               />
               {/* <Link href="/auth/signin"> */}
-                <Button onClick={handleSubmit}>
-                  {loading ? "Submitting..." : "Proceed"}
-                </Button>
+              <Button
+              // onClick={handleSubmit}
+              >
+                {loading ? "Submitting..." : "Proceed"}
+              </Button>
               {/* </Link> */}
             </form>
           </div>
         </div>
-        <ToastContainer
+        {/* <ToastContainer
           progressClassName="toastProgress"
           bodyClassName="toastBody"
-        />
+        /> */}
       </section>
     </>
   );
