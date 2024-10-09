@@ -16,6 +16,7 @@ export default function CreateForm() {
     userName: "",
     emailAddress: "",
   });
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e: { target: { value: unknown; name: string } }) => {
     const value = e.target.value;
