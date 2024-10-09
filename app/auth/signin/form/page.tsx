@@ -43,15 +43,12 @@ export default function SignIn() {
         }
         toast.success("Signed in successfully", { autoClose: 3000 });
         // Save token or session data as needed
-        // router.push("/Home");
+        router.push("/Home");
       })
       .catch((error) => {
         setLoading(false);
         if (error.response) {
-          if (
-            error.response.data.error ===
-            "User not register!"
-          ) {
+          if (error.response.data.error === "User not register!") {
             toast.error(`User not registered!`, { autoClose: 3000 });
           } else {
             toast.error(`${error.response.data.error}`, { autoClose: 3000 });

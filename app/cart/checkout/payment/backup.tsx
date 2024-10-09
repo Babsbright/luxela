@@ -1,14 +1,14 @@
 "use client";
-
-import React, { useState } from 'react';
 import Image from "next/image";
-import Link from "next/link";
-// import { useRouter } from 'next/navigation'; 
 import { useCart } from "../../../context/CartContext";
-import lock from "/public/assests/lock.svg"; 
+// import sol from "/public/assests/sol.svg";
+import lock from "/public/assests/lock.svg";
+import { useState } from "react";
 import PaymentPage2 from "./paymentPage2";
+import Link from "next/link";
 import Navbar from "../../../components/Homepage/Navbar2";
 import MobileNav from "../../../components/Homepage/MobileNav2";
+// import { items } from "../../data";
 
 export default function Payment() {
   const [page, setPage] = useState<boolean>(false);
@@ -27,14 +27,27 @@ export default function Payment() {
 
   const { subtotal, shippingFee, total = 0 } = calculateTotal();
 
+  // Redirect to payment link
   const handlePayment = () => {
-    const paylinkEndpoint = process.env.NEXT_PUBLIC_HELIO_PAYLINK_ENDPOINT;
-    if (paylinkEndpoint) {
-        window.location.href = paylinkEndpoint;
-    } else {
-        console.error("Payment endpoint is not defined.");
-    }
-};
+    const totalAmount = calculateTotal();
+    const actionLink = process.env.NEXT_PUBLIC_PAYMENT_ENDPOINT;
+    const publicKey = process.env.NEXT_PUBLIC_PAYMENT_API_KEY;
+
+    const paymentUrl = `${actionLink}&amount=${totalAmount}&apiKey=${publicKey}`;
+
+    window.open(paymentUrl, "_blank");
+
+    // Simulate a payment result (success or failure)
+    setTimeout(() => {
+      const paymentSuccess = Math.random() > 0.5;
+      if (paymentSuccess) {
+        alert("🎉 Payment was successful!");
+        setPage(true);
+      } else {
+        alert("😓 Payment failed. Please try again.");
+      }
+    }, 5000);
+  };
 
   return (
     <>
