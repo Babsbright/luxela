@@ -45,8 +45,9 @@ export default function CreateForm() {
       })
       .catch((error) => {
         setLoading(false)
+        console.log(error)
         if (error.response) {
-          toast.error(`${error.response.data.msg}`, { autoClose: 3000 });
+          toast.error(`${error.response.data.error}`, { autoClose: 3000 });
         } else if (error.request) {
           toast.error("Network Error", { autoClose: 3000 });
         } else {
