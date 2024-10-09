@@ -42,7 +42,6 @@ export default function CreateForm() {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       .then((response) => {
         setLoading(false);
-        console.log(response);
         localStorage.setItem("username", response.data.data.name);
         toast.success("Account Created Successfully", { autoClose: 3000 });
         router.push("/auth/signin");
