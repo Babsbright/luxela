@@ -31,7 +31,7 @@ export default function SignIn() {
     setLoading(true);
     const userData = {
       email: data.emailAddress,
-      role:"buyer"
+      role: "buyer",
     };
 
     axios
@@ -48,7 +48,14 @@ export default function SignIn() {
       .catch((error) => {
         setLoading(false);
         if (error.response) {
-          toast.error(`${error.response.data.msg}`, { autoClose: 3000 });
+          if (
+            error.response.data.error ===
+            "Failed to fetch user data: Cannot read properties of undefined (reading 'id')"
+          ) {
+            toast.error(`User does not exist`, { autoClose: 3000 });
+          } else {
+            toast.error(`${error.response.data.error}`, { autoClose: 3000 });
+          }
         } else if (error.request) {
           toast.error("Network Error", { autoClose: 3000 });
         } else {

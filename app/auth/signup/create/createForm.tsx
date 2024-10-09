@@ -16,7 +16,7 @@ export default function CreateForm() {
     userName: "",
     emailAddress: "",
   });
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: { target: { value: unknown; name: string } }) => {
     const value = e.target.value;
@@ -33,19 +33,19 @@ export default function CreateForm() {
       email: data.emailAddress,
       role: "buyer",
     };
+    setLoading(true)
     axios
       .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
       .then((response) => {
         if (response.data.token) {
           router.push("/login");
         }
-        setLoading(false)
+        setLoading(false);
         toast.success("Account Created Successfully", { autoClose: 3000 });
-        router.push("/auth/signup/emailVerification")
+        router.push("/auth/signup/emailVerification");
       })
       .catch((error) => {
-        setLoading(false)
-        console.log(error)
+        setLoading(false);
         if (error.response) {
           toast.error(`${error.response.data.error}`, { autoClose: 3000 });
         } else if (error.request) {
