@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",
+    "@heliofi/checkout-react": "^2.1.1",
     "@heroicons/react": "^2.1.5",
     "@project-serum/anchor": "^0.26.0",
     "@radix-ui/react-popover": "^1.1.1",
