@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import { useRouter } from 'next/navigation'; 
+// import { useRouter } from 'next/navigation';
 import { useCart } from "../../../context/CartContext";
-import lock from "/public/assests/lock.svg"; 
+import lock from "/public/assests/lock.svg";
 import PaymentPage2 from "./paymentPage2";
 import Navbar from "../../../components/Homepage/Navbar2";
 import MobileNav from "../../../components/Homepage/MobileNav2";
 
 export default function Payment() {
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   const [page, setPage] = useState<boolean>(false);
   const { cartItems } = useCart();
   const [buttonText] = useState("Proceed to Payment");
@@ -30,11 +31,11 @@ export default function Payment() {
   const handlePayment = () => {
     const paylinkEndpoint = process.env.NEXT_PUBLIC_HELIO_PAYLINK_ENDPOINT;
     if (paylinkEndpoint) {
-        window.location.href = paylinkEndpoint;
+      window.location.href = paylinkEndpoint;
     } else {
-        console.error("Payment endpoint is not defined.");
+      console.error("Payment endpoint is not defined.");
     }
-};
+  };
 
   return (
     <>
