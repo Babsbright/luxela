@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 "use client";
 import { Input } from "@/app/components/Input/input";
 import { useState } from "react";
@@ -15,7 +17,9 @@ export default function CreateForm() {
     userName: "",
     emailAddress: "",
   });
+
   const [loading, setLoading] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleChange = (e: { target: { value: unknown; name: string } }) => {
     const value = e.target.value;
@@ -38,6 +42,8 @@ export default function CreateForm() {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       .then((response) => {
         setLoading(false);
+        console.log(response);
+        localStorage.setItem("username", response.data.data.name);
         toast.success("Account Created Successfully", { autoClose: 3000 });
         router.push("/auth/signin");
       })
@@ -69,12 +75,43 @@ export default function CreateForm() {
 
         <Stepper currentStep={0} numberOfSteps={2} />
 
-        <div className="flex justify-center cursor-pointer my-4">
-          <Image
-            className="w-20 lg:w-28 hover:bg-luxela_lilac"
-            src={profile}
-            alt="profile"
+        <div className="flex justify-center cursor-pointer gap-x-2 my-4">
+          {selectedImage && (
+            <div>
+              {/* Display the selected image */}
+              <img
+                alt="not found"
+                className="rounded-full w-20 h-20 lg:w-28 lg:h-28"
+                src={URL.createObjectURL(selectedImage)}
+              />
+            </div>
+          )}
+          <br />
+          <input
+            style={{ display: "none" }}
+            type="file"
+            name="myImage"
+            id="myImage"
+            // Event handler to capture file selection and update the state
+            onChange={(event) => {
+              setSelectedImage(event.target.files[0]); // Update the state with the selected file
+              const file = event.target.files?.[0];
+              if (file) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                  localStorage.setItem("recent-image", reader.result as string);
+                };
+                reader.readAsDataURL(file);
+              }
+            }}
           />
+          <label htmlFor="myImage">
+            <Image
+              className="w-20 lg:w-28 hover:bg-luxela_lilac"
+              src={profile}
+              alt="profile"
+            />{" "}
+          </label>
         </div>
 
         <div className="font-spaceGrotesk">

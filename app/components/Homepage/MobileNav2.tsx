@@ -21,7 +21,7 @@ const MobileNav = () => {
             className="bg-[#141414] cursor-pointer relative border border-solid border-[#212121] rounded-[6px] p-2"
           >
             <ShoppingCartIcon />{" "}
-            <span className="text-white font-bold text-[12px] absolute top-0 start-0">
+            <span className="text-red-500 font-bold text-[12px] absolute top-0 start-0">
               {cartItems.length}
             </span>
           </div>
