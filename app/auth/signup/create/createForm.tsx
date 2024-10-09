@@ -35,6 +35,7 @@ export default function CreateForm() {
     setLoading(true);
     axios
       .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       .then((response) => {
         setLoading(false);
         toast.success("Account Created Successfully", { autoClose: 3000 });
