@@ -3,14 +3,14 @@
 import Image from "next/image";
 import Logo from "/public/assests/Luxela white logo 1.svg";
 import Button from "@/app/components/Button/button";
-import AuthNavbar from "../../AuthNavbar";
+import AuthNavbar from "../AuthNavbar";
 import { Input } from "@/app/components/Input/input";
-import { useState } from "react";
-import Stepper from "../stepper";
+import { useState, useEffect } from "react";
+// import Stepper from "../stepper";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
-import Loader from "../../Loader/index";
+import Loader from "../Loader/index";
 
 export default function SignIn() {
   const router = useRouter();
@@ -18,6 +18,11 @@ export default function SignIn() {
   const [data, setData] = useState({
     emailAddress: "",
   });
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    setImage(localStorage.getItem("brand-image"));
+  }, []);
 
   const handleChange = (e: { target: { value: string; name: string } }) => {
     const value = e.target.value;
@@ -32,7 +37,7 @@ export default function SignIn() {
     setLoading(true);
     const userData = {
       email: data.emailAddress,
-      role: "buyer",
+      role: "seller",
     };
 
     axios
@@ -42,7 +47,7 @@ export default function SignIn() {
         setLoading(false);
         toast.success("Signed in successfully", { autoClose: 3000 });
         // Save token or session data as needed
-        router.push("/Home");
+        router.push("/Brand");
       })
       .catch((error) => {
         setLoading(false);
@@ -75,11 +80,20 @@ export default function SignIn() {
             <div className="text-center">
               <h2 className="font-medium text-lg font-aeonik">Sign In</h2>
               <p className="font-spaceGrotesk max-w-md lg:max-w-lg mt-2 mx-auto text-white/80 text-sm">
-                Continue shopping by signing in to your Luxela account
+                Sign in to your Luxela account to start selling
               </p>
             </div>
+            {image && (
+              <div className="flex flex-col justify-center items-center my-5">
+                <img
+                  src={image}
+                  className="rounded-full w-24 h-24"
+                  alt="user image"
+                />
+              </div>
+            )}
 
-            <Stepper currentStep={0} numberOfSteps={2} />
+            {/* <Stepper currentStep={0} numberOfSteps={2} /> */}
 
             <div className="font-spaceGrotesk">
               <div className="mt-5 sm:mx-auto sm:w-full max-w-md">

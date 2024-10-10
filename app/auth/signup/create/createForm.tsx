@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Button from "@/app/components/Button/button";
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "../../Loader/index";
+
 
 export default function CreateForm() {
   const router = useRouter();
@@ -42,7 +44,7 @@ export default function CreateForm() {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       .then((response) => {
         setLoading(false);
-        localStorage.setItem("username", response.data.data.name);
+        localStorage.setItem("username", response.data.data.saveData.name);
         toast.success("Account Created Successfully", { autoClose: 3000 });
         router.push("/auth/signin");
       })
@@ -133,11 +135,15 @@ export default function CreateForm() {
                 onChange={handleChange}
                 placeholder="Enter your email address"
               />
-              {/* <Link href="/auth/signin"> */}
-              <Button onClick={handleSubmit}>
-                {loading ? "Submitting..." : "Proceed"}
+              <Button disabled={loading ? true : false} onClick={handleSubmit}>
+                {loading ? (
+                  <span className="flex flex-col items-center">
+                    <Loader />
+                  </span>
+                ) : (
+                  "Proceed"
+                )}
               </Button>
-              {/* </Link> */}
             </form>
           </div>
         </div>
