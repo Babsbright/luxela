@@ -15,7 +15,7 @@ import Loader from "../Loader/index";
 import { ToastContainer, toast } from "react-toastify";
 import {
   target,
-  brands,
+  // brands,
   countries,
   currencies,
   refundPeriods,
@@ -71,7 +71,7 @@ export default function BusinessSignup() {
       .post("https://luxela.onrender.com/api/v1/luxela/auth/signup", userData)
       /* eslint-disable @typescript-eslint/no-unused-vars */
       .then((response) => {
-        console.log(response)
+        console.log(response);
         setLoading(false);
         localStorage.setItem("brandname", response.data.data.saveData.name);
         toast.success("Account Created Successfully", { autoClose: 3000 });

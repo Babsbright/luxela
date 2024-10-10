@@ -85,7 +85,9 @@ export default function SignIn() {
             </div>
             {image && (
               <div className="flex flex-col justify-center items-center my-5">
-                <img
+                <Image
+                  width={40}
+                  height={40}
                   src={image}
                   className="rounded-full w-24 h-24"
                   alt="user image"
